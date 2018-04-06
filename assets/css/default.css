@@ -1,0 +1,57 @@
+*{
+    background-color: #faebbc;
+}
+nav {
+    display: inline;
+    float: right;
+}
+
+span.logo {
+    float: left;
+}
+
+header {
+    width: 40rem;
+    margin: auto;
+    overflow: auto;
+    background-color: #f3f3f3;
+}
+
+div.main {
+    width: 40rem;
+    margin: auto;
+}
+
+div.bodyitem {
+    margin: 1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+header a {
+    padding: 1rem;
+    display: inline-block;
+    background-color: #f3f3f3;
+}
+
+blockquote {
+    border-left: .3rem solid #ccc;
+    padding-left: 1rem;
+}
+
+a:hover{
+    background-color: #ddd;
+}
+
+li.postlistitem{
+    margin-bottom: .5rem;
+}
+
+ul.postlist{
+    list-style-type: none;
+    padding: 0;
+}

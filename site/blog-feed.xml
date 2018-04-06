@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Yuchen Pei's Blog</title>
+  <id>https://ypei.me/blog-feed.xml</id>
+  <updated>2017-08-07T00:00:00Z</updated>
+  <link href="https://ypei.me" />
+  <link href="https://ypei.me/blog-feed.xml" rel="self" />
+  <author>
+    <name>Yuchen Pei</name>
+  </author>
+  <generator>PyAtom</generator>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">The Mathematical Bazaar</title>
+    <id>posts/2017-08-07-mathematical_bazaar.html</id>
+    <updated>2017-08-07T00:00:00Z</updated>
+    <link href="posts/2017-08-07-mathematical_bazaar.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;In this essay I describe some problems in academia of mathematics and propose an open source model, which I call open research in mathematics.&lt;/p&gt;
+&lt;p&gt;This essay is a work in progress - comments and criticisms are welcome! &lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before I start I should point out that&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Open research is &lt;em&gt;not&lt;/em&gt; open access. In fact the latter is a prerequisite to the former.&lt;/li&gt;
+&lt;li&gt;I am not proposing to replace the current academic model with the open model - I know academia works well for many people and I am happy for them, but I think an open research community is long overdue since the wide adoption of the World Wide Web more than two decades ago. In fact, I fail to see why an open model can not run in tandem with the academia, just like open source and closed source software development coexist today.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="problems-of-academia"&gt;problems of academia&lt;/h2&gt;
+&lt;p&gt;Open source projects are characterised by publicly available source codes as well as open invitations for public collaborations, whereas closed source projects do not make source codes accessible to the public. How about mathematical academia then, is it open source or closed source? The answer is neither.&lt;/p&gt;
+&lt;p&gt;Compared to some other scientific disciplines, mathematics does not require expensive equipments or resources to replicate results; compared to programming in conventional software industry, mathematical findings are not meant to be commercial, as credits and reputation rather than money are the direct incentives (even though the former are commonly used to trade for the latter). It is also a custom and common belief that mathematical derivations and theorems shouldn't be patented. Because of this, mathematical research is an open source activity in the sense that proofs to new results are all available in papers, and thanks to open access e.g. the arXiv preprint repository most of the new mathematical knowledge is accessible for free.&lt;/p&gt;
+&lt;p&gt;Then why, you may ask, do I claim that maths research is not open sourced? Well, this is because 1. mathematical arguments are not easily replicable and 2. mathematical research projects are mostly not open for public participation.&lt;/p&gt;
+&lt;p&gt;Compared to computer programs, mathematical arguments are not written in an unambiguous language, and they are terse and not written in maximum verbosity (this is especially true in research papers as journals encourage limiting the length of submissions), so the understanding of a proof depends on whether the reader is equipped with the right background knowledge, and the completeness of a proof is highly subjective. More generally speaking, computer programs are mostly portable because all machines with the correct configurations can understand and execute a piece of program, whereas humans are subject to their environment, upbringings, resources etc. to have a brain ready to comprehend a proof that interests them. (these barriers are softer than the expensive equipments and resources in other scientific fields mentioned before because it is all about having access to the right information)&lt;/p&gt;
+&lt;p&gt;On the other hand, as far as the pursuit of reputation and prestige (which can be used to trade for the scarce resource of research positions and grant money) goes, there is often little practical motivation for career mathematicians to explain their results to the public carefully. And so the weird reality of the mathematical academia is that it is not an uncommon practice to keep trade secrets in order to protect one's territory and maintain a monopoly. This is doable because as long as a paper passes the opaque and sometimes political peer review process and is accepted by a journal, it is considered work done, accepted by the whole academic community and adds to the reputation of the author(s). Just like in the software industry, trade secrets and monopoly hinder the development of research as a whole, as well as demoralise outsiders who are interested in participating in related research.&lt;/p&gt;
+&lt;p&gt;Apart from trade secrets and territoriality, another reason to the nonexistence of open research community is an elitist tradition in the mathematical academia, which goes as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Whoever is not good at mathematics or does not possess a degree in maths is not eligible to do research, or else they run high risks of being labelled a crackpot.&lt;/li&gt;
+&lt;li&gt;Mistakes made by established mathematicians are more tolerable than those less established.&lt;/li&gt;
+&lt;li&gt;Good mathematical writings should be deep, and expositions of non-original results are viewed as inferior work and do not add to (and in some cases may even damage) one's reputation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All these customs potentially discourage public participations in mathematical research, and I do not see them easily go away unless an open source community gains momentum.&lt;/p&gt;
+&lt;p&gt;To solve the above problems, I propose a open source model of mathematical research, which has high levels of openness and transparency and also has some added benefits listed in the last section of this essay. This model tries to achieve two major goals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open and public discussions and collaborations of mathematical research projects online&lt;/li&gt;
+&lt;li&gt;Open review to validate results, where author name, reviewer name, comments and responses are all publicly available online.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To this end, a Github model is fitting. Let me first describe how open source collaboration works on Github.&lt;/p&gt;
+&lt;h2 id="open-source-collaborations-on-github"&gt;open source collaborations on Github&lt;/h2&gt;
+&lt;p&gt;On &lt;a href="https://github.com"&gt;Github&lt;/a&gt;, every project is publicly available in a repository (we do not consider private repos). The owner can update the project by &amp;quot;committing&amp;quot; changes, which include a message of what has been changed, the author of the changes and a timestamp. Each project has an issue tracker, which is basically a discussion forum about the project, where anyone can open an issue (start a discussion), and the owner of the project as well as the original poster of the issue can close it if it is resolved, e.g. bug fixed, feature added, or out of the scope of the project. Closing the issue is like ending the discussion, except that the thread is still open to more posts for anyone interested. People can react to each issue post, e.g. upvote, downvote, celebration, and importantly, all the reactions are public too, so you can find out who upvoted or downvoted your post.&lt;/p&gt;
+&lt;p&gt;When one is interested in contributing code to a project, they fork it, i.e. make a copy of the project, and make the changes they like in the fork. Once they are happy with the changes, they submit a pull request to the original project. The owner of the original project may accept or reject the request, and they can comment on the code in the pull request, asking for clarification, pointing out problematic part of the code etc and the author of the pull request can respond to the comments. Anyone, not just the owner can participate in this review process, turning it into a public discussion. In fact, a pull request is a special issue thread. Once the owner is happy with the pull request, they accept it and the changes are merged into the original project. The author of the changes will show up in the commit history of the original project, so they get the credits.&lt;/p&gt;
+&lt;p&gt;As an alternative to forking, if one is interested in a project but has a different vision, or that the maintainer has stopped working on it, they can clone it and make their own version. This is a more independent kind of fork because there is no longer intention to contribute back to the original project.&lt;/p&gt;
+&lt;p&gt;Moreover, on Github there is no way to send private messages, which forces people to interact publicly. If say you want someone to see and reply to your comment in an issue post or pull request, you simply mention them by &lt;code&gt;@someone&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="open-research-in-mathematics"&gt;open research in mathematics&lt;/h2&gt;
+&lt;p&gt;All this points to a promising direction of open research. A maths project may have a wiki / collection of notes, the paper being written, computer programs implementing the results etc. The issue tracker can serve as a discussion forum about the project as well as a platform for open review (bugs are analogous to mistakes, enhancements are possible ways of improving the main results etc.), and anyone can make their own version of the project, and (optionally) contribute back by making pull requests, which will also be openly reviewed. One may want to add an extra &amp;quot;review this project&amp;quot; functionality, so that people can comment on the original project like they do in a pull request. This may or may not be necessary, as anyone can make comments or point out mistakes in the issue tracker.&lt;/p&gt;
+&lt;p&gt;One may doubt this model due to concerns of credits because work in progress is available to anyone. Well, since all the contributions are trackable in project commit history and public discussions in issues and pull request reviews, there is in fact &lt;em&gt;less&lt;/em&gt; room for cheating than the current model in academia, where scooping can happen without any witnesses. What we need is a platform with a good amount of trust like arXiv, so that the open research community honours (and can not ignore) the commit history, and the chance of mis-attribution can be reduced to minimum.&lt;/p&gt;
+&lt;p&gt;Compared to the academic model, open research also has the following advantages:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Anyone in the world with Internet access will have a chance to participate in research, whether they are affiliated to a university, have the financial means to attend conferences, or are colleagues of one of the handful experts in a specific field.&lt;/li&gt;
+&lt;li&gt;The problem of replicating / understanding maths results will be solved, as people help each other out. This will also remove the burden of answering queries about one's research. For example, say one has a project &amp;quot;Understanding the fancy results in [paper name]&amp;quot;, they write up some initial notes but get stuck understanding certain arguments. In this case they can simply post the questions on the issue tracker, and anyone who knows the answer, or just has a speculation can participate in the discussion. In the end the problem may be resolved without the authors of the paper being bothered, who may be too busy to answer.&lt;/li&gt;
+&lt;li&gt;Similarly, the burden of peer review can also be shifted from a few appointed reviewers to the crowd.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="related-readings"&gt;related readings&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.catb.org/esr/writings/cathedral-bazaar/"&gt;The Cathedral and the Bazaar by Eric Raymond&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://michaelnielsen.org/blog/doing-science-online/"&gt;Doing sience online by Michael Nielson&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gowers.wordpress.com/2009/01/27/is-massively-collaborative-mathematics-possible/"&gt;Is massively collaborative mathematics possible? by Timothy Gowers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Please send your comments to my email address - I am still looking for ways to add a comment functionality to this website.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">Open mathematical research and launching toywiki</title>
+    <id>posts/2017-04-25-open_research_toywiki.html</id>
+    <updated>2017-04-25T00:00:00Z</updated>
+    <link href="posts/2017-04-25-open_research_toywiki.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;As an experimental project, I am launching toywiki.&lt;/p&gt;
+&lt;p&gt;It hosts a collection of my research notes.&lt;/p&gt;
+&lt;p&gt;It takes some ideas from the open source culture and apply them to mathematical research: 1. It uses a very permissive license (CC-BY-SA). For example anyone can fork the project and make their own version if they have a different vision and want to build upon the project. 2. All edits will done with maximum transparency, and discussions of any of notes should also be as public as possible (e.g. Github issues) 3. Anyone can suggest changes by opening issues and submitting pull requests&lt;/p&gt;
+&lt;p&gt;Here are the links: &lt;a href="http://toywiki.xyz"&gt;toywiki&lt;/a&gt; and &lt;a href="https://github.com/ycpei/toywiki"&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Feedbacks are welcome by email.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">A \(q\)-Robinson-Schensted-Knuth algorithm and a \(q\)-polymer</title>
+    <id>posts/2016-10-13-q-robinson-schensted-knuth-polymer.html</id>
+    <updated>2016-10-13T00:00:00Z</updated>
+    <link href="posts/2016-10-13-q-robinson-schensted-knuth-polymer.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;(Latest update: 2017-01-12) In &lt;a href="http://arxiv.org/abs/1504.00666"&gt;Matveev-Petrov 2016&lt;/a&gt; a \(q\)-deformed Robinson-Schensted-Knuth algorithm (\(q\)RSK) was introduced. In this article we give reformulations of this algorithm in terms of Noumi-Yamada description, growth diagrams and local moves. We show that the algorithm is symmetric, namely the output tableaux pair are swapped in a sense of distribution when the input matrix is transposed. We also formulate a \(q\)-polymer model based on the \(q\)RSK and prove the corresponding Burke property, which we use to show a strong law of large numbers for the partition function given stationary boundary conditions and \(q\)-geometric weights. We use the \(q\)-local moves to define a generalisation of the \(q\)RSK taking a Young diagram-shape of array as the input. We write down the joint distribution of partition functions in the space-like direction of the \(q\)-polymer in \(q\)-geometric environment, formulate a \(q\)-version of the multilayer polynuclear growth model (\(q\)PNG) and write down the joint distribution of the \(q\)-polymer partition functions at a fixed time.&lt;/p&gt;
+&lt;p&gt;This article is available at &lt;a href="https://arxiv.org/abs/1610.03692"&gt;arXiv&lt;/a&gt;. It seems to me that one difference between arXiv and Github is that on arXiv each preprint has a few versions only. In Github many projects have a “dev” branch hosting continuous updates, whereas the master branch is where the stable releases live.&lt;/p&gt;
+&lt;p&gt;&lt;a href="%7B%7B%20site.url%20%7D%7D/assets/resources/qrsklatest.pdf"&gt;Here&lt;/a&gt; is a “dev” version of the article, which I shall push to arXiv when it stablises. Below is the changelog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2017-01-12: Typos and grammar, arXiv v2.&lt;/li&gt;
+&lt;li&gt;2016-12-20: Added remarks on the geometric \(q\)-pushTASEP. Added remarks on the converse of the Burke property. Added natural language description of the \(q\)RSK. Fixed typos.&lt;/li&gt;
+&lt;li&gt;2016-11-13: Fixed some typos in the proof of Theorem 3.&lt;/li&gt;
+&lt;li&gt;2016-11-07: Fixed some typos. The \(q\)-Burke property is now stated in a more symmetric way, so is the law of large numbers Theorem 2.&lt;/li&gt;
+&lt;li&gt;2016-10-20: Fixed a few typos. Updated some references. Added a reference: &lt;a href="http://web.mit.edu/~shopkins/docs/rsk.pdf"&gt;a set of notes titled “RSK via local transformations”&lt;/a&gt;. It is written by &lt;a href="http://web.mit.edu/~shopkins/"&gt;Sam Hopkins&lt;/a&gt; in 2014 as an expository article based on MIT combinatorics preseminar presentations of Alex Postnikov. It contains some idea (applying local moves to a general Young-diagram shaped array in the order that matches any growth sequence of the underlying Young diagram) which I thought I was the first one to write down.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">AMS review of 'Double Macdonald polynomials as the stable limit of Macdonald superpolynomials' by Blondeau-Fournier, Lapointe and Mathieu</title>
+    <id>posts/2015-07-15-double-macdonald-polynomials-macdonald-superpolynomials.html</id>
+    <updated>2015-07-15T00:00:00Z</updated>
+    <link href="posts/2015-07-15-double-macdonald-polynomials-macdonald-superpolynomials.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;A Macdonald superpolynomial (introduced in [O. Blondeau-Fournier et al., Lett. Math. Phys. &lt;span class="bf"&gt;101&lt;/span&gt; (2012), no. 1, 27–47; &lt;a href="http://www.ams.org/mathscinet/search/publdoc.html?pg1=MR&amp;amp;s1=2935476&amp;amp;loc=fromrevtext"&gt;MR2935476&lt;/a&gt;; J. Comb. &lt;span class="bf"&gt;3&lt;/span&gt; (2012), no. 3, 495–561; &lt;a href="http://www.ams.org/mathscinet/search/publdoc.html?pg1=MR&amp;amp;s1=3029444&amp;amp;loc=fromrevtext"&gt;MR3029444&lt;/a&gt;]) in \(N\) Grassmannian variables indexed by a superpartition \(\Lambda\) is said to be stable if \({m (m + 1) \over 2} \ge |\Lambda|\) and \(N \ge |\Lambda| - {m (m - 3) \over 2}\) , where \(m\) is the fermionic degree. A stable Macdonald superpolynomial (corresponding to a bisymmetric polynomial) is also called a double Macdonald polynomial (dMp). The main result of this paper is the factorisation of a dMp into plethysms of two classical Macdonald polynomials (Theorem 5). Based on this result, this paper&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;shows that the dMp has a unique decomposition into bisymmetric monomials;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calculates the norm of the dMp;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calculates the kernel of the Cauchy-Littlewood-type identity of the dMp;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;shows the specialisation of the aforementioned factorisation to the Jack, Hall-Littlewood and Schur cases. One of the three Schur specialisations, denoted as \(s_{\lambda, \mu}\), also appears in (7) and (9) below;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;defines the \(\omega\) -automorphism in this setting, which was used to prove an identity involving products of four Littlewood-Richardson coefficients;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;shows an explicit evaluation of the dMp motivated by the most general evaluation of the usual Macdonald polynomials;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;relates dMps with the representation theory of the hyperoctahedral group \(B_n\) via the double Kostka coefficients (which are defined as the entries of the transition matrix from the bisymmetric Schur functions \(s_{\lambda, \mu}\) to the modified dMps);&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;shows that the double Kostka coefficients have the positivity and the symmetry property, and can be written as sums of products of the usual Kostka coefficients;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;defines an operator \(\nabla^B\) as an analogue of the nabla operator \(\nabla\) introduced in [F. Bergeron and A. M. Garsia, in &lt;em&gt;Algebraic methods and \(q\)-special functions&lt;/em&gt; (Montréal, QC, 1996), 1–52, CRM Proc. Lecture Notes, 22, Amer. Math. Soc., Providence, RI, 1999; &lt;a href="http://www.ams.org/mathscinet/search/publdoc.html?r=1&amp;amp;pg1=MR&amp;amp;s1=1726826&amp;amp;loc=fromrevtext"&gt;MR1726826&lt;/a&gt;]. The action of \(\nabla^B\) on the bisymmetric Schur function \(s_{\lambda, \mu}\) yields the dimension formula \((h + 1)^r\) for the corresponding representation of \(B_n\) , where \(h\) and \(r\) are the Coxeter number and the rank of \(B_n\) , in the same way that the action of \(\nabla\) on the \(n\) th elementary symmetric function leads to the same formula for the group of type \(A_n\) .&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Copyright notice: This review is published at http://www.ams.org/mathscinet-getitem?mr=3306078, its copyright owned by the AMS.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">On a causal quantum double product integral related to Lévy stochastic area.</title>
+    <id>posts/2015-07-01-causal-quantum-product-levy-area.html</id>
+    <updated>2015-07-01T00:00:00Z</updated>
+    <link href="posts/2015-07-01-causal-quantum-product-levy-area.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;In &lt;a href="https://arxiv.org/abs/1506.04294"&gt;this paper&lt;/a&gt; with &lt;a href="http://homepages.lboro.ac.uk/~marh3/"&gt;Robin&lt;/a&gt; we study the family of causal double product integrals \[ \prod_{a &amp;lt; x &amp;lt; y &amp;lt; b}\left(1 + i{\lambda \over 2}(dP_x dQ_y - dQ_x dP_y) + i {\mu \over 2}(dP_x dP_y + dQ_x dQ_y)\right) \]&lt;/p&gt;
+&lt;p&gt;where &lt;span class="math inline"&gt;&lt;em&gt;P&lt;/em&gt;&lt;/span&gt; and &lt;span class="math inline"&gt;&lt;em&gt;Q&lt;/em&gt;&lt;/span&gt; are the mutually noncommuting momentum and position Brownian motions of quantum stochastic calculus. The evaluation is motivated heuristically by approximating the continuous double product by a discrete product in which infinitesimals are replaced by finite increments. The latter is in turn approximated by the second quantisation of a discrete double product of rotation-like operators in different planes due to a result in &lt;a href="http://www.actaphys.uj.edu.pl/findarticle?series=Reg&amp;amp;vol=46&amp;amp;page=1851"&gt;(Hudson-Pei2015)&lt;/a&gt;. The main problem solved in this paper is the explicit evaluation of the continuum limit &lt;span class="math inline"&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; of the latter, and showing that &lt;span class="math inline"&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; is a unitary operator. The kernel of &lt;span class="math inline"&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; is written in terms of Bessel functions, and the evaluation is achieved by working on a lattice path model and enumerating linear extensions of related partial orderings, where the enumeration turns out to be heavily related to Dyck paths and generalisations of Catalan numbers.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">AMS review of 'Infinite binary words containing repetitions of odd period' by Badkobeh and Crochemore</title>
+    <id>posts/2015-05-30-infinite-binary-words-containing-repetitions-odd-periods.html</id>
+    <updated>2015-05-30T00:00:00Z</updated>
+    <link href="posts/2015-05-30-infinite-binary-words-containing-repetitions-odd-periods.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;This paper is about the existence of pattern-avoiding infinite binary words, where the patterns are squares, cubes and \(3^+\)-powers.    There are mainly two kinds of results, positive (existence of an infinite binary word avoiding a certain pattern) and negative (non-existence of such a word). Each positive result is proved by the construction of a word with finitely many squares and cubes which are listed explicitly. First a synchronising (also known as comma-free) uniform morphism \(g\: \Sigma_3^* \to \Sigma_2^*\)&lt;/p&gt;
+&lt;p&gt;is constructed. Then an argument is given to show that the length of squares in the code \(g(w)\) for a squarefree \(w\) is bounded, hence all the squares can be obtained by examining all \(g(s)\) for \(s\) of bounded lengths. The argument resembles that of the proof of, e.g., Theorem 1, Lemma 2, Theorem 3 and Lemma 4 in [N. Rampersad, J. O. Shallit and M. Wang, Theoret. Comput. Sci. &lt;strong&gt;339&lt;/strong&gt; (2005), no. 1, 19–34; &lt;a href="http://www.ams.org/mathscinet/search/publdoc.html?r=1&amp;amp;pg1=MR&amp;amp;s1=2142071&amp;amp;loc=fromrevtext"&gt;MR2142071&lt;/a&gt;]. The negative results are proved by traversing all possible finite words satisfying the conditions.&lt;/p&gt;
+&lt;p&gt;   Let \(L(n_2, n_3, S)\) be the maximum length of a word with \(n_2\) distinct squares, \(n_3\) distinct cubes and that the periods of the squares can take values only in \(S\) , where \(n_2, n_3 \in \Bbb N \cup \{\infty, \omega\}\) and \(S \subset \Bbb N_+\) .    \(n_k = 0\) corresponds to \(k\)-free, \(n_k = \infty\) means no restriction on the number of distinct \(k\)-powers, and \(n_k = \omega\) means \(k^+\)-free.&lt;/p&gt;
+&lt;p&gt;   Below is the summary of the positive and negative results:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;(Negative) \(L(\infty, \omega, 2 \Bbb N) &amp;lt; \infty\) : \(\nexists\) an infinite \(3^+\) -free binary word avoiding all squares of odd periods. (Proposition 1)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;(Negative) \(L(\infty, 0, 2 \Bbb N + 1) \le 23\) : \(\nexists\) an infinite 3-free binary word, avoiding squares of even periods. The longest one has length \(\le 23\) (Proposition 2).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;(Positive) \(L(\infty, \omega, 2 \Bbb N +
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;dl&gt;
+&lt;dt&gt;= \infty\)&lt;/dt&gt;
+&lt;dd&gt;\(\exists\) an infinite \(3^+\) -free binary word avoiding squares of even periods (Theorem 1).
+&lt;/dd&gt;
+&lt;/dl&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;(Positive) \(L(\infty, \omega, \{1, 3\}) = \infty\) : \(\exists\) an infinite \(3^+\) -free binary word containing only squares of period 1 or 3 (Theorem 2).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;(Negative) \(L(6, 1, 2 \Bbb N + 1) = 57\) : \(\nexists\) an infinite binary word avoiding squares of even period containing \(&amp;lt; 7\) squares and \(&amp;lt; 2\) cubes. The longest one containing 6 squares and 1 cube has length 57 (Proposition 6).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;(Positive) \(L(7, 1, 2 \Bbb N + 1) = \infty\) : \(\exists\) an infinite \(3^+\) -free binary word avoiding squares of even period with 1 cube and 7 squares (Theorem 3).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;(Positive) \(L(4, 2, 2 \Bbb N + 1) = \infty\) : \(\exists\) an infinite \(3^+\) -free binary words avoiding squares of even period and containing 2 cubes and 4 squares (Theorem 4).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Copyright notice: This review is published at http://www.ams.org/mathscinet-getitem?mr=3313467, its copyright owned by the AMS.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">jst</title>
+    <id>posts/2015-04-02-juggling-skill-tree.html</id>
+    <updated>2015-04-02T00:00:00Z</updated>
+    <link href="posts/2015-04-02-juggling-skill-tree.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;jst = juggling skill tree&lt;/p&gt;
+&lt;p&gt;If you have ever played a computer role playing game, you may have noticed the protagonist sometimes has a skill “tree” (most of the time it is actually a directed acyclic graph), where certain skills leads to others. For example, &lt;a href="http://hydra-media.cursecdn.com/diablo.gamepedia.com/3/37/Sorceress_Skill_Trees_%28Diablo_II%29.png?version=b74b3d4097ef7ad4e26ebee0dcf33d01"&gt;here&lt;/a&gt; is the skill tree of sorceress in &lt;a href="https://en.wikipedia.org/wiki/Diablo_II"&gt;Diablo II&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now suppose our hero embarks on a quest for learning all the possible juggling patterns. Everyone would agree she should start with cascade, the simplest nontrivial 3-ball pattern, but what afterwards? A few other accessible patterns for beginners are juggler’s tennis, two in one and even reverse cascade, but what to learn after that? The encyclopeadic &lt;a href="http://libraryofjuggling.com/"&gt;Library of Juggling&lt;/a&gt; serves as a good guide, as it records more than 160 patterns, some of which very aesthetically appealing. On this website almost all the patterns have a “prerequisite” section, indicating what one should learn beforehand. I have therefore written a script using &lt;a href="http://python.org"&gt;Python&lt;/a&gt;, &lt;a href="http://www.crummy.com/software/BeautifulSoup/"&gt;BeautifulSoup&lt;/a&gt; and &lt;a href="http://pygraphviz.github.io/"&gt;pygraphviz&lt;/a&gt; to generate a jst (graded by difficulties, which is the leftmost column) from the Library of Juggling (click the image for the full size):&lt;/p&gt;
+&lt;p&gt;&lt;a href="../assets/resources/juggling.png"&gt;&lt;img src="../assets/resources/juggling.png" alt="The juggling skill tree" style="width:38em" /&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">Unitary causal quantum stochastic double products as universal interactions I</title>
+    <id>posts/2015-04-01-unitary-double-products.html</id>
+    <updated>2015-04-01T00:00:00Z</updated>
+    <link href="posts/2015-04-01-unitary-double-products.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;In &lt;a href="http://www.actaphys.uj.edu.pl/findarticle?series=Reg&amp;amp;vol=46&amp;amp;page=1851"&gt;this paper&lt;/a&gt; with &lt;a href="http://homepages.lboro.ac.uk/~marh3/"&gt;Robin&lt;/a&gt; we show the explicit formulae for a family of unitary triangular and rectangular double product integrals which can be described as second quantisations.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">AMS review of 'A weighted interpretation for the super Catalan numbers' by Allen and Gheorghiciuc</title>
+    <id>posts/2015-01-20-weighted-interpretation-super-catalan-numbers.html</id>
+    <updated>2015-01-20T00:00:00Z</updated>
+    <link href="posts/2015-01-20-weighted-interpretation-super-catalan-numbers.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;The super Catalan numbers are defined as $$ T(m,n) = {(2 m)! (2 n)! 2 m! n! (m + n)!}. $$&lt;/p&gt;
+&lt;p&gt;   This paper has two main results. First a combinatorial interpretation of the super Catalan numbers is given: $$ T(m,n) = P(m,n) - N(m,n) $$ where \(P(m,n)\) enumerates the number of 2-Motzkin paths whose \(m\) -th step begins at an even level (called \(m\)-positive paths) and \(N(m,n)\) those with \(m\)-th step beginning at an odd level (\(m\)-negative paths). The proof uses a recursive argument on the number of \(m\)-positive and -negative paths, based on a recursion of the super Catalan numbers appearing in [I. M. Gessel, J. Symbolic Comput. &lt;strong&gt;14&lt;/strong&gt; (1992), no. 2-3, 179–194; &lt;a href="http://www.ams.org/mathscinet/search/publdoc.html?r=1&amp;amp;pg1=MR&amp;amp;s1=1187230&amp;amp;loc=fromrevtext"&gt;MR1187230&lt;/a&gt;]: $$ 4T(m,n) = T(m+1, n) + T(m, n+1). $$ This result gives an expression for the super Catalan numbers in terms of numbers counting the so-called ballot paths. The latter sometimes are also referred to as the generalised Catalan numbers forming the entries of the Catalan triangle.&lt;/p&gt;
+&lt;p&gt;   Based on the first result, the second result is a combinatorial interpretation of the super Catalan numbers \(T(2,n)\) in terms of counting certain Dyck paths. This is equivalent to a theorem, which represents \(T(2,n)\) as counting of certain pairs of Dyck paths, in [I. M. Gessel and G. Xin, J. Integer Seq. &lt;strong&gt;8&lt;/strong&gt; (2005), no. 2, Article 05.2.3, 13 pp.; &lt;a href="http://www.ams.org/mathscinet/search/publdoc.html?r=1&amp;amp;pg1=MR&amp;amp;s1=2134162&amp;amp;loc=fromrevtext"&gt;MR2134162&lt;/a&gt;], and the equivalence is explained at the end of the paper by a bijection between the Dyck paths and the pairs of Dyck paths. The proof of the theorem itself is also done by constructing two bijections between Dyck paths satisfying certain conditions. All the three bijections are formulated by locating, removing and adding steps.&lt;/p&gt;
+&lt;p&gt;Copyright notice: This review is published at http://www.ams.org/mathscinet-getitem?mr=3275875, its copyright owned by the AMS.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">Symmetry property of \(q\)-weighted Robinson-Schensted algorithms and branching algorithms</title>
+    <id>posts/2014-04-01-q-robinson-schensted-symmetry-paper.html</id>
+    <updated>2014-04-01T00:00:00Z</updated>
+    <link href="posts/2014-04-01-q-robinson-schensted-symmetry-paper.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;In &lt;a href="http://link.springer.com/article/10.1007/s10801-014-0505-x"&gt;this paper&lt;/a&gt; a symmetry property analogous to the well known symmetry property of the normal Robinson-Schensted algorithm has been shown for the \(q\)-weighted Robinson-Schensted algorithm. The proof uses a generalisation of the growth diagram approach introduced by Fomin. This approach, which uses “growth graphs”, can also be applied to a wider class of insertion algorithms which have a branching structure.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="../assets/resources/1423graph.jpg" alt="Growth graph of q-RS for 1423" /&gt;&lt;figcaption&gt;Growth graph of q-RS for 1423&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Above is the growth graph of the \(q\)-weighted Robinson-Schensted algorithm for the permutation \({1 2 3 4\choose1 4 2 3}\).&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">A \(q\)-weighted Robinson-Schensted algorithm</title>
+    <id>posts/2013-06-01-q-robinson-schensted-paper.html</id>
+    <updated>2013-06-01T00:00:00Z</updated>
+    <link href="posts/2013-06-01-q-robinson-schensted-paper.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;In &lt;a href="https://projecteuclid.org/euclid.ejp/1465064320"&gt;this paper&lt;/a&gt; with &lt;a href="http://www.bristol.ac.uk/maths/people/neil-m-oconnell/"&gt;Neil&lt;/a&gt; we construct a \(q\)-version of the Robinson-Schensted algorithm with column insertion. Like the &lt;a href="http://en.wikipedia.org/wiki/Robinson–Schensted_correspondence"&gt;usual RS correspondence&lt;/a&gt; with column insertion, this algorithm could take words as input. Unlike the usual RS algorithm, the output is a set of weighted pairs of semistandard and standard Young tableaux \((P,Q)\) with the same shape. The weights are rational functions of indeterminant \(q\).&lt;/p&gt;
+&lt;p&gt;If \(q\in[0,1]\), the algorithm can be considered as a randomised RS algorithm, with 0 and 1 being two interesting cases. When \(q\to0\), it is reduced to the latter usual RS algorithm; while when \(q\to1\) with proper scaling it should scale to directed random polymer model in &lt;a href="http://arxiv.org/abs/0910.0069"&gt;(O’Connell 2012)&lt;/a&gt;. When the input word \(w\) is a random walk:&lt;/p&gt;
+&lt;p&gt;\begin{align*}\mathbb P(w=v)=\prod_{i=1}^na_{v_i},\qquad\sum_ja_j=1\end{align*}&lt;/p&gt;
+&lt;p&gt;the shape of output evolves as a Markov chain with kernel related to \(q\)-Whittaker functions, which are Macdonald functions when \(t=0\) with a factor.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

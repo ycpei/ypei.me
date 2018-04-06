@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>A \(q\)-weighted Robinson-Schensted algorithm</title>
+        <link rel="stylesheet" href="../assets/css/default.css" />
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    </head>
+    <body>
+        <header>
+            <span class="logo">
+                <a href="../blog.html">Blog</a>
+            </span>
+            <nav>
+                <a href="../index.html">About</a><a href="../postlist.html">All posts</a><a href="../blog-feed.xml">Feed</a>
+            </nav>
+        </header>
+
+        <div class="main">
+            <div class="bodyitem">
+                <h2> A \(q\)-weighted Robinson-Schensted algorithm </h2>
+                <p>Posted on 2013-06-01</p>
+                    <p>In <a href="https://projecteuclid.org/euclid.ejp/1465064320">this paper</a> with <a href="http://www.bristol.ac.uk/maths/people/neil-m-oconnell/">Neil</a> we construct a \(q\)-version of the Robinson-Schensted algorithm with column insertion. Like the <a href="http://en.wikipedia.org/wiki/Robinson–Schensted_correspondence">usual RS correspondence</a> with column insertion, this algorithm could take words as input. Unlike the usual RS algorithm, the output is a set of weighted pairs of semistandard and standard Young tableaux \((P,Q)\) with the same shape. The weights are rational functions of indeterminant \(q\).</p>
+<p>If \(q\in[0,1]\), the algorithm can be considered as a randomised RS algorithm, with 0 and 1 being two interesting cases. When \(q\to0\), it is reduced to the latter usual RS algorithm; while when \(q\to1\) with proper scaling it should scale to directed random polymer model in <a href="http://arxiv.org/abs/0910.0069">(O’Connell 2012)</a>. When the input word \(w\) is a random walk:</p>
+<p>\begin{align*}\mathbb P(w=v)=\prod_{i=1}^na_{v_i},\qquad\sum_ja_j=1\end{align*}</p>
+<p>the shape of output evolves as a Markov chain with kernel related to \(q\)-Whittaker functions, which are Macdonald functions when \(t=0\) with a factor.</p>
+
+            </div>
+        </div>
+    </body>
+</html>
