@@ -5,7 +5,7 @@ name: index
 ---
 
 Yuchen is a postdoctoral researcher in the [KTH RMSMA group](https://www.math.kth.se/RMSMA/).
-Before KTH he did PhD in the [MASDOC program at Warwick](https://warwick.ac.uk/fac/sci/masdoc), and spent two years in a postdoc position in [CMSA at Harvard](http://cmsa.fas.harvard.edu).
+Before KTH he did a PhD in the [MASDOC program at Warwick](https://warwick.ac.uk/fac/sci/masdoc), and spent two years in a postdoc position in [CMSA at Harvard](http://cmsa.fas.harvard.edu).
 
 He is interested in machine learning and functional programming.
 
