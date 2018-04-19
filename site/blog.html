@@ -18,6 +18,45 @@
 
         <div class="main">
             <div class="bodyitem">
+    <a href="posts/2018-04-10-update-open-research.html"><h2> Updates on open research </h2></a>
+    <p>Posted on 2018-04-13</p>
+        <p>It has been 8 months since I last wrote about open research. Since then two things happened which prompted me to write an update.</p>
+<p>First, I read about Richard Stallman the champion in the free software movement, in <a href="http://shop.oreilly.com/product/9780596002879.do">his biography by Sam Williams</a> and his own collection of essays <a href="https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition"><em>Free software, free society</em></a>. For anyone interested in open research, I highly recommend having a look at these two books.</p>
+<p>Also three weeks ago I attended a workshop titled <a href="https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration">Open research: rethinking scientific collaboration</a>. That was the first time I met a group of people who also want open research to happen, and we had some stimulating discussions.</p>
+<p>From both of these I have developed some ideas.</p>
+<h3 id="freedom-and-community">Freedom and community</h3>
+<p>This section is restricted to mathematical research / academia.</p>
+<p>Ideals matter. My understanding is that Stallman’s struggles stemmed from the frustration of denied request of source code (a frustration I shared in academia except source code is replaced by maths knowledge), and revolved around two things that underlies the free software movement: freedom and community. That is, the freedom to use, modify and share a work, and by sharing, help the community.</p>
+<p>Likewise, as for open research, apart from the utilitarian view that open research is more efficient / harder for credits theft, we should not ignore the ethical aspect that open research is right and fair.</p>
+<p>In particular, I think freedom and community can also serve as principles in open research. One way to make this argument more concrete is to describe the problems of NDAs (non-disclosure agreements) and reproducibility.</p>
+<p><strong>NDAs</strong>. It is assumed that when establishing a collaboration, or during a discussion, the joint work in progress belongs to all those involved, and no one has the freedom to disclose any intermediate results without getting permissions from all collaborators. In effect this amounts to signing an NDA. Considering the primary goal of academia is to better human knowledge but not for profit, NDAs in research are unacceptable. They also restrict people’s freedom from sharing information that can benefit their own or others’ research.</p>
+<p><strong>Reproducibility</strong>. Papers written down are not necessarily reproducible, even though they have appeared on peer-reviewed journals. This is because the peer-review process is opaque and the proofs in the papers may not be clear to everyone. To make things worse, there are no open channels to discuss results in these papers and one may have to rely on interacting with the small circle of the informed. One example is folk theorems. Another is trade secrets required to decipher published works.</p>
+<p>NDAs restrict the freedom of those holding information from disclosing it, thus they do not cover the trade secrets in ongoing research. That is, on the other side of the coin, it is also within one’s freedom to withhold such information, even though it is not nice to do so if the information can help others with their research.</p>
+<p>But we do need a community that promotes and respects free flow of maths knowledge, in the spirit of the <a href="https://www.gnu.org/philosophy/">four essential freedoms</a>, a community that rejects NDAs and upholds reproducibility,</p>
+<p>Here are some ideas on how to tackle these two problems and build the community:</p>
+<ol type="1">
+<li>Free licensing. It solves NDA problem - free licenses permit redistribution and modification of works, so if you adopt them in your joint work, then you have the freedom to modify and distribute the work; it also helps with reproducibility - if a paper is not clear, anyone can write their own version and publish it. Bonus points with the use of copyleft licenses like <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Share-Alike</a> or the <a href="https://www.gnu.org/licenses/fdl.html">GNU Free Documentation License</a>.</li>
+<li>A forum for discussions of mathematics. It helps solve the reproducibility problem - public interaction may help quickly clarify problems. By the way, Math Overflow is not a forum.</li>
+<li>An infrastructure of mathematical knowledge. Like the GNU system, a mathematics encyclopedia under a copyleft license maintained in the Github-style rather than Wikipedia-style by a “Free Mathematics Foundation”, and drawing contributions from the public (inside or outside of the academia). To begin with, crowd-source (again, Github-style) the proofs of say 1000 foundational theorems covered in the curriculum of a bachelor’s degree. Perhaps start with taking contributions from people with some credentials (e.g. having a bachelor degree in maths) and then expand the contribution permission to the public.</li>
+<li>Cite with care: if a work is considered authorative but you couldn’t reproduce the results, whereas another paper which tries to explain or discuss similar results makes the first paper understandable to you, give both papers due attribution (something like: see [1], but I couldn’t reproduce the proof in [1], and the proofs in [2] helped clarify it). No one should be offended if you say you can not reproduce something - there may be causes on both sides, whereas citing [2] is fairer and helps readers with a similar background.</li>
+</ol>
+<h3 id="tools-for-open-research">Tools for open research</h3>
+<p>The open research workshop revolved around how to lead the scientific academia towards open research. There were discussions on open research tools, improving credit attributions, the peer-review process and the path to adoption.</p>
+<p>From the workshop I learned about some interesting tools for open research that are either new or just new to me, and it is exciting to see them.</p>
+<ul>
+<li><a href="https://osf.io">OSF</a>, an online research platform. Clean and simple interface with commenting, wiki, citation generation, DOI generation, tags, license generation etc. Like Github it supports private and public repositories (but default to private), version control, with the ability to fork or bookmark a project.</li>
+<li><a href="https://scipost.org/">SciPost</a>, physics journals whose peer review reports and responses are public (peer-witnessed refereeing), and allows comments (post-publication evaluation). Like arXiv, it requires academic credential (PhD or above) to register.</li>
+<li><a href="https://knowen.org/">Knowen</a>, a platform to organise knowledge in directed acyclic graphs. Could be useful for building the infrastructure of mathematical knowledge.</li>
+<li><a href="https://fermatslibrary.com/">Fermat’s Library</a>, the journal club website that crowd-annotates one notable paper per week released a Chrome extension <a href="https://fermatslibrary.com/librarian">Librarian</a> that overlays a commenting interface on arXiv.</li>
+<li><a href="https://polymathprojects.org/">The Polymath project</a>, the famous massive collaborative mathematical project. Not exactly new, the Polymath project is the only open maths research project that has gained some traction and recognition. However, it does not have many projects (<a href="http://michaelnielsen.org/polymath1/index.php?title=Main_Page">currently only one active project</a>).</li>
+<li><a href="https://stacks.math.columbia.edu/">The Stacks Project</a>, quite close to my vision of an open source infrastructure.</li>
+</ul>
+<h3 id="an-anecdote-from-the-workshop">An anecdote from the workshop</h3>
+<p>In a conversation during the workshop, one of the participants called open science “normal science”, because reproducibility, open access, collaborations, and fair attributions are all what science is supposed to be, and practices like treating the readers as buyers rather than users should be called “bad science”, rather than “closed science”.</p>
+<p>To which an organiser replied: maybe we should rename the workshop “Not-bad science”.</p>
+
+</div>
+<div class="bodyitem">
     <a href="posts/2017-08-07-mathematical_bazaar.html"><h2> The Mathematical Bazaar </h2></a>
     <p>Posted on 2017-08-07</p>
         <p>In this essay I describe some problems in academia of mathematics and propose an open source model, which I call open research in mathematics.</p>
@@ -115,13 +154,6 @@
 <li><p>defines an operator \(\nabla^B\) as an analogue of the nabla operator \(\nabla\) introduced in [F. Bergeron and A. M. Garsia, in <em>Algebraic methods and \(q\)-special functions</em> (Montréal, QC, 1996), 1–52, CRM Proc. Lecture Notes, 22, Amer. Math. Soc., Providence, RI, 1999; <a href="http://www.ams.org/mathscinet/search/publdoc.html?r=1&amp;pg1=MR&amp;s1=1726826&amp;loc=fromrevtext">MR1726826</a>]. The action of \(\nabla^B\) on the bisymmetric Schur function \(s_{\lambda, \mu}\) yields the dimension formula \((h + 1)^r\) for the corresponding representation of \(B_n\) , where \(h\) and \(r\) are the Coxeter number and the rank of \(B_n\) , in the same way that the action of \(\nabla\) on the \(n\) th elementary symmetric function leads to the same formula for the group of type \(A_n\) .</p></li>
 </ol>
 <p>Copyright notice: This review is published at http://www.ams.org/mathscinet-getitem?mr=3306078, its copyright owned by the AMS.</p>
-
-</div>
-<div class="bodyitem">
-    <a href="posts/2015-07-01-causal-quantum-product-levy-area.html"><h2> On a causal quantum double product integral related to Lévy stochastic area. </h2></a>
-    <p>Posted on 2015-07-01</p>
-        <p>In <a href="https://arxiv.org/abs/1506.04294">this paper</a> with <a href="http://homepages.lboro.ac.uk/~marh3/">Robin</a> we study the family of causal double product integrals \[ \prod_{a &lt; x &lt; y &lt; b}\left(1 + i{\lambda \over 2}(dP_x dQ_y - dQ_x dP_y) + i {\mu \over 2}(dP_x dP_y + dQ_x dQ_y)\right) \]</p>
-<p>where <span class="math inline"><em>P</em></span> and <span class="math inline"><em>Q</em></span> are the mutually noncommuting momentum and position Brownian motions of quantum stochastic calculus. The evaluation is motivated heuristically by approximating the continuous double product by a discrete product in which infinitesimals are replaced by finite increments. The latter is in turn approximated by the second quantisation of a discrete double product of rotation-like operators in different planes due to a result in <a href="http://www.actaphys.uj.edu.pl/findarticle?series=Reg&amp;vol=46&amp;page=1851">(Hudson-Pei2015)</a>. The main problem solved in this paper is the explicit evaluation of the continuum limit <span class="math inline"><em>W</em></span> of the latter, and showing that <span class="math inline"><em>W</em></span> is a unitary operator. The kernel of <span class="math inline"><em>W</em></span> is written in terms of Bessel functions, and the evaluation is achieved by working on a lattice path model and enumerating linear extensions of related partial orderings, where the enumeration turns out to be heavily related to Dyck paths and generalisations of Catalan numbers.</p>
 
 </div>
 
