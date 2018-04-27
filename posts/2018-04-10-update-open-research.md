@@ -4,45 +4,46 @@ date: 2018-04-13
 title: Updates on open research
 ---
 
-It has been 8 months since I last wrote about open research. Since then two things happened which prompted me to write an update.
+It has been 8 months since I last wrote about open (maths) research. Since then two things happened which prompted me to write an update.
 
-First, I read about Richard Stallman the champion in the free software movement, in [his biography by Sam Williams](http://shop.oreilly.com/product/9780596002879.do) and his own collection of essays [_Free software, free society_](https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition). 
+As always I discuss open research only in mathematics, not because I don't think it should not apply to other disciplines, but simply because I do not have experience nor interests in non-mathematical subjects.
+
+First, I read about Richard Stallman the founder of the free software movement, in [his biography by Sam Williams](http://shop.oreilly.com/product/9780596002879.do) and his own collection of essays [_Free software, free society_](https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition), from which I learned a bit more about the context and philosophy of free software and open source software.
 For anyone interested in open research, I highly recommend having a look at these two books.
+I am also reading Levy's [Hackers](http://www.stevenlevy.com/index.php/books/hackers), which documented the development of the hacker culture predating Stallman.
+I can see the connection of ideas from the hacker ethic to free software to the open source philosophy.
+My guess is that the software world is fortunate to have pioneers who advocated on freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a major concern.
 
-Also three weeks ago I attended a workshop titled [Open research: rethinking scientific collaboration](https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration). That was the first time I met a group of people who also want open research to happen, and we had some stimulating discussions.
+Also a month ago I attended a workshop called [Open research: rethinking scientific collaboration](https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration). That was the first time I met a group of people (mostly physicists) who also want open research to happen, and we had some stimulating discussions.
 
-From both of these I have developed some ideas.
+From both of these I feel like I should update the open research.
 
 ### Freedom and community
-This section is restricted to mathematical research / academia.
-
 Ideals matter. My understanding is that Stallman's struggles stemmed from the frustration of denied request of source code (a frustration I shared in academia except source code is replaced by maths knowledge), and revolved around two things that underlies the free software movement: freedom and community.
 That is, the freedom to use, modify and share a work, and by sharing, help the community.
 
-Likewise, as for open research, apart from the utilitarian view that open research is more efficient / harder for credits theft, we should not ignore the ethical aspect that open research is right and fair.
-
+Likewise, as for open research, apart from the utilitarian view that open research is more efficient / harder for credit theft, we should not ignore the ethical aspect that open research is right and fair.
 In particular, I think freedom and community can also serve as principles in open research.
-One way to make this argument more concrete is to describe the problems of NDAs (non-disclosure agreements) and reproducibility.
+One way to make this argument more concrete is to describe the what I feel are the central problems: NDAs (non-disclosure agreements) and reproducibility.
 
-__NDAs__. It is assumed that when establishing a collaboration, or during a discussion, the joint work in progress belongs to all those involved, and no one has the freedom to disclose any intermediate results without getting permissions from all collaborators. In effect this amounts to signing an NDA.
-Considering the primary goal of academia is to better human knowledge but not for profit, NDAs in research are unacceptable.
-They also restrict people's freedom from sharing information that can benefit their own or others' research.
+__NDAs__. It is assumed that when establishing a research collaboration, or just having a discussion, the joint work in progress belongs to all those involved, and no one has the freedom to disclose any information e.g. intermediate results without getting permission from all collaborators. In effect this amounts to signing an NDA.
+NDAs are harmful because they restrict people's freedom from sharing information that can benefit their own or others' research.
+Considering that in contrast to the private sector, the primary goal of academia is to better human knowledge but not for profit, NDAs in research are unacceptable.
 
 __Reproducibility__. Papers written down are not necessarily reproducible, even though they have appeared on peer-reviewed journals.
 This is because the peer-review process is opaque and the proofs in the papers may not be clear to everyone.
 To make things worse, there are no open channels to discuss results in these papers and one may have to rely on interacting with the small circle of the informed. 
 One example is folk theorems. Another is trade secrets required to decipher published works.
 
-NDAs restrict the freedom of those holding information from disclosing it, thus they do not cover the trade secrets in ongoing research. 
-That is, on the other side of the coin, it is also within one's freedom to withhold such information, even though it is not nice to do so if the information can help others with their research.
+I should clarify that freedom works both ways. One should have the freedom to disclose maths knowledge, but they should also be free to withhold any information that does not hamper the reproducibility of published works (e.g. results in ongoing research yet to be published), even though it may not be nice to do so when such information can help others with their research.
 
-But we do need a community that promotes and respects free flow of maths knowledge, in the spirit of the [four essential freedoms](https://www.gnu.org/philosophy/), a community that rejects NDAs and upholds reproducibility, 
+Similar to the solution offered by the free software movement, we need a community that promotes and respects free flow of maths knowledge, in the spirit of the [four essential freedoms](https://www.gnu.org/philosophy/), a community that rejects NDAs and upholds reproducibility.
 
 Here are some ideas on how to tackle these two problems and build the community:
 
 1. Free licensing. It solves NDA problem - free licenses permit redistribution and modification of works, so if you adopt them in your joint work, then you have the freedom to modify and distribute the work; it also helps with reproducibility - if a paper is not clear, anyone can write their own version and publish it. Bonus points with the use of copyleft licenses like [Creative Commons Share-Alike](https://creativecommons.org/licenses/by-sa/4.0/) or the [GNU Free Documentation License](https://www.gnu.org/licenses/fdl.html).
 2. A forum for discussions of mathematics. It helps solve the reproducibility problem - public interaction may help quickly clarify problems. By the way, Math Overflow is not a forum.
-3. An infrastructure of mathematical knowledge. Like the GNU system, a mathematics encyclopedia under a copyleft license maintained in the Github-style rather than Wikipedia-style by a "Free Mathematics Foundation", and drawing contributions from the public (inside or outside of the academia). To begin with, crowd-source (again, Github-style) the proofs of say 1000 foundational theorems covered in the curriculum of a bachelor's degree. Perhaps start with taking contributions from people with some credentials (e.g. having a bachelor degree in maths) and then expand the contribution permission to the public.
+3. An infrastructure of mathematical knowledge. Like the GNU system, a mathematics encyclopedia under a copyleft license maintained in the Github-style rather than Wikipedia-style by a "Free Mathematics Foundation", and drawing contributions from the public (inside or outside of the academia). To begin with, crowd-source (again, Github-style) the proofs of say 1000 foundational theorems covered in the curriculum of a bachelor's degree. Perhaps start with taking contributions from people with some credentials (e.g. having a bachelor degree in maths) and then expand the contribution permission to the public, or taking advantage of existing corpus under free license like Wikipedia.
 4. Cite with care: if a work is considered authorative but you couldn't reproduce the results, whereas another paper which tries to explain or discuss similar results makes the first paper understandable to you, give both papers due attribution (something like: see [1], but I couldn't reproduce the proof in [1], and the proofs in [2] helped clarify it). No one should be offended if you say you can not reproduce something - there may be causes on both sides, whereas citing [2] is fairer and helps readers with a similar background.
 
 ### Tools for open research
