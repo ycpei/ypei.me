@@ -33,7 +33,7 @@ def combine(item, template):
     
     
 def main():
-    basedir = '../'
+    basedir = os.path.dirname(os.path.realpath(__file__)) + '/../'
     pagesdir = basedir + 'pages/'
     postsdir = basedir + 'posts/'
     micropostsdir = basedir + 'microposts/'
