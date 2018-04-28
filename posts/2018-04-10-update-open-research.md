@@ -6,31 +6,31 @@ title: Updates on open research
 
 It has been 8 months since I last wrote about open (maths) research. Since then two things happened which prompted me to write an update.
 
-As always I discuss open research only in mathematics, not because I don think it should not be applied to other disciplines, but simply because I do not have experience nor sufficient interests in non-mathematical subjects.
+As always I discuss open research only in mathematics, not because I think it should not be applied to other disciplines, but simply because I do not have experience nor sufficient interests in non-mathematical subjects.
 
 First, I read about Richard Stallman the founder of the free software movement, in [his biography by Sam Williams](http://shop.oreilly.com/product/9780596002879.do) and his own collection of essays [_Free software, free society_](https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition), from which I learned a bit more about the context and philosophy of free software and open source software.
 For anyone interested in open research, I highly recommend having a look at these two books.
 I am also reading Levy's [Hackers](http://www.stevenlevy.com/index.php/books/hackers), which documented the development of the hacker culture predating Stallman.
 I can see the connection of ideas from the hacker ethic to free software to the open source philosophy.
-My guess is that the software world is fortunate to have pioneers who advocated on freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a bigger concern.
+My guess is that the software world is fortunate to have pioneers who advocated for freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a bigger concern.
 
 Also a month ago I attended a workshop called [Open research: rethinking scientific collaboration](https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration). That was the first time I met a group of people (mostly physicists) who also want open research to happen, and we had some stimulating discussions.
 
 From both of these I feel like I should write an updated post on open research.
 
 ### Freedom and community
-Ideals matter. Stallman's struggles stemmed from the frustration of denied request of source code (a frustration I shared in academia except source code is replaced by maths knowledge), and revolved around two things that underlies the free software movement: freedom and community.
-That is, the freedom to use, modify and share a work, and by sharing, help the community.
+Ideals matter. Stallman's struggles stemmed from the frustration of denied request of source code (a frustration I shared in academia except source code is replaced by maths knowledge), and revolved around two things that underlie the free software movement: freedom and community.
+That is, the freedom to use, modify and share a work, and by sharing, to help the community.
 
 Likewise, as for open research, apart from the utilitarian view that open research is more efficient / harder for credit theft, we should not ignore the ethical aspect that open research is right and fair.
 In particular, I think freedom and community can also serve as principles in open research.
-One way to make this argument more concrete is to describe the what I feel are the central problems: NDAs (non-disclosure agreements) and reproducibility.
+One way to make this argument more concrete is to describe what I feel are the central problems: NDAs (non-disclosure agreements) and reproducibility.
 
-__NDAs__. It is assumed that when establishing a research collaboration, or just having a discussion, the joint work in progress belongs to all those involved, and no one has the freedom to disclose any information e.g. intermediate results without getting permission from all collaborators. In effect this amounts to signing an NDA.
+__NDAs__. It is assumed that when establishing a research collaboration, or just having a discussion, all those involved own the joint work in progress, and no one has the freedom to disclose any information e.g. intermediate results without getting permission from all collaborators. In effect this amounts to signing an NDA.
 NDAs are harmful because they restrict people's freedom from sharing information that can benefit their own or others' research.
 Considering that in contrast to the private sector, the primary goal of academia is knowledge but not profit, NDAs in research are unacceptable.
 
-__Reproducibility__. Research papers written down are not necessarily reproducible, even though they have appeared on peer-reviewed journals.
+__Reproducibility__. Research papers written down are not necessarily reproducible, even though they appear on peer-reviewed journals.
 This is because the peer-review process is opaque and the proofs in the papers may not be clear to everyone.
 To make things worse, there are no open channels to discuss results in these papers and one may have to rely on interacting with the small circle of the informed. 
 One example is folk theorems. Another is trade secrets required to decipher published works.
@@ -58,10 +58,10 @@ During the workshop many efforts for open research were mentioned, and afterward
 - [Knowen](https://knowen.org/), a platform to organise knowledge in directed acyclic graphs. Could be useful for building the infrastructure of mathematical knowledge.
 - [Fermat's Library](https://fermatslibrary.com/), the journal club website that crowd-annotates one notable paper per week released a Chrome extension [Librarian](https://fermatslibrary.com/librarian) that overlays a commenting interface on arXiv. As an example Ian Goodfellow did an [AMA (ask me anything) on his GAN paper](https://fermatslibrary.com/arxiv_comments?url=https://arxiv.org/pdf/1406.2661.pdf).
 - [The Polymath project](https://polymathprojects.org/), the famous massive collaborative mathematical project. Not exactly new, the Polymath project is the only open maths research project that has gained some traction and recognition. However, it does not have many active projects ([currently only one active project](http://michaelnielsen.org/polymath1/index.php?title=Main_Page)).
-- [The Stacks Project](https://stacks.math.columbia.edu/). I was made aware of this project by [Yiting](. 
+- [The Stacks Project](https://stacks.math.columbia.edu/). I was made aware of this project by [Yiting](https://people.kth.se/~yitingl/). Its data is hosted on github and accepts contributions via pull requests and is licensed under the GNU Free Documentation License, ticking many boxes of the free and open source model.
 
 ### An anecdote from the workshop
 
 In a conversation during the workshop, one of the participants called open science "normal science", because reproducibility, open access, collaborations, and fair attributions are all what science is supposed to be, and practices like treating the readers as buyers rather than users should be called "bad science", rather than "closed science".
 
-To which an organiser replied: maybe we should rename the workshop "Not-bad science".
+To which an organiser replied: maybe we should rename the workshop to "Not-bad science".
