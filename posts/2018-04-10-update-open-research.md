@@ -6,20 +6,20 @@ title: Updates on open research
 
 It has been 8 months since I last wrote about open (maths) research. Since then two things happened which prompted me to write an update.
 
-As always I discuss open research only in mathematics, not because I don't think it should not apply to other disciplines, but simply because I do not have experience nor interests in non-mathematical subjects.
+As always I discuss open research only in mathematics, not because I don think it should not be applied to other disciplines, but simply because I do not have experience nor sufficient interests in non-mathematical subjects.
 
 First, I read about Richard Stallman the founder of the free software movement, in [his biography by Sam Williams](http://shop.oreilly.com/product/9780596002879.do) and his own collection of essays [_Free software, free society_](https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition), from which I learned a bit more about the context and philosophy of free software and open source software.
 For anyone interested in open research, I highly recommend having a look at these two books.
 I am also reading Levy's [Hackers](http://www.stevenlevy.com/index.php/books/hackers), which documented the development of the hacker culture predating Stallman.
 I can see the connection of ideas from the hacker ethic to free software to the open source philosophy.
-My guess is that the software world is fortunate to have pioneers who advocated on freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a major concern.
+My guess is that the software world is fortunate to have pioneers who advocated on freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a bigger concern.
 
 Also a month ago I attended a workshop called [Open research: rethinking scientific collaboration](https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration). That was the first time I met a group of people (mostly physicists) who also want open research to happen, and we had some stimulating discussions.
 
-From both of these I feel like I should update the open research.
+From both of these I feel like I should write an updated post on open research.
 
 ### Freedom and community
-Ideals matter. My understanding is that Stallman's struggles stemmed from the frustration of denied request of source code (a frustration I shared in academia except source code is replaced by maths knowledge), and revolved around two things that underlies the free software movement: freedom and community.
+Ideals matter. Stallman's struggles stemmed from the frustration of denied request of source code (a frustration I shared in academia except source code is replaced by maths knowledge), and revolved around two things that underlies the free software movement: freedom and community.
 That is, the freedom to use, modify and share a work, and by sharing, help the community.
 
 Likewise, as for open research, apart from the utilitarian view that open research is more efficient / harder for credit theft, we should not ignore the ethical aspect that open research is right and fair.
@@ -28,9 +28,9 @@ One way to make this argument more concrete is to describe the what I feel are t
 
 __NDAs__. It is assumed that when establishing a research collaboration, or just having a discussion, the joint work in progress belongs to all those involved, and no one has the freedom to disclose any information e.g. intermediate results without getting permission from all collaborators. In effect this amounts to signing an NDA.
 NDAs are harmful because they restrict people's freedom from sharing information that can benefit their own or others' research.
-Considering that in contrast to the private sector, the primary goal of academia is to better human knowledge but not for profit, NDAs in research are unacceptable.
+Considering that in contrast to the private sector, the primary goal of academia is knowledge but not profit, NDAs in research are unacceptable.
 
-__Reproducibility__. Papers written down are not necessarily reproducible, even though they have appeared on peer-reviewed journals.
+__Reproducibility__. Research papers written down are not necessarily reproducible, even though they have appeared on peer-reviewed journals.
 This is because the peer-review process is opaque and the proofs in the papers may not be clear to everyone.
 To make things worse, there are no open channels to discuss results in these papers and one may have to rely on interacting with the small circle of the informed. 
 One example is folk theorems. Another is trade secrets required to decipher published works.
@@ -44,16 +44,16 @@ Here are some ideas on how to tackle these two problems and build the community:
 1. Free licensing. It solves NDA problem - free licenses permit redistribution and modification of works, so if you adopt them in your joint work, then you have the freedom to modify and distribute the work; it also helps with reproducibility - if a paper is not clear, anyone can write their own version and publish it. Bonus points with the use of copyleft licenses like [Creative Commons Share-Alike](https://creativecommons.org/licenses/by-sa/4.0/) or the [GNU Free Documentation License](https://www.gnu.org/licenses/fdl.html).
 2. A forum for discussions of mathematics. It helps solve the reproducibility problem - public interaction may help quickly clarify problems. By the way, Math Overflow is not a forum.
 3. An infrastructure of mathematical knowledge. Like the GNU system, a mathematics encyclopedia under a copyleft license maintained in the Github-style rather than Wikipedia-style by a "Free Mathematics Foundation", and drawing contributions from the public (inside or outside of the academia). To begin with, crowd-source (again, Github-style) the proofs of say 1000 foundational theorems covered in the curriculum of a bachelor's degree. Perhaps start with taking contributions from people with some credentials (e.g. having a bachelor degree in maths) and then expand the contribution permission to the public, or taking advantage of existing corpus under free license like Wikipedia.
-4. Cite with care: if a work is considered authorative but you couldn't reproduce the results, whereas another paper which tries to explain or discuss similar results makes the first paper understandable to you, give both papers due attribution (something like: see [1], but I couldn't reproduce the proof in [1], and the proofs in [2] helped clarify it). No one should be offended if you say you can not reproduce something - there may be causes on both sides, whereas citing [2] is fairer and helps readers with a similar background.
+4. Citing with care: if a work is considered authorative but you couldn't reproduce the results, whereas another paper which tries to explain or discuss similar results makes the first paper understandable to you, give both papers due attribution (something like: see [1], but I couldn't reproduce the proof in [1], and the proofs in [2] helped clarify it). No one should be offended if you say you can not reproduce something - there may be causes on both sides, whereas citing [2] is fairer and helps readers with a similar background.
 
 ### Tools for open research
 
-The open research workshop revolved around how to lead the scientific academia towards open research.
+The open research workshop revolved around how to lead academia towards open research.
 There were discussions on open research tools, improving credit attributions, the peer-review process and the path to adoption.
 
 From the workshop I learned about some interesting tools for open research that are either new or just new to me, and it is exciting to see them. 
 
-- [OSF](https://osf.io), an online research platform. Clean and simple interface with commenting, wiki, citation generation, DOI generation, tags, license generation etc. Like Github it supports private and public repositories (but default to private), version control, with the ability to fork or bookmark a project.
+- [OSF](https://osf.io), an online research platform. Clean and simple interface with commenting, wiki, citation generation, DOI generation, tags, license generation etc. Like Github it supports private and public repositories (but defaults to private), version control, with the ability to fork or bookmark a project.
 - [SciPost](https://scipost.org/), physics journals whose peer review reports and responses are public (peer-witnessed refereeing), and allows comments (post-publication evaluation). Like arXiv, it requires academic credential (PhD or above) to register.
 - [Knowen](https://knowen.org/), a platform to organise knowledge in directed acyclic graphs. Could be useful for building the infrastructure of mathematical knowledge.
 - [Fermat's Library](https://fermatslibrary.com/), the journal club website that crowd-annotates one notable paper per week released a Chrome extension [Librarian](https://fermatslibrary.com/librarian) that overlays a commenting interface on arXiv.
