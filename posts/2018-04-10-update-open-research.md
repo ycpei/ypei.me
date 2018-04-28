@@ -1,6 +1,6 @@
 ---
 template: post
-date: 2018-04-13
+date: 2018-04-28
 title: Updates on open research
 ---
 
@@ -64,4 +64,4 @@ During the workshop many efforts for open research were mentioned, and afterward
 
 In a conversation during the workshop, one of the participants called open science "normal science", because reproducibility, open access, collaborations, and fair attributions are all what science is supposed to be, and practices like treating the readers as buyers rather than users should be called "bad science", rather than "closed science".
 
-To which an organiser replied: maybe we should rename the workshop to "Not-bad science".
+To which an organiser replied: maybe we should rename the workshop "Not-bad science".
