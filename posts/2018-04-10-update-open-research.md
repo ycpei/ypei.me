@@ -48,17 +48,17 @@ Here are some ideas on how to tackle these two problems and build the community:
 
 ### Tools for open research
 
-The open research workshop revolved around how to lead academia towards open research.
+The open research workshop revolved around how to lead academia towards a more open culture.
 There were discussions on open research tools, improving credit attributions, the peer-review process and the path to adoption.
 
-From the workshop I learned about some interesting tools for open research that are either new or just new to me, and it is exciting to see them. 
+During the workshop many efforts for open research were mentioned, and afterwards I was also made aware by more of them, like the following:
 
-- [OSF](https://osf.io), an online research platform. Clean and simple interface with commenting, wiki, citation generation, DOI generation, tags, license generation etc. Like Github it supports private and public repositories (but defaults to private), version control, with the ability to fork or bookmark a project.
-- [SciPost](https://scipost.org/), physics journals whose peer review reports and responses are public (peer-witnessed refereeing), and allows comments (post-publication evaluation). Like arXiv, it requires academic credential (PhD or above) to register.
+- [OSF](https://osf.io), an online research platform. It has a clean and simple interface with commenting, wiki, citation generation, DOI generation, tags, license generation etc. Like Github it supports private and public repositories (but defaults to private), version control, with the ability to fork or bookmark a project.
+- [SciPost](https://scipost.org/), physics journals whose peer review reports and responses are public (peer-witnessed refereeing), and allows comments (post-publication evaluation). Like arXiv, it requires some academic credential (PhD or above) to register.
 - [Knowen](https://knowen.org/), a platform to organise knowledge in directed acyclic graphs. Could be useful for building the infrastructure of mathematical knowledge.
-- [Fermat's Library](https://fermatslibrary.com/), the journal club website that crowd-annotates one notable paper per week released a Chrome extension [Librarian](https://fermatslibrary.com/librarian) that overlays a commenting interface on arXiv.
-- [The Polymath project](https://polymathprojects.org/), the famous massive collaborative mathematical project. Not exactly new, the Polymath project is the only open maths research project that has gained some traction and recognition. However, it does not have many projects ([currently only one active project](http://michaelnielsen.org/polymath1/index.php?title=Main_Page)).
-- [The Stacks Project](https://stacks.math.columbia.edu/), quite close to my vision of an open source infrastructure.
+- [Fermat's Library](https://fermatslibrary.com/), the journal club website that crowd-annotates one notable paper per week released a Chrome extension [Librarian](https://fermatslibrary.com/librarian) that overlays a commenting interface on arXiv. As an example Ian Goodfellow did an [AMA (ask me anything) on his GAN paper](https://fermatslibrary.com/arxiv_comments?url=https://arxiv.org/pdf/1406.2661.pdf).
+- [The Polymath project](https://polymathprojects.org/), the famous massive collaborative mathematical project. Not exactly new, the Polymath project is the only open maths research project that has gained some traction and recognition. However, it does not have many active projects ([currently only one active project](http://michaelnielsen.org/polymath1/index.php?title=Main_Page)).
+- [The Stacks Project](https://stacks.math.columbia.edu/). I was made aware of this project by [Yiting](. 
 
 ### An anecdote from the workshop
 
