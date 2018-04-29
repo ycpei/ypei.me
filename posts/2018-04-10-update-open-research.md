@@ -4,7 +4,7 @@ date: 2018-04-28
 title: Updates on open research
 ---
 
-It has been 8 months since I last wrote about open (maths) research. Since then two things happened which prompted me to write an update.
+It has been 9 months since I last wrote about open (maths) research. Since then two things happened which prompted me to write an update.
 
 As always I discuss open research only in mathematics, not because I think it should not be applied to other disciplines, but simply because I do not have experience nor sufficient interests in non-mathematical subjects.
 
