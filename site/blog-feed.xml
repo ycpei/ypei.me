@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Yuchen Pei's Blog</title>
   <id>https://ypei.me/blog-feed.xml</id>
-  <updated>2018-04-28T00:00:00Z</updated>
+  <updated>2018-04-29T00:00:00Z</updated>
   <link href="https://ypei.me" />
   <link href="https://ypei.me/blog-feed.xml" rel="self" />
   <author>
@@ -12,7 +12,7 @@
   <entry xml:base="https://ypei.me/blog-feed.xml">
     <title type="text">Updates on open research</title>
     <id>posts/2018-04-10-update-open-research.html</id>
-    <updated>2018-04-28T00:00:00Z</updated>
+    <updated>2018-04-29T00:00:00Z</updated>
     <link href="posts/2018-04-10-update-open-research.html" />
     <author>
       <name>Yuchen Pei</name>
