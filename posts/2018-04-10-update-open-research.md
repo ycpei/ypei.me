@@ -14,7 +14,7 @@ I am also reading Levy's [Hackers](http://www.stevenlevy.com/index.php/books/hac
 I can see the connection of ideas from the hacker ethic to free software to the open source philosophy.
 My guess is that the software world is fortunate to have pioneers who advocated for freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a bigger concern.
 
-Also a month ago I attended a workshop called [Open research: rethinking scientific collaboration](https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration). That was the first time I met a group of people (mostly physicists) who also want open research to happen, and we had some stimulating discussions.
+Also a month ago I attended a workshop called [Open research: rethinking scientific collaboration](https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration). That was the first time I met a group of people (mostly physicists) who also want open research to happen, and we had some stimulating discussions. Many thanks to the organisers at Perimeter Institute for organising the event, and special thanks to [Matteo Smerlak](https://www.perimeterinstitute.ca/people/matteo-smerlak) and [Ashley Milsted](https://www.perimeterinstitute.ca/people/ashley-milsted) for invitation and hosting.
 
 From both of these I feel like I should write an updated post on open research.
 
