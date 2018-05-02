@@ -8,7 +8,7 @@ It has been 9 months since I last wrote about open (maths) research. Since then 
 
 As always I discuss open research only in mathematics, not because I think it should not be applied to other disciplines, but simply because I do not have experience nor sufficient interests in non-mathematical subjects.
 
-First, I read about Richard Stallman the founder of the free software movement, in [his biography by Sam Williams](http://shop.oreilly.com/product/9780596002879.do) and his own collection of essays [_Free software, free society_](https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition), from which I learned a bit more about the context and philosophy of free software and open source software.
+First, I read about Richard Stallman the founder of the free software movement, in [his biography by Sam Williams](http://shop.oreilly.com/product/9780596002879.do) and his own collection of essays [_Free software, free society_](https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition), from which I learned a bit more about the context and philosophy of free software and its relation to that of open source software.
 For anyone interested in open research, I highly recommend having a look at these two books.
 I am also reading Levy's [Hackers](http://www.stevenlevy.com/index.php/books/hackers), which documented the development of the hacker culture predating Stallman.
 I can see the connection of ideas from the hacker ethic to free software to the open source philosophy.
