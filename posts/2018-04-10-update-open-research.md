@@ -11,8 +11,8 @@ As always I discuss open research only in mathematics, not because I think it sh
 First, I read about Richard Stallman the founder of the free software movement, in [his biography by Sam Williams](http://shop.oreilly.com/product/9780596002879.do) and his own collection of essays [_Free software, free society_](https://shop.fsf.org/books-docs/free-software-free-society-selected-essays-richard-m-stallman-3rd-edition), from which I learned a bit more about the context and philosophy of free software and its relation to that of open source software.
 For anyone interested in open research, I highly recommend having a look at these two books.
 I am also reading Levy's [Hackers](http://www.stevenlevy.com/index.php/books/hackers), which documented the development of the hacker culture predating Stallman.
-I can see the connection of ideas from the hacker ethic to free software to the open source philosophy.
-My guess is that the software world is fortunate to have pioneers who advocated for freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a bigger concern.
+I can see the connection of ideas from the hacker ethic to the free software philosophy and to the open source philosophy.
+My guess is that the software world is fortunate to have pioneers who advocated for various kinds of freedom and openness from the beginning, whereas for academia which has a much longer history, credit protection has always been a bigger concern.
 
 Also a month ago I attended a workshop called [Open research: rethinking scientific collaboration](https://www.perimeterinstitute.ca/conferences/open-research-rethinking-scientific-collaboration). That was the first time I met a group of people (mostly physicists) who also want open research to happen, and we had some stimulating discussions. Many thanks to the organisers at Perimeter Institute for organising the event, and special thanks to [Matteo Smerlak](https://www.perimeterinstitute.ca/people/matteo-smerlak) and [Ashley Milsted](https://www.perimeterinstitute.ca/people/ashley-milsted) for invitation and hosting.
 
