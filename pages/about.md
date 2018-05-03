@@ -12,7 +12,7 @@ He is interested in machine learning and functional programming.
 He is also interested in the idea of open research and open sourced his research in Robinson-Schensted algorithms as a [wiki](https://toywiki.xyz).
 
 He can be reached at:
-&#104;&#105;&#64;&#121;&#112;&#101;&#105;&#46;&#109;&#101; | [Github](https://github.com/ycpei) | [LinkedIn](https://www.linkedin.com/in/ycpei/)
+&#121;&#112;&#101;&#105;&#64;&#107;&#116;&#104;&#46;&#115;&#101; | &#104;&#105;&#64;&#121;&#112;&#101;&#105;&#46;&#109;&#101; | [Github](https://github.com/ycpei) | [LinkedIn](https://www.linkedin.com/in/ycpei/)
 
 This website is made using a [handmade static site generator](https://github.com/ycpei/ypei.me/blob/master/engine/engine.py).
 
