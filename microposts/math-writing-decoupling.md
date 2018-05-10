@@ -1,5 +1,5 @@
 ---
-2018-05-10
+date: 2018-05-10
 ---
 ### Writing readable mathematics like writing an operating system
 
