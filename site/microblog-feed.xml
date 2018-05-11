@@ -2,13 +2,167 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Yuchen Pei's Microblog</title>
   <id>https://ypei.me/microblog-feed.xml</id>
-  <updated>2018-04-06T00:00:00Z</updated>
+  <updated>2018-05-11T00:00:00Z</updated>
   <link href="https://ypei.me" />
   <link href="https://ypei.me/microblog-feed.xml" rel="self" />
   <author>
     <name>Yuchen Pei</name>
   </author>
   <generator>PyAtom</generator>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-11</title>
+    <id>microblog.html</id>
+    <updated>2018-05-11T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;h3 id="some-notes-on-rnn-fsm-fa-tm-and-utm"&gt;Some notes on RNN, FSM / FA, TM and UTM&lt;/h3&gt;
+&lt;p&gt;Related to a previous micropost.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.cs.toronto.edu/~rgrosse/csc321/lec9.pdf"&gt;The slides from Toronto&lt;/a&gt; is a nice introduction to RNN (recurrent neural network) from a computational point of view. It states that RNN can simulate any FSM (finite state machine, a.k.a. finite automata abbr. FA) with a toy example computing the parity of a binary string.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.deeplearningbook.org/contents/rnn.html"&gt;Goodfellow et. al.’s book&lt;/a&gt; (see page 372 and 374) goes one step further, stating that RNN with a hidden-to-hidden layer can simulate Turing machines, and not only that, but also the &lt;em&gt;universal&lt;/em&gt; Turing machine abbr. UTM (the book referenced &lt;a href="https://www.sciencedirect.com/science/article/pii/S0022000085710136"&gt;Siegelmann-Sontag&lt;/a&gt;), a property not shared by the weaker network where the hidden-to-hidden layer is replaced by an output-to-hidden layer (page 376).&lt;/p&gt;
+&lt;p&gt;By the way, the RNN with a hidden-to-hidden layer has the same architecture as the so-called linear dynamical system mentioned in &lt;a href="https://www.coursera.org/learn/neural-networks/lecture/Fpa7y/modeling-sequences-a-brief-overview"&gt;Hinton’s video&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;From what I have learned, the universality of RNN and feedforward networks are therefore due to different arguments, the former coming from Turing machines and the latter from an analytical view of approximation by step functions.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-10</title>
+    <id>microblog.html</id>
+    <updated>2018-05-10T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;h3 id="writing-readable-mathematics-like-writing-an-operating-system"&gt;Writing readable mathematics like writing an operating system&lt;/h3&gt;
+&lt;p&gt;One way to write readable mathematics is to decouple concepts. One idea is the following template. First write a toy example with all the important components present in this example, then analyse each component individually and elaborate how (perhaps more complex) variations of the component can extend the toy example and induce more complex or powerful versions of the toy example. Through such incremental development, one should be able to arrive at any result in cutting edge research after a pleasant journey.&lt;/p&gt;
+&lt;p&gt;It’s a bit like the UNIX philosophy, where you have a basic system of modules like IO, memory management, graphics etc, and modify / improve each module individually (H/t &lt;a href="http://nand2tetris.org/"&gt;NAND2Tetris&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;The book &lt;a href="http://neuralnetworksanddeeplearning.com/"&gt;Neutral networks and deep learning&lt;/a&gt; by Michael Nielsen is an example of such approach. It begins the journey with a very simple neutral net with one hidden layer, no regularisation, and sigmoid activations. It then analyses each component including cost functions, the back propagation algorithm, the activation functions, regularisation and the overall architecture (from fully connected to CNN) individually and improve the toy example incrementally. Over the course the accuracy of the example of mnist grows incrementally from 95.42% to 99.67%.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-09</title>
+    <id>microblog.html</id>
+    <updated>2018-05-09T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;What makes the rectified linear activation function better than the sigmoid or tanh functions? At present, we have a poor understanding of the answer to this question. Indeed, rectified linear units have only begun to be widely used in the past few years. The reason for that recent adoption is empirical: a few people tried rectified linear units, often on the basis of hunches or heuristic arguments. They got good results classifying benchmark data sets, and the practice has spread. In an ideal world we’d have a theory telling us which activation function to pick for which application. But at present we’re a long way from such a world. I should not be at all surprised if further major improvements can be obtained by an even better choice of activation function. And I also expect that in coming decades a powerful theory of activation functions will be developed. Today, we still have to rely on poorly understood rules of thumb and experience.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Michael Nielsen, &lt;a href="http://neuralnetworksanddeeplearning.com/chap6.html#convolutional_neural_networks_in_practice"&gt;Neutral networks and deep learning&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-09</title>
+    <id>microblog.html</id>
+    <updated>2018-05-09T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;One way RNNs are currently being used is to connect neural networks more closely to traditional ways of thinking about algorithms, ways of thinking based on concepts such as Turing machines and (conventional) programming languages. &lt;a href="https://arxiv.org/abs/1410.4615"&gt;A 2014 paper&lt;/a&gt; developed an RNN which could take as input a character-by-character description of a (very, very simple!) Python program, and use that description to predict the output. Informally, the network is learning to “understand” certain Python programs. &lt;a href="https://arxiv.org/abs/1410.5401"&gt;A second paper, also from 2014&lt;/a&gt;, used RNNs as a starting point to develop what they called a neural Turing machine (NTM). This is a universal computer whose entire structure can be trained using gradient descent. They trained their NTM to infer algorithms for several simple problems, such as sorting and copying.&lt;/p&gt;
+&lt;p&gt;As it stands, these are extremely simple toy models. Learning to execute the Python program &lt;code&gt;print(398345+42598)&lt;/code&gt; doesn’t make a network into a full-fledged Python interpreter! It’s not clear how much further it will be possible to push the ideas. Still, the results are intriguing. Historically, neural networks have done well at pattern recognition problems where conventional algorithmic approaches have trouble. Vice versa, conventional algorithmic approaches are good at solving problems that neural nets aren’t so good at. No-one today implements a web server or a database program using a neural network! It’d be great to develop unified models that integrate the strengths of both neural networks and more traditional approaches to algorithms. RNNs and ideas inspired by RNNs may help us do that.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Michael Nielsen, &lt;a href="http://neuralnetworksanddeeplearning.com/chap6.html#other_approaches_to_deep_neural_nets"&gt;Neural networks and deep learning&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-08</title>
+    <id>microblog.html</id>
+    <updated>2018-05-08T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;Primer Science is a tool by a startup called Primer that uses NLP to summarize contents (but not single papers, yet) on arxiv. A developer of this tool predicts in &lt;a href="https://twimlai.com/twiml-talk-136-taming-arxiv-w-natural-language-processing-with-john-bohannon/#"&gt;an interview&lt;/a&gt; that progress on AI’s ability to extract meanings from AI research papers will be the biggest accelerant on AI research.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-08</title>
+    <id>microblog.html</id>
+    <updated>2018-05-08T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;no-one has yet developed an entirely convincing theoretical explanation for why regularization helps networks generalize. Indeed, researchers continue to write papers where they try different approaches to regularization, compare them to see which works better, and attempt to understand why different approaches work better or worse. And so you can view regularization as something of a kludge. While it often helps, we don’t have an entirely satisfactory systematic understanding of what’s going on, merely incomplete heuristics and rules of thumb.&lt;/p&gt;
+&lt;p&gt;There’s a deeper set of issues here, issues which go to the heart of science. It’s the question of how we generalize. Regularization may give us a computational magic wand that helps our networks generalize better, but it doesn’t give us a principled understanding of how generalization works, nor of what the best approach is.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Michael Nielsen, &lt;a href="http://neuralnetworksanddeeplearning.com/chap3.html#why_does_regularization_help_reduce_overfitting"&gt;Neural networks and deep learning&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-08</title>
+    <id>microblog.html</id>
+    <updated>2018-05-08T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;Computerphile has some brilliant educational videos on computer science, like &lt;a href="https://www.youtube.com/watch?v=ciNHn38EyRc"&gt;a demo of SQL injection&lt;/a&gt;, &lt;a href="https://www.youtube.com/watch?v=eis11j_iGMs"&gt;a toy example of the lambda calculus&lt;/a&gt;, and &lt;a href="https://www.youtube.com/watch?v=9T8A89jgeTI"&gt;explaining the Y combinator&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-07</title>
+    <id>microblog.html</id>
+    <updated>2018-05-07T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;h3 id="learning-via-knowledge-graph-and-reddit-journal-clubs"&gt;Learning via knowledge graph and reddit journal clubs&lt;/h3&gt;
+&lt;p&gt;It is a natural idea to look for ways to learn things like going through a skill tree in a computer RPG.&lt;/p&gt;
+&lt;p&gt;For example I made a &lt;a href="https://ypei.me/posts/2015-04-02-juggling-skill-tree.html"&gt;DAG for juggling&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Websites like &lt;a href="https://knowen.org"&gt;Knowen&lt;/a&gt; and &lt;a href="https://metacademy.org"&gt;Metacademy&lt;/a&gt; explore this idea with added flavour of open collaboration.&lt;/p&gt;
+&lt;p&gt;The design of Metacademy looks quite promising. It also has a nice tagline: “your package manager for knowledge”.&lt;/p&gt;
+&lt;p&gt;There are so so many tools to assist learning / research / knowledge sharing today, and we should keep experimenting, in the hope that eventually one of them will scale.&lt;/p&gt;
+&lt;p&gt;On another note, I often complain about the lack of a place to discuss math research online, but today I found on Reddit some journal clubs on machine learning: &lt;a href="https://www.reddit.com/r/MachineLearning/comments/8aluhs/d_machine_learning_wayr_what_are_you_reading_week/"&gt;1&lt;/a&gt;, &lt;a href="https://www.reddit.com/r/MachineLearning/comments/8elmd8/d_anyone_having_trouble_reading_a_particular/"&gt;2&lt;/a&gt;. If only we had this for maths. On the other hand r/math does have some interesting recurring threads as well: &lt;a href="https://www.reddit.com/r/math/wiki/everythingaboutx"&gt;Everything about X&lt;/a&gt; and &lt;a href="https://www.reddit.com/r/math/search?q=what+are+you+working+on?+author:automoderator+&amp;amp;sort=new&amp;amp;restrict_sr=on&amp;amp;t=all"&gt;What Are You Working On?&lt;/a&gt;. Hopefully these threads can last for years to come.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-02</title>
+    <id>microblog.html</id>
+    <updated>2018-05-02T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;h3 id="pastebin-for-the-win"&gt;Pastebin for the win&lt;/h3&gt;
+&lt;p&gt;The lack of maths rendering in major online communication platforms like instant messaging, email or Github has been a minor obsession of mine for quite a while, as I saw it as a big factor preventing people from talking more maths online. But today I realised this is totally a non-issue. Just do what people on IRC have been doing since the inception of the universe: use a (latex) pastebin.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-01</title>
+    <id>microblog.html</id>
+    <updated>2018-05-01T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Neural networks are one of the most beautiful programming paradigms ever invented. In the conventional approach to programming, we tell the computer what to do, breaking big problems up into many small, precisely defined tasks that the computer can easily perform. By contrast, in a neural network we don’t tell the computer how to solve our problem. Instead, it learns from observational data, figuring out its own solution to the problem at hand.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Michael Nielsen - &lt;a href="http://neuralnetworksanddeeplearning.com/about.html"&gt;What this book (Neural Networks and Deep Learning) is about&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Unrelated to the quote, note that Nielsen’s book is licensed under &lt;a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_GB"&gt;CC BY-NC&lt;/a&gt;, so one can build on it and redistribute non-commercially.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-04-30</title>
+    <id>microblog.html</id>
+    <updated>2018-04-30T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;But, users have learned to accommodate to Google not the other way around. We know what kinds of things we can type into Google and what we can’t and we keep our searches to things that Google is likely to help with. We know we are looking for texts and not answers to start a conversation with an entity that knows what we really need to talk about. People learn from conversation and Google can’t have one. It can pretend to have one using Siri but really those conversations tend to get tiresome when you are past asking about where to eat.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Roger Schank - &lt;a href="http://www.rogerschank.com/fraudulent-claims-made-by-IBM-about-Watson-and-AI"&gt;Fraudulent claims made by IBM about Watson and AI&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://ypei.me/microblog-feed.xml">
     <title type="text">2018-04-06</title>
     <id>microblog.html</id>
