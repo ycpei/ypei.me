@@ -30,4 +30,4 @@ have therefore written a script using [Python](http://python.org),
 difficulties, which is the leftmost column) from the Library of Juggling
 (click the image for the full size): 
 
-[![The juggling skill tree](../assets/resources/juggling.png){width="38em"}](../assets/resources/juggling.png)
+<a href="../assets/resources/juggling.png"><img src="../assets/resources/juggling.png" alt="The juggling skill tree" style="width:38em" /></a>
