@@ -3,6 +3,7 @@ import re
 import yaml
 import pypandoc
 import logging
+from lxml import etree
 from pyatom import AtomFeed
 
 def item_from_path(path):
@@ -21,6 +22,9 @@ def item_from_path(path):
         res['body'] = pypandoc.convert_text(matchres.group(2), 'html', format='vimwiki')
     elif ext == '.html':
         res['body'] = matchres.group(2)
+    res.setdefault('synlen', 1)
+    paras = etree.HTML(res['body']).xpath('//p')
+    res['synopsis'] = ''.join([etree.tostring(p, encoding='unicode') for p in paras[:res['synlen']]])
     return res
 
 def combine(item, template):
