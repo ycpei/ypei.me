@@ -3,7 +3,7 @@ date: 2018-05-11
 ---
 ### Some notes on RNN, FSM / FA, TM and UTM
 
-Related to a previous micropost.
+Related to [a previous micropost](#neural-turing-machine).
 
 [The slides from Toronto](http://www.cs.toronto.edu/~rgrosse/csc321/lec9.pdf) is a nice introduction to RNN (recurrent neural network) from a computational point of view. It states that RNN can simulate any FSM (finite state machine, a.k.a. finite automata abbr. FA) with a toy example computing the parity of a binary string.
 
