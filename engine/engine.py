@@ -59,9 +59,7 @@ def main():
     with open(templatesdir + 'barepost.html') as f:
         template = f.read()
     #headposts is the list of the first few posts, to be displayed on blog.html
-    headposts = {'body': ''}
-    for post in posts[:homepostnum]:
-        headposts['body'] += combine(post, template)['body']
+    headposts = {'body' : ''.join([combine(post, template)['body'] for post in posts[:homepostnum]])}
     with open(templatesdir + 'blog.html') as f:
         template = f.read()
         headposts = combine(headposts, template)
