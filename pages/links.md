@@ -5,6 +5,7 @@ title: Links
 ---
 Here are some links I find interesting or helpful, or both. Listed in no particular order.
 
+-   [CodeLab](https://competitions.codalab.org/competitions/)
 -   [HaskellForMaths](https://haskellformaths.blogspot.com/)
 -   [Open Problem Garden](http://www.openproblemgarden.org/)
 -   [AMS open notes](http://www.ams.org/open-math-notes)
