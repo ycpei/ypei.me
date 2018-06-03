@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Automatic differentiation</title>
+        <link rel="stylesheet" href="../assets/css/default.css" />
+        <script data-isso="/comments/"
+                data-isso-css="true"
+                data-isso-lang="en"
+                data-isso-reply-to-self="false"
+                data-isso-require-author="true"
+                data-isso-require-email="true"
+                data-isso-max-comments-top="10"
+                data-isso-max-comments-nested="5"
+                data-isso-reveal-on-click="5"
+                data-isso-avatar="true"
+                data-isso-avatar-bg="#f0f0f0"
+                data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..."
+                data-isso-vote="true"
+                data-vote-levels=""
+                src="/comments/js/embed.min.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+        <script src="../assets/js/analytics.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <header>
+            <span class="logo">
+                <a href="../blog.html">Yuchen's Blog</a>
+            </span>
+            <nav>
+                <a href="../index.html">About</a><a href="../postlist.html">All posts</a><a href="../blog-feed.xml">Feed</a>
+            </nav>
+        </header>
+
+        <div class="main">
+            <div class="bodyitem">
+                <h2> Automatic differentiation </h2>
+                <p>Posted on 2018-06-03 | <a href="/posts/2018-06-03-automatic_differentiation.html#isso-thread">Comments</a> </p>
+                    <p>This post is meant as a documentation of my understanding of autodiff. I benefited a lot from <a href="http://www.cs.toronto.edu/%7Ergrosse/courses/csc321_2018/slides/lec10.pdf">Toronto CSC321 slides</a> and the <a href="https://github.com/mattjj/autodidact/">autodidact</a> project which is a pedagogical implementation of <a href="https://github.com/hips/autograd">Autograd</a>. That said, any mistakes in this note are mine (especially since some of the knowledge is obtained from interpreting slides!), and if you do spot any I would be grateful if you can let me know.</p>
+<p>Automatic differentiation (AD) is a way to compute derivatives. It does so by traversing through a computational graph using the chain rule.</p>
+<p>There are the forward mode AD and reverse mode AD, which are kind of symmetric to each other and understanding one of them results in little to no difficulty in understanding the other.</p>
+<p>In the language of neural networks, one can say that the forward mode AD is used when one wants to compute the derivatives of functions at all layers with respect to input layer weights, whereas the reverse mode AD is used to compute the derivatives of output functions with respect to weights at all layers. Therefore reverse mode AD (rmAD) is the one to use for gradient descent, which is the one we focus in this post.</p>
+<p>Basically rmAD requires the computation to be sufficiently decomposed, so that in the computational graph, each node as a function of its parent nodes is an elementary function that the AD engine has knowledge about.</p>
+<p>For example, the Sigmoid activation <span class="math inline">\(a&#39; = \sigma(w a + b)\)</span> is quite simple, but it should be decomposed to simpler computations:</p>
+<ul>
+<li><span class="math inline">\(a&#39; = 1 / t_1\)</span></li>
+<li><span class="math inline">\(t_1 = 1 + t_2\)</span></li>
+<li><span class="math inline">\(t_2 = \exp(t_3)\)</span></li>
+<li><span class="math inline">\(t_3 = - t_4\)</span></li>
+<li><span class="math inline">\(t_4 = t_5 + b\)</span></li>
+<li><span class="math inline">\(t_5 = w a\)</span></li>
+</ul>
+<p>Thus the function <span class="math inline">\(a&#39;(a)\)</span> is decomposed to elementary operations like addition, subtraction, multiplication, reciprocitation, exponentiation, logarithm etc. And the rmAD engine stores the Jacobian of these elementary operations.</p>
+<p>Since in neural networks we want to find derivatives of a single loss function <span class="math inline">\(L(x; \theta)\)</span>, we can omit <span class="math inline">\(L\)</span> when writing derivatives and denote, say <span class="math inline">\(\bar \theta_k := \partial_{\theta_k} L\)</span>.</p>
+<p>In implementations of rmAD, one can represent the Jacobian as a transformation <span class="math inline">\(j: (x \to y) \to (y, \bar y, x) \to \bar x\)</span>. <span class="math inline">\(j\)</span> is called the <em>Vector Jacobian Product</em> (VJP). For example, <span class="math inline">\(j(\exp)(y, \bar y, x) = y \bar y\)</span> since given <span class="math inline">\(y = \exp(x)\)</span>,</p>
+<p><span class="math inline">\(\partial_x L = \partial_x y \cdot \partial_y L = \partial_x \exp(x) \cdot \partial_y L = y \bar y\)</span></p>
+<p>as another example, <span class="math inline">\(j(+)(y, \bar y, x_1, x_2) = (\bar y, \bar y)\)</span> since given <span class="math inline">\(y = x_1 + x_2\)</span>, <span class="math inline">\(\bar{x_1} = \bar{x_2} = \bar y\)</span>.</p>
+<p>Similarly,</p>
+<ol type="1">
+<li><span class="math inline">\(j(/)(y, \bar y, x_1, x_2) = (\bar y / x_2, - \bar y x_1 / x_2^2)\)</span></li>
+<li><span class="math inline">\(j(\log)(y, \bar y, x) = \bar y / x\)</span></li>
+<li><span class="math inline">\(j((A, \beta) \mapsto A \beta)(y, \bar y, A, \beta) = (\bar y \otimes \beta, A^T \bar y)\)</span>.</li>
+<li>etc...</li>
+</ol>
+<p>In the third one, the function is a matrix <span class="math inline">\(A\)</span> multiplied on the right by a column vector <span class="math inline">\(\beta\)</span>, and <span class="math inline">\(\bar y \otimes \beta\)</span> is the tensor product which is a fancy way of writing <span class="math inline">\(\bar y \beta^T\)</span>. See <a href="https://github.com/mattjj/autodidact/blob/master/autograd/numpy/numpy_vjps.py">numpy_vjps.py</a> for the implementation in autodidact.</p>
+<p>So, given a node say <span class="math inline">\(y = y(x_1, x_2, ..., x_n)\)</span>, and given the value of <span class="math inline">\(y\)</span>, <span class="math inline">\(x_{1 : n}\)</span> and <span class="math inline">\(\bar y\)</span>, rmAD computes the values of <span class="math inline">\(\bar x_{1 : n}\)</span> by using the Jacobians.</p>
+<p>This is the gist of rmAD. It stores the values of each node in a forward pass, and computes the derivatives of each node exactly once in a backward pass.</p>
+<p>It is a nice exercise to derive the backpropagation in the fully connected feedforward neural networks (e.g. <a href="http://neuralnetworksanddeeplearning.com/chap2.html#the_four_fundamental_equations_behind_backpropagation">the one for MNIST in Neural Networks and Deep Learning</a>) using rmAD.</p>
+<p>AD is an approach lying between the extremes of numerical approximation (e.g. finite difference) and symbolic evaluation. It uses exact formulas (VJP) at each elementary operation like symbolic evaluation, while evaluates each VJP numerically rather than lumping all the VJPs into an unwieldy symbolic formula.</p>
+<p>Things to look further into: the higher-order functional currying form <span class="math inline">\(j: (x \to y) \to (y, \bar y, x) \to \bar x\)</span> begs for a functional programming implementation.</p>
+
+            </div>
+        <section id="isso-thread"></section>
+        </div>
+    </body>
+</html>

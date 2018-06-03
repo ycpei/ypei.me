@@ -2,13 +2,102 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Yuchen Pei's Microblog</title>
   <id>https://ypei.me/microblog-feed.xml</id>
-  <updated>2018-05-11T00:00:00Z</updated>
+  <updated>2018-05-30T00:00:00Z</updated>
   <link href="https://ypei.me" />
   <link href="https://ypei.me/microblog-feed.xml" rel="self" />
   <author>
     <name>Yuchen Pei</name>
   </author>
   <generator>PyAtom</generator>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-30</title>
+    <id>microblog.html</id>
+    <updated>2018-05-30T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;Roger Grosse’s post &lt;a href="https://metacademy.org/roadmaps/rgrosse/learn_on_your_own"&gt;How to learn on your own (2015)&lt;/a&gt; is an excellent modern guide on how to learn and research technical stuff (especially machine learning and maths) on one’s own.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-25</title>
+    <id>microblog.html</id>
+    <updated>2018-05-25T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="http://jdlm.info/articles/2018/03/18/markov-decision-process-2048.html"&gt;This post&lt;/a&gt; models 2048 as an MDP and solves it using policy iteration and backward induction.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-22</title>
+    <id>microblog.html</id>
+    <updated>2018-05-22T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;ATS (Applied Type System) is a programming language designed to unify programming with formal specification. ATS has support for combining theorem proving with practical programming through the use of advanced type systems. A past version of The Computer Language Benchmarks Game has demonstrated that the performance of ATS is comparable to that of the C and C++ programming languages. By using theorem proving and strict type checking, the compiler can detect and prove that its implemented functions are not susceptible to bugs such as division by zero, memory leaks, buffer overflow, and other forms of memory corruption by verifying pointer arithmetic and reference counting before the program compiles. Additionally, by using the integrated theorem-proving system of ATS (ATS/LF), the programmer may make use of static constructs that are intertwined with the operative code to prove that a function attains its specification.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/ATS_(programming_language)"&gt;Wikipedia entry on ATS&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-20</title>
+    <id>microblog.html</id>
+    <updated>2018-05-20T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;(5-second fame) I sent a picture of my kitchen sink to BBC and got mentioned in the &lt;a href="https://www.bbc.co.uk/programmes/w3cswg8c"&gt;latest Boston Calling episode&lt;/a&gt; (listen at 25:54).&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-18</title>
+    <id>microblog.html</id>
+    <updated>2018-05-18T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="https://colah.github.io/"&gt;colah’s blog&lt;/a&gt; has a cool feature that allows you to comment on any paragraph of a blog post. Here’s an &lt;a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/"&gt;example&lt;/a&gt;. If it is doable on a static site hosted on Github pages, I suppose it shouldn’t be too hard to implement. This also seems to work more seamlessly than &lt;a href="https://fermatslibrary.com/"&gt;Fermat’s Library&lt;/a&gt;, because the latter has to embed pdfs in webpages. Now fantasy time: imagine that one day arXiv shows html versions of papers (through author uploading or conversion from TeX) with this feature.&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-15</title>
+    <id>microblog.html</id>
+    <updated>2018-05-15T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;h3 id="notes-on-random-froests"&gt;Notes on random froests&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/info"&gt;Stanford Lagunita’s statistical learning course&lt;/a&gt; has some excellent lectures on random forests. It starts with explanations of decision trees, followed by bagged trees and random forests, and ends with boosting. From these lectures it seems that:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;The term “predictors” in statistical learning = “features” in machine learning.&lt;/li&gt;
+&lt;li&gt;The main idea of random forests of dropping predictors for individual trees and aggregate by majority or average is the same as the idea of dropout in neural networks, where a proportion of neurons in the hidden layers are dropped temporarily during different minibatches of training, effectively averaging over an emsemble of subnetworks. Both tricks are used as regularisations, i.e. to reduce the variance. The only difference is: in random forests, all but a square root number of the total number of features are dropped, whereas the dropout ratio in neural networks is usually a half.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;By the way, here’s a comparison between statistical learning and machine learning from the slides of the Statistcal Learning course:&lt;/p&gt;
+&lt;p&gt;&lt;a href="../assets/resources/sl-vs-ml.png"&gt;&lt;img src="../assets/resources/sl-vs-ml.png" alt="SL vs ML" style="width:38em" /&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry xml:base="https://ypei.me/microblog-feed.xml">
+    <title type="text">2018-05-14</title>
+    <id>microblog.html</id>
+    <updated>2018-05-14T00:00:00Z</updated>
+    <link href="microblog.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;h3 id="open-peer-review"&gt;Open peer review&lt;/h3&gt;
+&lt;p&gt;Open peer review means peer review process where communications e.g. comments and responses are public.&lt;/p&gt;
+&lt;p&gt;Like &lt;a href="https://scipost.org/"&gt;SciPost&lt;/a&gt; mentioned in &lt;a href="/posts/2018-04-10-update-open-research.html"&gt;my post&lt;/a&gt;, &lt;a href="https://openreview.net"&gt;OpenReview.net&lt;/a&gt; is an example of open peer review in research. It looks like their focus is machine learning. Their &lt;a href="https://openreview.net/about"&gt;about page&lt;/a&gt; states their mission, and here’s &lt;a href="https://openreview.net/group?id=ICLR.cc/2018/Conference"&gt;an example&lt;/a&gt; where you can click on each entry to see what it is like. We definitely need this in the maths research community.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://ypei.me/microblog-feed.xml">
     <title type="text">2018-05-11</title>
     <id>microblog.html</id>

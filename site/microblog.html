@@ -19,6 +19,53 @@
 
         <div class="main">
             <div class="bodyitem">
+    <span id=how-to-learn-on-your-own><p><a href="#how-to-learn-on-your-own">2018-05-30</a></p></span>
+        <p>Roger Grosse’s post <a href="https://metacademy.org/roadmaps/rgrosse/learn_on_your_own">How to learn on your own (2015)</a> is an excellent modern guide on how to learn and research technical stuff (especially machine learning and maths) on one’s own.</p>
+
+</div>
+<div class="bodyitem">
+    <span id=2048-mdp><p><a href="#2048-mdp">2018-05-25</a></p></span>
+        <p><a href="http://jdlm.info/articles/2018/03/18/markov-decision-process-2048.html">This post</a> models 2048 as an MDP and solves it using policy iteration and backward induction.</p>
+
+</div>
+<div class="bodyitem">
+    <span id=ats><p><a href="#ats">2018-05-22</a></p></span>
+        <blockquote>
+<p>ATS (Applied Type System) is a programming language designed to unify programming with formal specification. ATS has support for combining theorem proving with practical programming through the use of advanced type systems. A past version of The Computer Language Benchmarks Game has demonstrated that the performance of ATS is comparable to that of the C and C++ programming languages. By using theorem proving and strict type checking, the compiler can detect and prove that its implemented functions are not susceptible to bugs such as division by zero, memory leaks, buffer overflow, and other forms of memory corruption by verifying pointer arithmetic and reference counting before the program compiles. Additionally, by using the integrated theorem-proving system of ATS (ATS/LF), the programmer may make use of static constructs that are intertwined with the operative code to prove that a function attains its specification.</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/ATS_(programming_language)">Wikipedia entry on ATS</a></p>
+
+</div>
+<div class="bodyitem">
+    <span id=bostoncalling><p><a href="#bostoncalling">2018-05-20</a></p></span>
+        <p>(5-second fame) I sent a picture of my kitchen sink to BBC and got mentioned in the <a href="https://www.bbc.co.uk/programmes/w3cswg8c">latest Boston Calling episode</a> (listen at 25:54).</p>
+
+</div>
+<div class="bodyitem">
+    <span id=colah-blog><p><a href="#colah-blog">2018-05-18</a></p></span>
+        <p><a href="https://colah.github.io/">colah’s blog</a> has a cool feature that allows you to comment on any paragraph of a blog post. Here’s an <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">example</a>. If it is doable on a static site hosted on Github pages, I suppose it shouldn’t be too hard to implement. This also seems to work more seamlessly than <a href="https://fermatslibrary.com/">Fermat’s Library</a>, because the latter has to embed pdfs in webpages. Now fantasy time: imagine that one day arXiv shows html versions of papers (through author uploading or conversion from TeX) with this feature.</p>
+
+</div>
+<div class="bodyitem">
+    <span id=random-forests><p><a href="#random-forests">2018-05-15</a></p></span>
+        <h3 id="notes-on-random-froests">Notes on random froests</h3>
+<p><a href="https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/info">Stanford Lagunita’s statistical learning course</a> has some excellent lectures on random forests. It starts with explanations of decision trees, followed by bagged trees and random forests, and ends with boosting. From these lectures it seems that:</p>
+<ol type="1">
+<li>The term “predictors” in statistical learning = “features” in machine learning.</li>
+<li>The main idea of random forests of dropping predictors for individual trees and aggregate by majority or average is the same as the idea of dropout in neural networks, where a proportion of neurons in the hidden layers are dropped temporarily during different minibatches of training, effectively averaging over an emsemble of subnetworks. Both tricks are used as regularisations, i.e. to reduce the variance. The only difference is: in random forests, all but a square root number of the total number of features are dropped, whereas the dropout ratio in neural networks is usually a half.</li>
+</ol>
+<p>By the way, here’s a comparison between statistical learning and machine learning from the slides of the Statistcal Learning course:</p>
+<p><a href="../assets/resources/sl-vs-ml.png"><img src="../assets/resources/sl-vs-ml.png" alt="SL vs ML" style="width:38em" /></a></p>
+
+</div>
+<div class="bodyitem">
+    <span id=open-review-net><p><a href="#open-review-net">2018-05-14</a></p></span>
+        <h3 id="open-peer-review">Open peer review</h3>
+<p>Open peer review means peer review process where communications e.g. comments and responses are public.</p>
+<p>Like <a href="https://scipost.org/">SciPost</a> mentioned in <a href="/posts/2018-04-10-update-open-research.html">my post</a>, <a href="https://openreview.net">OpenReview.net</a> is an example of open peer review in research. It looks like their focus is machine learning. Their <a href="https://openreview.net/about">about page</a> states their mission, and here’s <a href="https://openreview.net/group?id=ICLR.cc/2018/Conference">an example</a> where you can click on each entry to see what it is like. We definitely need this in the maths research community.</p>
+
+</div>
+<div class="bodyitem">
     <span id=rnn-fsm><p><a href="#rnn-fsm">2018-05-11</a></p></span>
         <h3 id="some-notes-on-rnn-fsm-fa-tm-and-utm">Some notes on RNN, FSM / FA, TM and UTM</h3>
 <p>Related to <a href="#neural-turing-machine">a previous micropost</a>.</p>

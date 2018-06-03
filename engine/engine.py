@@ -16,7 +16,7 @@ def item_from_path(path):
     res.setdefault('name', os.path.basename(x))
     if ext in ['.md', '.markdown']:
         logging.info('Converting {}...'.format(path))
-        res['body'] = pypandoc.convert_text(matchres.group(2), 'html', format='md')
+        res['body'] = pypandoc.convert_text(matchres.group(2), 'html', format='md', extra_args=['--mathjax'])
     elif ext == '.wiki':
         logging.info('Converting {}...'.format(path))
         res['body'] = pypandoc.convert_text(matchres.group(2), 'html', format='vimwiki')

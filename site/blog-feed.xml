@@ -2,13 +2,55 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Yuchen Pei's Blog</title>
   <id>https://ypei.me/blog-feed.xml</id>
-  <updated>2018-04-29T00:00:00Z</updated>
+  <updated>2018-06-03T00:00:00Z</updated>
   <link href="https://ypei.me" />
   <link href="https://ypei.me/blog-feed.xml" rel="self" />
   <author>
     <name>Yuchen Pei</name>
   </author>
   <generator>PyAtom</generator>
+  <entry xml:base="https://ypei.me/blog-feed.xml">
+    <title type="text">Automatic differentiation</title>
+    <id>posts/2018-06-03-automatic_differentiation.html</id>
+    <updated>2018-06-03T00:00:00Z</updated>
+    <link href="posts/2018-06-03-automatic_differentiation.html" />
+    <author>
+      <name>Yuchen Pei</name>
+    </author>
+    <content type="html">&lt;p&gt;This post is meant as a documentation of my understanding of autodiff. I benefited a lot from &lt;a href="http://www.cs.toronto.edu/%7Ergrosse/courses/csc321_2018/slides/lec10.pdf"&gt;Toronto CSC321 slides&lt;/a&gt; and the &lt;a href="https://github.com/mattjj/autodidact/"&gt;autodidact&lt;/a&gt; project which is a pedagogical implementation of &lt;a href="https://github.com/hips/autograd"&gt;Autograd&lt;/a&gt;. That said, any mistakes in this note are mine (especially since some of the knowledge is obtained from interpreting slides!), and if you do spot any I would be grateful if you can let me know.&lt;/p&gt;
+&lt;p&gt;Automatic differentiation (AD) is a way to compute derivatives. It does so by traversing through a computational graph using the chain rule.&lt;/p&gt;
+&lt;p&gt;There are the forward mode AD and reverse mode AD, which are kind of symmetric to each other and understanding one of them results in little to no difficulty in understanding the other.&lt;/p&gt;
+&lt;p&gt;In the language of neural networks, one can say that the forward mode AD is used when one wants to compute the derivatives of functions at all layers with respect to input layer weights, whereas the reverse mode AD is used to compute the derivatives of output functions with respect to weights at all layers. Therefore reverse mode AD (rmAD) is the one to use for gradient descent, which is the one we focus in this post.&lt;/p&gt;
+&lt;p&gt;Basically rmAD requires the computation to be sufficiently decomposed, so that in the computational graph, each node as a function of its parent nodes is an elementary function that the AD engine has knowledge about.&lt;/p&gt;
+&lt;p&gt;For example, the Sigmoid activation &lt;span class="math inline"&gt;\(a&amp;#39; = \sigma(w a + b)\)&lt;/span&gt; is quite simple, but it should be decomposed to simpler computations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(a&amp;#39; = 1 / t_1\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(t_1 = 1 + t_2\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(t_2 = \exp(t_3)\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(t_3 = - t_4\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(t_4 = t_5 + b\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(t_5 = w a\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus the function &lt;span class="math inline"&gt;\(a&amp;#39;(a)\)&lt;/span&gt; is decomposed to elementary operations like addition, subtraction, multiplication, reciprocitation, exponentiation, logarithm etc. And the rmAD engine stores the Jacobian of these elementary operations.&lt;/p&gt;
+&lt;p&gt;Since in neural networks we want to find derivatives of a single loss function &lt;span class="math inline"&gt;\(L(x; \theta)\)&lt;/span&gt;, we can omit &lt;span class="math inline"&gt;\(L\)&lt;/span&gt; when writing derivatives and denote, say &lt;span class="math inline"&gt;\(\bar \theta_k := \partial_{\theta_k} L\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In implementations of rmAD, one can represent the Jacobian as a transformation &lt;span class="math inline"&gt;\(j: (x \to y) \to (y, \bar y, x) \to \bar x\)&lt;/span&gt;. &lt;span class="math inline"&gt;\(j\)&lt;/span&gt; is called the &lt;em&gt;Vector Jacobian Product&lt;/em&gt; (VJP). For example, &lt;span class="math inline"&gt;\(j(\exp)(y, \bar y, x) = y \bar y\)&lt;/span&gt; since given &lt;span class="math inline"&gt;\(y = \exp(x)\)&lt;/span&gt;,&lt;/p&gt;
+&lt;p&gt;&lt;span class="math inline"&gt;\(\partial_x L = \partial_x y \cdot \partial_y L = \partial_x \exp(x) \cdot \partial_y L = y \bar y\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;as another example, &lt;span class="math inline"&gt;\(j(+)(y, \bar y, x_1, x_2) = (\bar y, \bar y)\)&lt;/span&gt; since given &lt;span class="math inline"&gt;\(y = x_1 + x_2\)&lt;/span&gt;, &lt;span class="math inline"&gt;\(\bar{x_1} = \bar{x_2} = \bar y\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Similarly,&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(j(/)(y, \bar y, x_1, x_2) = (\bar y / x_2, - \bar y x_1 / x_2^2)\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(j(\log)(y, \bar y, x) = \bar y / x\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="math inline"&gt;\(j((A, \beta) \mapsto A \beta)(y, \bar y, A, \beta) = (\bar y \otimes \beta, A^T \bar y)\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;etc...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In the third one, the function is a matrix &lt;span class="math inline"&gt;\(A\)&lt;/span&gt; multiplied on the right by a column vector &lt;span class="math inline"&gt;\(\beta\)&lt;/span&gt;, and &lt;span class="math inline"&gt;\(\bar y \otimes \beta\)&lt;/span&gt; is the tensor product which is a fancy way of writing &lt;span class="math inline"&gt;\(\bar y \beta^T\)&lt;/span&gt;. See &lt;a href="https://github.com/mattjj/autodidact/blob/master/autograd/numpy/numpy_vjps.py"&gt;numpy_vjps.py&lt;/a&gt; for the implementation in autodidact.&lt;/p&gt;
+&lt;p&gt;So, given a node say &lt;span class="math inline"&gt;\(y = y(x_1, x_2, ..., x_n)\)&lt;/span&gt;, and given the value of &lt;span class="math inline"&gt;\(y\)&lt;/span&gt;, &lt;span class="math inline"&gt;\(x_{1 : n}\)&lt;/span&gt; and &lt;span class="math inline"&gt;\(\bar y\)&lt;/span&gt;, rmAD computes the values of &lt;span class="math inline"&gt;\(\bar x_{1 : n}\)&lt;/span&gt; by using the Jacobians.&lt;/p&gt;
+&lt;p&gt;This is the gist of rmAD. It stores the values of each node in a forward pass, and computes the derivatives of each node exactly once in a backward pass.&lt;/p&gt;
+&lt;p&gt;It is a nice exercise to derive the backpropagation in the fully connected feedforward neural networks (e.g. &lt;a href="http://neuralnetworksanddeeplearning.com/chap2.html#the_four_fundamental_equations_behind_backpropagation"&gt;the one for MNIST in Neural Networks and Deep Learning&lt;/a&gt;) using rmAD.&lt;/p&gt;
+&lt;p&gt;AD is an approach lying between the extremes of numerical approximation (e.g. finite difference) and symbolic evaluation. It uses exact formulas (VJP) at each elementary operation like symbolic evaluation, while evaluates each VJP numerically rather than lumping all the VJPs into an unwieldy symbolic formula.&lt;/p&gt;
+&lt;p&gt;Things to look further into: the higher-order functional currying form &lt;span class="math inline"&gt;\(j: (x \to y) \to (y, \bar y, x) \to \bar x\)&lt;/span&gt; begs for a functional programming implementation.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="https://ypei.me/blog-feed.xml">
     <title type="text">Updates on open research</title>
     <id>posts/2018-04-10-update-open-research.html</id>
@@ -181,7 +223,7 @@
       <name>Yuchen Pei</name>
     </author>
     <content type="html">&lt;p&gt;In &lt;a href="https://arxiv.org/abs/1506.04294"&gt;this paper&lt;/a&gt; with &lt;a href="http://homepages.lboro.ac.uk/~marh3/"&gt;Robin&lt;/a&gt; we study the family of causal double product integrals \[ \prod_{a &amp;lt; x &amp;lt; y &amp;lt; b}\left(1 + i{\lambda \over 2}(dP_x dQ_y - dQ_x dP_y) + i {\mu \over 2}(dP_x dP_y + dQ_x dQ_y)\right) \]&lt;/p&gt;
-&lt;p&gt;where &lt;span class="math inline"&gt;&lt;em&gt;P&lt;/em&gt;&lt;/span&gt; and &lt;span class="math inline"&gt;&lt;em&gt;Q&lt;/em&gt;&lt;/span&gt; are the mutually noncommuting momentum and position Brownian motions of quantum stochastic calculus. The evaluation is motivated heuristically by approximating the continuous double product by a discrete product in which infinitesimals are replaced by finite increments. The latter is in turn approximated by the second quantisation of a discrete double product of rotation-like operators in different planes due to a result in &lt;a href="http://www.actaphys.uj.edu.pl/findarticle?series=Reg&amp;amp;vol=46&amp;amp;page=1851"&gt;(Hudson-Pei2015)&lt;/a&gt;. The main problem solved in this paper is the explicit evaluation of the continuum limit &lt;span class="math inline"&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; of the latter, and showing that &lt;span class="math inline"&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; is a unitary operator. The kernel of &lt;span class="math inline"&gt;&lt;em&gt;W&lt;/em&gt;&lt;/span&gt; is written in terms of Bessel functions, and the evaluation is achieved by working on a lattice path model and enumerating linear extensions of related partial orderings, where the enumeration turns out to be heavily related to Dyck paths and generalisations of Catalan numbers.&lt;/p&gt;
+&lt;p&gt;where &lt;span class="math inline"&gt;\(P\)&lt;/span&gt; and &lt;span class="math inline"&gt;\(Q\)&lt;/span&gt; are the mutually noncommuting momentum and position Brownian motions of quantum stochastic calculus. The evaluation is motivated heuristically by approximating the continuous double product by a discrete product in which infinitesimals are replaced by finite increments. The latter is in turn approximated by the second quantisation of a discrete double product of rotation-like operators in different planes due to a result in &lt;a href="http://www.actaphys.uj.edu.pl/findarticle?series=Reg&amp;amp;vol=46&amp;amp;page=1851"&gt;(Hudson-Pei2015)&lt;/a&gt;. The main problem solved in this paper is the explicit evaluation of the continuum limit &lt;span class="math inline"&gt;\(W\)&lt;/span&gt; of the latter, and showing that &lt;span class="math inline"&gt;\(W\)&lt;/span&gt; is a unitary operator. The kernel of &lt;span class="math inline"&gt;\(W\)&lt;/span&gt; is written in terms of Bessel functions, and the evaluation is achieved by working on a lattice path model and enumerating linear extensions of related partial orderings, where the enumeration turns out to be heavily related to Dyck paths and generalisations of Catalan numbers.&lt;/p&gt;
 </content>
   </entry>
   <entry xml:base="https://ypei.me/blog-feed.xml">
