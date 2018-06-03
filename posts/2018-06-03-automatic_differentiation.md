@@ -3,8 +3,8 @@ template: post
 date: 2018-06-03
 title: Automatic differentiation
 ---
-This post is meant as a documentation of my understanding of autodiff. I
-benefited a lot from [Toronto CSC321
+This post serves as a documentation of my study of autodiff as well as a explainer of the subject.
+For my learning I benefited a lot from [Toronto CSC321
 slides](http://www.cs.toronto.edu/%7Ergrosse/courses/csc321_2018/slides/lec10.pdf)
 and the [autodidact](https://github.com/mattjj/autodidact/) project
 which is a pedagogical implementation of
