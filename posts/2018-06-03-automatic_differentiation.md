@@ -3,7 +3,9 @@ template: post
 date: 2018-06-03
 title: Automatic differentiation
 ---
-This post serves as a documentation of my study of autodiff as well as a explainer of the subject.
+This post serves as a note and explainer of autodiff.
+It is licensed under [GNU FDL](https://www.gnu.org/licenses/fdl.html).
+
 For my learning I benefited a lot from [Toronto CSC321
 slides](http://www.cs.toronto.edu/%7Ergrosse/courses/csc321_2018/slides/lec10.pdf)
 and the [autodidact](https://github.com/mattjj/autodidact/) project
