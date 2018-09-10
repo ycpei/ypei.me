@@ -1,11 +1,11 @@
 ---
 template: default
-permalink: /links
 title: Links
 ---
 Here are some links I find interesting or helpful, or both. Listed in no particular order.
 
--   [Arxiv Sanity](http://www.arxiv-sanity.com/)
+-   [Scandinavia and the World](https://satwcomic.com/)
+-   [Arxiv Sanity Preserver](http://www.arxiv-sanity.com/)
 -   [ShortScience.org](http://www.shortscience.org/)
 -   [Papers with Code](https://paperswithcode.com/)
 -   [Distill](https://distill.pub/)
