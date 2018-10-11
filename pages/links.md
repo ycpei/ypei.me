@@ -4,6 +4,9 @@ title: Links
 ---
 Here are some links I find interesting or helpful, or both. Listed in no particular order.
 
+-   [Bret Victor](http://worrydream.com/)
+-   [Peter Krautzberger](https://www.peterkrautzberger.org/archive/)
+-   [Chris Piech](https://web.stanford.edu/~cpiech/bio/index.html)
 -   [SciLag](https://www.scilag.net/)
 -   [Scandinavia and the World](https://satwcomic.com/)
 -   [Arxiv Sanity Preserver](http://www.arxiv-sanity.com/)
