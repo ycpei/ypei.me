@@ -116,7 +116,7 @@ The LIME model has a more general framework, but the specific model
 considered in the paper is the one described above, with a Lasso for
 feature selection.
 
-Shapley values and LIME {#Shapley values and LIME}
+Shapley values and LIME
 -----------------------
 
 The connection between the Shapley values and LIME is noted in
