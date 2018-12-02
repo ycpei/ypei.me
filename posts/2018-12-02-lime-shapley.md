@@ -76,8 +76,8 @@ feature contributions of supervised learning models locally.
 
 Let $f: X_1 \times X_2 \times ... \times X_n \to \mathbb R$ be a
 function. We can think of $f$ as a model, where $X_j$ is the space of
-$j$th feature. For example, in a language model, $X_j$ may be the count
-of the $j$th word in the vocabulary.
+$j$th feature. For example, in a language model, $X_j$ may correspond to
+the count of the $j$th word in the vocabulary.
 
 The output may be something like housing price, or log-probability of
 something.
