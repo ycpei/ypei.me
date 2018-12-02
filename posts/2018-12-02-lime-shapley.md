@@ -12,6 +12,9 @@ __Acknowledgement__. Thanks to Josef Lindman Hörnlund for bringing the LIME
 and SHAP papers to my attention. The research is done while working at KTH 
 mathematics department.
 
+_If you are reading on a mobile device, you may need to "request desktop site"
+for equations to be properly displayed. This post is licensed under CC BY-SA._
+
 Shapley values
 --------------
 
@@ -124,7 +127,7 @@ Shapley values and LIME
 -----------------------
 
 The connection between the Shapley values and LIME is noted in
-Lundberg-Lee (2016), but the underlying connection goes back to 1988
+Lundberg-Lee (2017), but the underlying connection goes back to 1988
 (Charnes et. al.).
 
 To see the connection, we need to modify LIME a bit.
