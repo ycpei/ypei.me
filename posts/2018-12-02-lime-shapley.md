@@ -9,7 +9,7 @@ In this post I explain LIME (Ribeiro et. al. 2016), the Shapley values
 (Shapley, 1953) and the SHAP values (Lundberg-Lee, 2017).
 
 __Acknowledgement__. Thanks to Josef Lindman Hörnlund for bringing the LIME
-and SHAP papers to my attention. The research is done while working at KTH 
+and SHAP papers to my attention. The research was done while working at KTH 
 mathematics department.
 
 _If you are reading on a mobile device, you may need to "request desktop site"
