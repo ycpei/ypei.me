@@ -8,6 +8,10 @@ comments: true
 In this post I explain LIME (Ribeiro et. al. 2016), the Shapley values
 (Shapley, 1953) and the SHAP values (Lundberg-Lee, 2017).
 
+__Acknowledgement__. Thanks to Josef Lindman Hörnlund for bringing the LIME
+and SHAP papers to my attention. The research is done while working at KTH 
+mathematics department.
+
 Shapley values
 --------------
 
@@ -265,11 +269,6 @@ $$(h_x(S))_i =
 x_i, & \text{if }i \in S; \\
 \mathbb E_{\mu_i} z_i, & \text{otherwise.}
 \end{cases}$$
-
-How about DeepLIFT?
--------------------
-
-TODO
 
 References
 ----------
