@@ -8,7 +8,7 @@ comments: true
 In this post I explain LIME (Ribeiro et. al. 2016), the Shapley values
 (Shapley, 1953) and the SHAP values (Lundberg-Lee, 2017).
 
-Shapley values {#Shapley values}
+Shapley values
 --------------
 
 A coalitional game $(v, N)$ of $n$ players involves
@@ -37,14 +37,14 @@ $i$.
 The Shapley values satisfy some nice properties which are readily
 verified, including:
 
--   []{#Efficiency}**Efficiency**.
+-   **Efficiency**.
     $\sum_i \phi_i(v) = v(N) - v(\emptyset)$.
--   []{#Symmetry}**Symmetry**. If for some $i, j \in N$, for all
+-   **Symmetry**. If for some $i, j \in N$, for all
     $S \subset N$, we have $v(S + i) = v(S + j)$, then
     $\phi_i(v) = \phi_j(v)$.
--   []{#Null player}**Null player**. If for some $i \in N$, for all
+-   **Null player**. If for some $i \in N$, for all
     $S \subset N$, we have $v(S + i) = v(S)$, then $\phi_i(v) = 0$.
--   []{#Linearity}**Linearity**. $\phi_i$ is linear in games. That is
+-   **Linearity**. $\phi_i$ is linear in games. That is
     $\phi_i(v) + \phi_i(w) = \phi_i(v + w)$, where $v + w$ is defined by
     $(v + w)(S) := v(S) + w(S)$.
 
@@ -61,7 +61,7 @@ Conversely, according to Strumbelj-Kononenko (2010), it was shown in
 Shapley\'s original paper (Shapley, 1953) that these four properties
 together with $v(\emptyset) = 0$ defines the Shapley values.
 
-LIME {#LIME}
+LIME
 ----
 
 LIME (Ribeiro et. al. 2016) is a model that offers a way to explain
@@ -100,7 +100,7 @@ of perturbed samples $x_i = h_x(S_i)$ in the $X$ space, and then fits a
 linear model $g$ using $1_{S_i}$ as the input samples and $f(h_x(S_i))$
 as the output samples:
 
-[]{#Problem}**Problem**(LIME). Find $w = (w_1, w_2, ..., w_n)$ that
+**Problem**(LIME). Find $w = (w_1, w_2, ..., w_n)$ that
 minimises
 
 $$\sum_i (w \cdot 1_{S_i} - f(h_x(S_i)))^2 \pi_x(h_x(S_i))$$
@@ -142,11 +142,11 @@ $\sum_{i = 1}^n w_i = f(x) - f(h_x(\emptyset)) = v(N) - v(\emptyset)$.
 
 Then the problem becomes a weighted linear regression:
 
-[]{#Problem}**Problem**. minimises
+**Problem**. minimises
 $\sum_{S \subset N} (w(S) - v(S))^2 q(s)$ over $w$ subject to
 $w(N) = v(N) - v(\emptyset)$.
 
-[]{#Claim}**Claim** (Charnes et. al. 1988). The solution to this problem
+**Claim** (Charnes et. al. 1988). The solution to this problem
 is
 
 $$w_i = {1 \over n} (v(N) - v(\emptyset)) + \left(\sum_{s = 1}^{n - 1} {n - 2 \choose s - 1} q(s)\right)^{-1} \sum_{S \subset N: i \in S} \left({n - s \over n} q(s) v(S) - {s - 1 \over n} q(s - 1) v(S - i)\right). \qquad (-1)$$
@@ -157,7 +157,7 @@ $$q(s) = c {n - 2 \choose s - 1}^{-1}$$
 
 for any constant $c$, then $w_i = \phi_i(v)$ are the Shapley values.
 
-[]{#Remark}**Remark**. Don\'t worry about this specific choice of $q(s)$
+**Remark**. Don\'t worry about this specific choice of $q(s)$
 when $s = 0$ or $n$, because $q(0)$ and $q(n)$ do not appear on the
 right hand side of (-1). Therefore they can be defined to be of any
 value. A common convention of the binomial coefficients is to set
@@ -167,7 +167,7 @@ $q(0) = q(n) = \infty$.
 In Lundberg-Lee (2017), $c$ is chosen to be $1 / n$, see Theorem 2
 there.
 
-[]{#Proof}**Proof**. The Lagrangian is
+**Proof**. The Lagrangian is
 
 $$L(w, \lambda) = \sum_{S \subset N} (v(S) - w(S))^2 q(s) - \lambda(w(N) - v(N) + v(\emptyset)).$$
 
@@ -219,7 +219,7 @@ $$\sum_{S \subset N} s q(s) v(S) = \sum_{S: i \in S} (s q(s) v(S) + (s - 1) q(s 
 
 Plugging this back into (6) we get the desired result. $\square$
 
-SHAP {#SHAP}
+SHAP
 ----
 
 The SHAP paper (Lundberg-Lee 2017) is not clear in its definition of the
@@ -266,12 +266,12 @@ x_i, & \text{if }i \in S; \\
 \mathbb E_{\mu_i} z_i, & \text{otherwise.}
 \end{cases}$$
 
-How about DeepLIFT? {#How about DeepLIFT?}
+How about DeepLIFT?
 -------------------
 
 TODO
 
-References {#References}
+References
 ----------
 
 -   Charnes, A., B. Golany, M. Keane, and J. Rousseau. "Extremal
