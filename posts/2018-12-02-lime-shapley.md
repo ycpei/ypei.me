@@ -77,7 +77,7 @@ feature contributions of supervised learning models locally.
 Let $f: X_1 \times X_2 \times ... \times X_n \to \mathbb R$ be a
 function. We can think of $f$ as a model, where $X_j$ is the space of
 $j$th feature. For example, in a language model, $X_j$ may correspond to
-the count of the $j$th word in the vocabulary.
+the count of the $j$th word in the vocabulary, i.e. the bag-of-words model.
 
 The output may be something like housing price, or log-probability of
 something.
@@ -97,7 +97,7 @@ x_i, & \text{if }i \in S; \\
 That is, $h_x(S)$ masks the features that are not in $S$, or in other
 words, we are perturbing the sample $x$. Specifically, $h_x(N) = x$.
 Alternatively, the $0$ in the \"otherwise\" case can be replaced by some
-kind of default value (see the last section of this post).
+kind of default value (see the section titled SHAP in this post).
 
 For a set $S \subset N$, let us denote $1_S \in \{0, 1\}^n$ to be an
 $n$-bit where the $k$th bit is $1$ if and only if $k \in S$.
@@ -123,7 +123,7 @@ The LIME model has a more general framework, but the specific model
 considered in the paper is the one described above, with a Lasso for
 feature selection.
 
-One difference between our account here and the one in the LIME paper
+**Remark**. One difference between our account here and the one in the LIME paper
 is: the dimension of the data space may differ from $n$ (see Section 3.1 of that paper).
 But in the case of text data, they do use bag-of-words (our $X$) for an "intermediate"
 representation. So my understanding is, in their context, there is an
@@ -134,6 +134,8 @@ with $f(r^{-1}(h_{r(x')}(S)))$.
 As an example, in the example of $X$ being the bag of words, $X'$ may be 
 the embedding vector space, so that $r(x') = A^{-1} x'$, where $A$ 
 is the word embedding matrix.
+Therefore, without loss of generality, we assume the input space to be
+$X$ which is of dimension $n$.
 
 Shapley values and LIME
 -----------------------
@@ -276,14 +278,46 @@ $$v(S) = f(x_S, \mathbb E_{\mu_{N \setminus S}} z_{N \setminus S}). \qquad (9)$$
 
 It is worth noting that to make the modified LIME model considered in
 the previous section fall under the linear SHAP framework (9), we need
-to make a further specialisation, that is, change the definition of
-$h_x(S)$ to
+to make two further specialisations, the first is rather cosmetic: we need to
+change the definition of $h_x(S)$ to
 
 $$(h_x(S))_i = 
 \begin{cases}
 x_i, & \text{if }i \in S; \\
 \mathbb E_{\mu_i} z_i, & \text{otherwise.}
 \end{cases}$$
+
+But we also need to boldly assume the original $f$ to be linear, which in
+my view, defeats the purpose of interpretability, because linear models are
+interpretable by themselves.
+
+One may argue that perhaps we do not need linearity to define $v(S)$ as in (9).
+If we do so, however, then (9) loses mathematical meaning.
+A bigger question is: how effective is SHAP?
+
+Evaluating SHAP
+---------------
+
+The quest of the SHAP paper can be decoupled into two independent components. 
+The niceties of Shapley values and the choice of the coalitional game $v$.
+
+The SHAP paper argues that Shapley values $\phi_i(v)$ are a good measurement because they
+are the only values satisfying the some nice properties including the Efficiency
+property mentioned at the beginning of the post, invariance under permutation
+and monotonicity, see the paragraph below Theorem 1 there, which refers to Theorem 2 of 
+Young (1985).
+
+Indeed, both efficiency (the "additive feature attribution methods" in the paper) 
+and monotonicity are meaningful when considering $\phi_i(v)$ as the 
+feature contribution of the $i$th feature.
+
+The question is thus reduced to the second component: what constitutes 
+a nice choice of $v$?
+
+The SHAP paper answers this question with 3 options with increasing simplification:
+(7)(8)(9) in the previous section of this post (corresponding to (9)(11)(12) in the paper).
+They are intuitive, but it will be interesting to see more concrete (or even mathematical)
+justifications of such choices.
 
 References
 ----------
@@ -307,3 +341,6 @@ References
 -   Strumbelj, Erik, and Igor Kononenko. "An Efficient Explanation of
     Individual Classifications Using Game Theory." J. Mach. Learn. Res.
     11 (March 2010): 1--18.
+-   Young, H. P. “Monotonic Solutions of Cooperative Games.” International 
+    Journal of Game Theory 14, no. 2 (June 1, 1985): 65–72. 
+    <https://doi.org/10.1007/BF01769885>.
