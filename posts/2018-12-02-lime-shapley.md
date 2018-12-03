@@ -123,6 +123,18 @@ The LIME model has a more general framework, but the specific model
 considered in the paper is the one described above, with a Lasso for
 feature selection.
 
+One difference between our account here and the one in the LIME paper
+is: the dimension of the data space may differ from $n$ (see Section 3.1 of that paper).
+But in the case of text data, they do use bag-of-words (our $X$) for an "intermediate"
+representation. So my understanding is, in their context, there is an
+"original" data space (let's call it $X'$). And there is a one-one correspondence
+between $X'$ and $X$ (let's call it $r: X' \to X$), so that given a 
+sample $x' \in X'$, we can compute the output of $S$ in the local model 
+with $f(r^{-1}(h_{r(x')}(S)))$.
+As an example, in the example of $X$ being the bag of words, $X'$ may be 
+the embedding vector space, so that $r(x') = A^{-1} x'$, where $A$ 
+is the word embedding matrix.
+
 Shapley values and LIME
 -----------------------
 
