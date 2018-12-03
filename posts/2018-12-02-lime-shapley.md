@@ -294,6 +294,7 @@ interpretable by themselves.
 One may argue that perhaps we do not need linearity to define $v(S)$ as in (9).
 If we do so, however, then (9) loses mathematical meaning.
 A bigger question is: how effective is SHAP?
+An even bigger question: in general, how do we evaluate models of interpretation?
 
 Evaluating SHAP
 ---------------
