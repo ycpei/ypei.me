@@ -268,7 +268,7 @@ becomes
 
 $$v(S) = \mathbb E_{z_{N \setminus S} \sim \mu_{N \setminus S}} f(x_S, z_{N \setminus S}) \qquad (8)$$
 
-For example, Strumbelj-Kononenko (2010) considers this where $\mu$ is
+For example, Strumbelj-Kononenko (2010) considers this scenario where $\mu$ is
 the uniform distribution over $X$, see Definition 4 there.
 
 A further simplification is model linearity, which means $f$ is linear.
@@ -300,7 +300,7 @@ Evaluating SHAP
 ---------------
 
 The quest of the SHAP paper can be decoupled into two independent components:
-the niceties of Shapley values and the choice of the coalitional game $v$.
+showing the niceties of Shapley values and choosing the coalitional game $v$.
 
 The SHAP paper argues that Shapley values $\phi_i(v)$ are a good measurement because they
 are the only values satisfying the some nice properties including the Efficiency
