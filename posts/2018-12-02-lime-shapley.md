@@ -298,8 +298,8 @@ A bigger question is: how effective is SHAP?
 Evaluating SHAP
 ---------------
 
-The quest of the SHAP paper can be decoupled into two independent components. 
-The niceties of Shapley values and the choice of the coalitional game $v$.
+The quest of the SHAP paper can be decoupled into two independent components:
+the niceties of Shapley values and the choice of the coalitional game $v$.
 
 The SHAP paper argues that Shapley values $\phi_i(v)$ are a good measurement because they
 are the only values satisfying the some nice properties including the Efficiency
