@@ -13,7 +13,8 @@ and SHAP papers to my attention. The research was done while working at KTH
 mathematics department.
 
 _If you are reading on a mobile device, you may need to "request desktop site"
-for equations to be properly displayed. This post is licensed under CC BY-SA._
+for the equations to be properly displayed. This post is licensed under CC BY-SA
+and GNU FDL._
 
 Shapley values
 --------------
@@ -32,7 +33,7 @@ $S - i := S \setminus \{i\}$ and $S + i := S \cup \{i\}$)
 
 $$\phi_i(v) = \sum_{S: i \in S} {(n - s)! (s - 1)! \over n!} (v(S) - v(S - i)).$$
 
-$\phi_i(v)$ is an expectation:
+It is not hard to see that $\phi_i(v)$ can be viewed as an expectation:
 
 $$\phi_i(v) = \mathbb E_{S \sim \nu_i} (v(S) - v(S - i))$$
 
@@ -187,6 +188,8 @@ $q(0) = q(n) = \infty$.
 
 In Lundberg-Lee (2017), $c$ is chosen to be $1 / n$, see Theorem 2
 there.
+
+In Charnes et. al. 1988, the $w_i$s are called the generalised Shapley values.
 
 **Proof**. The Lagrangian is
 
