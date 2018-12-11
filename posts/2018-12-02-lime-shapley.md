@@ -189,7 +189,8 @@ $q(0) = q(n) = \infty$.
 In Lundberg-Lee (2017), $c$ is chosen to be $1 / n$, see Theorem 2
 there.
 
-In Charnes et. al. 1988, the $w_i$s are called the generalised Shapley values.
+In Charnes et. al. 1988, the $w_i$s defined in (-1) are called the 
+generalised Shapley values.
 
 **Proof**. The Lagrangian is
 
