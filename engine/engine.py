@@ -1,3 +1,8 @@
+# Copyright Yuchen Pei 2018 (hi@ypei.me)
+# Licensed under GNU GPLv3+
+#
+# A static site generator inspired by Jekyll and Hakyll
+
 import os
 import re
 import yaml
