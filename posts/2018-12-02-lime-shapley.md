@@ -265,6 +265,8 @@ value $\phi_i(v)$, where
 $$v(S) = \mathbb E_{z \sim \mu} (f(z) | z_S = x_S). \qquad (7)$$
 
 So it is a conditional expectation where $z_i$ is clamped for $i \in S$.
+In fact, the definition of feature contributions in this form predates 
+Lundberg-Lee 2017. For example, it can be found in Strumbelj-Kononenko 2014.
 
 One simplification is to assume the $n$ features are independent, thus
 $\mu = \mu_1 \times \mu_2 \times ... \times \mu_n$. In this case, (7)
@@ -346,6 +348,7 @@ References
 -   Strumbelj, Erik, and Igor Kononenko. "An Efficient Explanation of
     Individual Classifications Using Game Theory." J. Mach. Learn. Res.
     11 (March 2010): 1--18.
+-   Strumbelj, Erik, and Igor Kononenko. “Explaining Prediction Models and Individual Predictions with Feature Contributions.” Knowledge and Information Systems 41, no. 3 (December 2014): 647–65. <https://doi.org/10.1007/s10115-013-0679-x>.
 -   Young, H. P. “Monotonic Solutions of Cooperative Games.” International 
     Journal of Game Theory 14, no. 2 (June 1, 1985): 65–72. 
     <https://doi.org/10.1007/BF01769885>.
