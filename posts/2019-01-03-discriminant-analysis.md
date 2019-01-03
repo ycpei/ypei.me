@@ -5,7 +5,7 @@ template: post
 comments: true
 ---
 
-In this post I talk about theory and implementation of linear and
+In this post I talk about the theory and implementation of linear and
 quadratic discriminant analysis, classical methods in statistical
 learning.
 
@@ -13,7 +13,7 @@ learning.
 help to my understanding of the subject, including Chapter 4 of [The
 Elements of Statistical
 Learning](https://web.stanford.edu/~hastie/ElemStatLearn/), [Stanford
-CS229 Lecture notes](http://cs229.stanford.edu/notes/cs229-notes2.pdf),
+CS229 Lecture notes](http://cs229.stanford.edu/notes/cs229-notes2.pdf), 
 and [the scikit-learn
 code](https://github.com/scikit-learn/scikit-learn/blob/7389dba/sklearn/discriminant_analysis.py).
 
