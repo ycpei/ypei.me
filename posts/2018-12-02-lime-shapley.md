@@ -6,7 +6,7 @@ comments: true
 ---
 
 In this post I explain LIME (Ribeiro et. al. 2016), the Shapley values
-(Shapley, 1953) and the SHAP values (Lundberg-Lee, 2017).
+(Shapley, 1953) and the SHAP values (Strumbelj-Kononenko, 2014; Lundberg-Lee, 2017).
 
 __Acknowledgement__. Thanks to Josef Lindman Hörnlund for bringing the LIME
 and SHAP papers to my attention. The research was done while working at KTH 
@@ -247,9 +247,11 @@ Plugging this back into (6) we get the desired result. $\square$
 SHAP
 ----
 
-The SHAP paper (Lundberg-Lee 2017) is not clear in its definition of the
-\"SHAP values\" and its relation to LIME, so the following is my
-interpretation of their interpretation model.
+The paper that coined the term \"SHAP values\" (Lundberg-Lee 2017) 
+is not clear in its definition of the \"SHAP values\" and its 
+relation to LIME, so the following is my
+interpretation of their interpretation model, which coincide with a
+model studied in Strumbelj-Kononenko 2014.
 
 Recall that we want to calculate feature contributions to a model $f$ at
 a sample $x$.
