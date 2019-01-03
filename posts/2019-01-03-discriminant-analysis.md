@@ -5,11 +5,11 @@ template: post
 comments: true
 ---
 
-In this post I will talk about theory and implementation of linear and
+In this post I talk about theory and implementation of linear and
 quadratic discriminant analysis, classical methods in statistical
 learning.
 
-[]{#Acknowledgement}**Acknowledgement**. Various sources were of great
+**Acknowledgement**. Various sources were of great
 help to my understanding of the subject, including Chapter 4 of [The
 Elements of Statistical
 Learning](https://web.stanford.edu/~hastie/ElemStatLearn/), [Stanford
@@ -17,7 +17,9 @@ CS229 Lecture notes](http://cs229.stanford.edu/notes/cs229-notes2.pdf),
 and [the scikit-learn
 code](https://github.com/scikit-learn/scikit-learn/blob/7389dba/sklearn/discriminant_analysis.py).
 
-Theory {#Theory}
+This post is licensed under CC BY-SA and GNU FDL.
+
+Theory
 ------
 
 Quadratic discriminant analysis (QDA) is a classical classification
@@ -62,7 +64,7 @@ Guassian Naive Bayes is a different specialisation of QDA: it assumes
 that all $\Sigma_i$ are diagonal, since all the features are assumed to
 be independent.
 
-### QDA {#QDA}
+### QDA
 
 We look at QDA.
 
@@ -85,7 +87,7 @@ throw an exception.
 This won\'t be a problem of the LDA, though, unless there is only one
 sample for each class.
 
-### Vanilla LDA {#Vanilla LDA}
+### Vanilla LDA
 
 Now let us look at LDA.
 
@@ -116,7 +118,7 @@ This can be seen as applying a linear transformation to $X$ to turn its
 covariance matrix to identity. And thus the model becomes a sort of a
 nearest neighbour classifier.
 
-### Nearest neighbour classifier {#Nearest neighbour classifier}
+### Nearest neighbour classifier
 
 More specifically, we want to transform the first term of (0) to a norm
 to get a classifier based on nearest neighbour modulo $\log \pi_i$:
@@ -147,7 +149,7 @@ So we just need to make $A = D_x^{-1} V_x^T$. When it comes to
 prediction, just transform $x$ with $A$, and find the nearest centroid
 $A \mu_i$ (again, modulo $\log \pi_i$) and label the input with $i$.
 
-### Dimensionality reduction {#Dimensionality reduction}
+### Dimensionality reduction
 
 We can further simplify the prediction by dimensionality reduction.
 Assume $n_c \le n$. Then the centroid spans an affine space of dimension
@@ -174,7 +176,7 @@ will result in a lossy compression / regularisation equivalent to doing
 analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) on
 $(M - \bar x) V_x D_x^{-1}$.
 
-### Fisher discriminant analysis {#Fisher discriminant analysis}
+### Fisher discriminant analysis
 
 The Fisher discriminant analysis involves finding an $n$-dimensional
 vector $a$ that maximises between-class covariance with respect to
@@ -209,7 +211,7 @@ column of $V_m$.
 Therefore, the solution to Fisher discriminant analysis is
 $a = c V_x D_x^{-1} V_m$ with $p = 1$.
 
-### Linear model {#Linear model}
+### Linear model
 
 The model is called linear discriminant analysis because it is a linear
 model. To see this, let $B = V_m^T D_x^{-1} V_x^T$ be the matrix of
@@ -231,7 +233,7 @@ thus the decision boundaries are linear.
 This is how scikit-learn implements LDA, by inheriting from
 `LinearClassifierMixin` and redirecting the classification there.
 
-Implementation {#Implementation}
+Implementation
 --------------
 
 This is where things get interesting. How do I validate my understanding
@@ -253,7 +255,7 @@ well-written though.
 The result is
 [here](https://github.com/ycpei/machine-learning/tree/master/discriminant-analysis).
 
-### Fun facts about LDA {#Fun facts about LDA}
+### Fun facts about LDA
 
 One property that can be used to test the LDA implementation is the fact
 that the scatter matrix $B(X - \bar x)^T (X - \bar X) B^T$ of the
