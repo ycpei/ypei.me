@@ -176,6 +176,11 @@ will result in a lossy compression / regularisation equivalent to doing
 analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) on
 $(M - \bar x) V_x D_x^{-1}$.
 
+Note that as of 2019-01-04, in the scikit-learn implementation, the prediction is done without
+any lossy compression, even if the parameter `n_components` is set to be smaller
+than dimension of the affine space spanned by the centroids.
+In other words, the prediction does not change regardless of `n_components`.
+
 ### Fisher discriminant analysis
 
 The Fisher discriminant analysis involves finding an $n$-dimensional
