@@ -16,8 +16,11 @@ Learning](https://web.stanford.edu/~hastie/ElemStatLearn/), [Stanford
 CS229 Lecture notes](http://cs229.stanford.edu/notes/cs229-notes2.pdf), 
 and [the scikit-learn
 code](https://github.com/scikit-learn/scikit-learn/blob/7389dba/sklearn/discriminant_analysis.py).
+Research was done while working at KTH mathematics department.
 
-This post is licensed under CC BY-SA and GNU FDL.
+_If you are reading on a mobile device, you may need to "request desktop site"
+for the equations to be properly displayed. This post is licensed under CC BY-SA
+and GNU FDL._
 
 Theory
 ------

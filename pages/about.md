@@ -7,7 +7,9 @@ name: index
 Yuchen is a post-doctoral researcher in mathematics at the [KTH RMSMA group](https://www.math.kth.se/RMSMA/).
 Before KTH he did a PhD at the [MASDOC program at Warwick](https://warwick.ac.uk/fac/sci/masdoc), and spent two years in a postdoc position at [CMSA at Harvard](http://cmsa.fas.harvard.edu).
 
-He is interested in machine learning and functional programming.
+He is interested in machine learning, with a preference to its theoretical (which really translates to mathematical because he views statistics and theoretical computer science as subsets of mathematics) aspects.
+
+As an academic his job is to seek truth and share his findings with the public.
 
 He is also interested in the idea of open research and open sourced his research in Robinson-Schensted algorithms as a [wiki](https://toywiki.xyz).
 
