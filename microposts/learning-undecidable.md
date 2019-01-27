@@ -8,7 +8,7 @@ Fantastic article, very clearly written.
 
 So it reduces a kind of learninability called estimating the maximum (EMX) to the cardinality of real numbers which is undecidable.
 
-When it comes to the relation between EMX and the rest of machine learning framework, the article mentions that EMX belongs to "extensions of PAC learnability include Vapnik’s statistical learning setting and the equivalent general learning setting by Shalev-Shwartz and colleagues" (I have no idea what these two things are), but it does not say whether EMX is representative of or reduces to common learning tasks. So it is not clear whether its undecidability applies to ML at large. What do you think?
+When it comes to the relation between EMX and the rest of machine learning framework, the article mentions that EMX belongs to "extensions of PAC learnability include Vapnik’s statistical learning setting and the equivalent general learning setting by Shalev-Shwartz and colleagues" (I have no idea what these two things are), but it does not say whether EMX is representative of or reduces to common learning tasks. So it is not clear whether its undecidability applies to ML at large.
 
 Another condition to the main theorem is the union bounded closure assumption. It seems a reasonable property of a family of sets, but then again I wonder how that translates to learning.
 
