@@ -25,3 +25,5 @@ The undecidability rests on X being the continuous [0, 1] interval, and from the
 In the ad problem, the domain X is all potential visitors, which is finite because there are finite number of people in the world. In this case P is a categorical distribution over the 1..n where n is the population of the world. One can have a good estimate of the parameters of a categorical distribution by asking for sufficiently large number of samples and computing the empirical distribution. Let's call the estimated distribution Q. One can choose the from F (also finite) the set that maximises Q(A) which will be a solution to EMX.
 
 In other words, the theorem states: EMX is undecidable because not all EMX instances are decidable, because there are some nasty ones due to infinities. That does not mean no EMX instance is decidable. And I think the ad instance is decidable. Is there a learning task that actually corresponds to an undecidable EMX instance? I don't know, but I will not believe the result of this paper is useful until I see one.
+
+h/t Reynaldo Boulogne
