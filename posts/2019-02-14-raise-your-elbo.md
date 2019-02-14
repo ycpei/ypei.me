@@ -550,7 +550,7 @@ this section). But now both $\pi$ and $\eta$ are random variables. Let
 the prior distribution $p(\pi)$ is Dirichlet with parameter
 $(\alpha, \alpha, ..., \alpha)$. Let the prior $p(\eta_k)$ be the
 conjugate prior of $(x | \eta_k)$, with parameter $\beta$, we will see
-later in this section that the posterior $q(\eta_k)$ has belongs to the
+later in this section that the posterior $q(\eta_k)$ belongs to the
 same family as $p(\eta_k)$. Represented in a plate notations, a fully
 Bayesian mixture model looks like:
 
