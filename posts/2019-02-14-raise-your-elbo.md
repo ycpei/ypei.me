@@ -73,7 +73,7 @@ $$L(w, q) = E_q \log{w \over q}. \qquad (1.25)$$
 From (1), we see that to minimise the nonnegative term $D(q || p)$, one
 can maximise the ELBO.
 
-To this end, we can simply discard $D(p || q)$ in (1) and obtain:
+To this end, we can simply discard $D(q || p)$ in (1) and obtain:
 
 $$\log Z \ge L(w, q) \qquad (1.3)$$
 
