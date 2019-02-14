@@ -29,7 +29,7 @@ Monte-Carlo + neural network approach to raising the ELBO, exemplified
 by the variational autoencoder (VAE). I also show its fully Bayesian
 version.
 
-[]{#Acknowledgement}**Acknowledgement**. The following texts and
+**Acknowledgement**. The following texts and
 resources were illuminating during the writing of this post: the
 Stanford CS228 notes
 ([1](https://ermongroup.github.io/cs228-notes/inference/variational/),[2](https://ermongroup.github.io/cs228-notes/learning/latent/)),
@@ -48,7 +48,7 @@ mathematics department.
 desktop site\" for the equations to be properly displayed. This post is
 licensed under CC BY-SA and GNU FDL.*
 
-KL divergence and ELBO {#KL divergence and ELBO}
+KL divergence and ELBO 
 ----------------------
 
 Let $p$ and $q$ be two probability measures. The Kullback-Leibler (KL)
@@ -83,7 +83,7 @@ $q = {w \over Z}$.
 It is time to define the task of variational inference (VI), also known
 as variational Bayes (VB).
 
-[]{#Definition}**Definition**. Variational inference is concerned with
+**Definition**. Variational inference is concerned with
 maximising the ELBO $L(w, q)$.
 
 There are mainly two version of VI, the half Bayesian and the fully
@@ -107,7 +107,7 @@ q &= q(z, \theta)
 
 In both cases $\theta$ are parameters and $z$ are latent variables.
 
-[]{#Remark on the naming of things}**Remark on the naming of things**.
+**Remark on the naming of things**.
 The term \"variational\" comes from the fact that we perform calculus of
 variations: maximise some functional ($L(w, q)$) over a set of functions
 ($q$). Note however, most of the VI / VB algorithms do not concern any
@@ -116,12 +116,12 @@ techniques in calculus of variations, but only uses Jensen\'s inequality
 reasoning of the naming, EM is also a kind of VI, even though in the
 literature VI often referes to its fully Bayesian version.
 
-EM {#EM}
+EM 
 --
 
 To illustrate the EM algorithms, we first define the mixture model.
 
-[]{#Definition (mixture model)}**Definition (mixture model)**. Given
+**Definition (mixture model)**. Given
 dataset $x_{1 : m}$, we assume the data has some underlying latent
 variable $z_{1 : m}$ that may take a value from a finite set
 $\{1, 2, ..., n_z\}$. Let $p(z_{i}; \pi)$ be categorically distributed
@@ -134,7 +134,7 @@ $p(x_{1 : m}; \theta)$.
 Represented as a DAG (a.k.a the plate notations), the model looks like
 this:
 
-![](file:../resource/mixture-model.png){style="width:250px"}
+![](/assets/resources/mixture-model.png){style="width:250px"}
 
 where the boxes with $m$ mean repitition for $m$ times, since there $m$
 indepdent pairs of $(x, z)$, and the same goes for $\eta$.
@@ -194,7 +194,7 @@ model is:
 -   At M-setp, one finds $\theta_{t + 1}$ to be the $\theta$ that
     maximises the above formula.
 
-### GMM {#GMM}
+### GMM 
 
 Gaussian mixture model (GMM) is an example of mixture models.
 
@@ -228,13 +228,13 @@ $$\begin{aligned}
 \Sigma_{k} &= {\sum_i r_{ik} (x_{i} - \mu_{t, k}) (x_{i} - \mu_{t, k})^T \over \sum_i r_{ik}}.
 \end{aligned}$$
 
-[]{#Remark}**Remark**. The k-means algorithm is the $\epsilon \to 0$
+**Remark**. The k-means algorithm is the $\epsilon \to 0$
 limit of the GMM with constraints $\Sigma_k = \epsilon I$. See Section
 9.3.2 of Bishop 1995 for derivation. It is also briefly mentioned there
 that a variant in this setting where the covariance matrix is not
 restricted to $\epsilon I$ is called elliptical k-means algorithm.
 
-### SMM {#SMM}
+### SMM 
 
 As a transition to the next models to study, let us consider a simpler
 mixture model obtained by making one modification to GMM: change
@@ -262,7 +262,7 @@ filtering, whereas pLSA2 has a fully Bayesian version called latent
 Dirichlet allocation (LDA), not to be confused with the other LDA
 (linear discriminant analysis).
 
-### pLSA {#pLSA}
+### pLSA 
 
 The pLSA model (Hoffman 2000) is a mixture model, where the dataset is
 now pairs $(d_i, x_i)_{i = 1 : m}$. In natural language processing, $x$
@@ -279,7 +279,7 @@ p(d_i, x_i; \theta) &= \sum_z p(z; \theta) p(d_i | z; \theta) p(x_i | z; \theta)
 Of the two formulations, (2.91) corresponds to pLSA type 1, and (2.92)
 corresponds to type 2.
 
-#### pLSA1 {#pLSA1}
+#### pLSA1 
 
 The pLSA1 model (Hoffman 2000) is basically SMM with $x_i$ substituted
 with $(d_i, x_i)$, which conditioned on $z$ are independently
@@ -289,7 +289,7 @@ $$p(d_i = u, x_i = w | z = k) = p(d_i | \xi_k) p(x_i; \eta_k) = \xi_{ku} \eta_{k
 
 The model can be illustrated in the plate notations:
 
-![](file:../resource/plsa1.png){style="width:350px"}
+![](/assets/resources/plsa1.png){style="width:350px"}
 
 So the solution of the M-step is
 
@@ -299,12 +299,12 @@ $$\begin{aligned}
 \eta_{k, w} &= {\sum_i r_{ik} 1_{x_{i} = w} \over \sum_i r_{ik}}.
 \end{aligned}$$
 
-[]{#Remark}**Remark**. pLSA1 is the probabilistic version of LSA, also
+**Remark**. pLSA1 is the probabilistic version of LSA, also
 known as matrix factorisation.
 
 Let $n_d$ and $n_x$ be the number of values $d_i$ and $x_i$ can take.
 
-[]{#Problem}**Problem** (LSA). Let $R$ be a $n_d \times n_x$ matrix, fix
+**Problem** (LSA). Let $R$ be a $n_d \times n_x$ matrix, fix
 $s \le \min\{n_d, n_x\}$. Find $n_d \times s$ matrix $D$ and
 $n_x \times s$ matrix $X$ that minimises
 
@@ -312,7 +312,7 @@ $$J(D, X) = \|R - D X^T\|_F.$$
 
 where $\|\cdot\|_F$ is the Frobenius norm.
 
-[]{#Claim}**Claim**. Let $R = U \Sigma V^T$ be the SVD of $R$, then the
+**Claim**. Let $R = U \Sigma V^T$ be the SVD of $R$, then the
 solution to the above problem is $D = U_s \Sigma_s^{{1 \over 2}}$ and
 $X = V_s \Sigma_s^{{1 \over 2}}$, where $U_s$ (resp. $V_s$) is the
 matrix of the first $s$ columns of $U$ (resp. $V$) and $\Sigma_s$ is the
@@ -323,7 +323,7 @@ $d$ and $x$: in pLSA we obtain $n_z$ dimensional embeddings
 $\xi_{\cdot, u}$ and $\eta_{\cdot, w}$, whereas in LSA we obtain $s$
 dimensional embeddings $D_{u, \cdot}$ and $X_{w, \cdot}$.
 
-#### pLSA2 {#pLSA2}
+#### pLSA2 
 
 Let us turn to pLSA2 (Hoffman 2004), corresponding to (2.92). We rewrite
 it as
@@ -350,7 +350,7 @@ pLSA1, $(x | z = k) \sim \text{Cat}(\eta_{k, \cdot})$.
 
 Illustrated in the plate notations, pLSA2 is:
 
-![](file:../resource/plsa2.png){style="width:350px"}
+![](/assets/resources/plsa2.png){style="width:350px"}
 
 The computation is basically adding an index $\ell$ to the computation
 of SMM wherever applicable.
@@ -366,7 +366,7 @@ $$\begin{aligned}
 \eta_{k w} &= {\sum_{\ell, i} r_{\ell i k} 1_{x_{\ell i} = w} \over \sum_{\ell, i} r_{\ell i k}}.
 \end{aligned}$$
 
-### HMM {#HMM}
+### HMM 
 
 The hidden markov model (HMM) is a sequential version of SMM, in the
 same sense that recurrent neural networks are sequential versions of
@@ -396,7 +396,7 @@ $$p(z_{i1}) = \pi_{z_{i1}}$$
 So the parameters are $\theta = (\pi, \xi, \eta)$. And HMM can be shown
 in plate notations as:
 
-![](file:../resource/hmm.png){style="width:350px"}
+![](/assets/resources/hmm.png){style="width:350px"}
 
 Now we apply EM to HMM, which is called the [Baum-Welch
 algorithm](https://en.wikipedia.org/wiki/Baum%E2%80%93Welch_algorithm).
@@ -490,7 +490,7 @@ p(z_{i, j - 1} = k, z_{i, j} = \ell, x_{i}; \theta_t) &= \alpha_k(i, j) \xi_{k\e
 And this yields $r_{ijk}$ and $s_{ijk\ell}$ since they can be computed
 as ${(7) \over (8)}$ and ${(9) \over (8)}$ respectively.
 
-Fully Bayesian EM / MFA {#Fully Bayesian EM / MFA}
+Fully Bayesian EM / MFA 
 -----------------------
 
 Let us now venture into the realm of full Bayesian.
@@ -538,9 +538,9 @@ It is also called mean field approximation (MFA), and can be easily
 generalised to models with more than two groups of latent variables, see
 e.g. Section 10.1 of Bishop 1995.
 
-### Application to mixture models {#Application to mixture models}
+### Application to mixture models 
 
-[]{#Definition (Fully Bayesian mixture model)}**Definition (Fully
+**Definition (Fully
 Bayesian mixture model)**. The relations between $\pi$, $\eta$, $x$, $z$
 are the same as in the definition of mixture models. Furthermore, we
 assume the distribution of $(x | \eta_k)$ belongs to the [exponential
@@ -554,7 +554,7 @@ later in this section that the posterior $q(\eta_k)$ has belongs to the
 same family as $p(\eta_k)$. Represented in a plate notations, a fully
 Bayesian mixture model looks like:
 
-![](file:../resource/fully-bayesian-mm.png){style="width:450px"}
+![](/assets/resources/fully-bayesian-mm.png){style="width:450px"}
 
 Given this structure we can write down the mean-field approximation:
 
@@ -627,7 +627,7 @@ So the mean field approximation for the fully Bayesian mixture model is
 the alternate iteration of (9.1) (E-step) and (9.3)(9.7)(9.9) (M-step)
 until convergence.
 
-### Fully Bayesian GMM {#Fully Bayesian GMM}
+### Fully Bayesian GMM 
 
 A typical example of fully Bayesian mixture models is the fully Bayesian
 Gaussian mixture model (Attias 2000, also called variational GMM in the
@@ -651,13 +651,13 @@ The E-step and M-step can be computed using (9.1) and (9.3)(9.7)(9.9) in
 the previous section. The details of the computation can be found in
 Chapter 10.2 of Bishop or the Attias.
 
-### LDA {#LDA}
+### LDA 
 
 As the second example of fully Bayesian mixture models, Latent Dirichlet
 allocation (LDA) (Blei-Ng-Jordan 2003) is the fully Bayesian version of
 pLSA2, with the following plate notations:
 
-![](file:../resource/lda.png){style="width:450px"}
+![](/assets/resources/lda.png){style="width:450px"}
 
 It is the smoothed version in the paper.
 
@@ -712,7 +712,7 @@ $$\begin{aligned}
 
 So the algorithm iterates over (10) and (11)(12) until convergence.
 
-### DPMM {#DPMM}
+### DPMM 
 
 The Dirichlet process mixture model (DPMM) is like the fully Bayesian
 mixture model except $n_z = \infty$, i.e. $z$ can take any positive
@@ -766,7 +766,7 @@ $$L(p, q) = \sum_{k = 1 : T} \mathbb E_{q(\theta_k)} \log {p(\theta_k) \over q(\
 
 The plate notation of this model is:
 
-![](file:../resource/dpmm.png){style="width:450px"}
+![](/assets/resources/dpmm.png){style="width:450px"}
 
 As it turns out, the infinities can be tamed in this case.
 
@@ -863,7 +863,7 @@ $$\begin{aligned}
 \phi^{\eta, 2}_k &= \nu + \sum_i q(z_i = k).
 \end{aligned}$$
 
-SVI {#SVI}
+SVI 
 ---
 
 In variational inference, the computation of some parameters are more
@@ -927,7 +927,7 @@ $$\rho_t = (t + \tau)^{-\kappa}$$
 
 for some $\kappa \in (.5, 1]$ and $\tau \ge 0$.
 
-AEVB {#AEVB}
+AEVB 
 ----
 
 SVI adds to variational inference stochastic updates similar to
@@ -1005,7 +1005,7 @@ $$\nabla_\phi U(x, \phi, \theta) \approx {m \over L} \sum_{\ell = 1 : L} \nabla_
 where each $\epsilon_{\ell}$ is sampled from $p(\epsilon)$. The
 approximation of $U(x, \phi, \theta)$ itself can be done similarly.
 
-### VAE {#VAE}
+### VAE 
 
 As an example of AEVB, the paper introduces variational autoencoder
 (VAE), with the following instantiations:
@@ -1024,7 +1024,7 @@ As an example of AEVB, the paper introduces variational autoencoder
 
 With this, one can use backprop to maximise the ELBO.
 
-### Fully Bayesian AEVB {#Fully Bayesian AEVB}
+### Fully Bayesian AEVB 
 
 Let us turn to fully Bayesian version of AEVB. Again, we first recall
 the ELBO of the fully Bayesian mixture models:
@@ -1070,7 +1070,7 @@ so that the gradients can be computed accordingly.
 
 Again, one may use Monte-Carlo to approximate this expetation.
 
-References {#References}
+References 
 ----------
 
 -   Attias, Hagai. \"A variational baysian framework for graphical
