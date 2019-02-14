@@ -336,7 +336,7 @@ $(x_{1, j})_{j = 1 : m_1}$. In the same fashion we construct
 $x_{2, 1 : m_2}, x_{3, 1 : m_3}, ... x_{n_d, 1 : m_{n_d}}$.
 
 With almost no loss of generality, we assume all $m_\ell$s are equal and
-them as $m$.
+write them as $m$.
 
 Now the model becomes
 
