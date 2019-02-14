@@ -205,7 +205,7 @@ $$(x_i; \eta_k) \sim N(\mu_k, \Sigma_k),$$
 
 so we write $\eta_k = (\mu_k, \Sigma_k)$,
 
-During E-step, the $q(z_i)$ can be directly computed using Bayesian
+During E-step, the $q(z_i)$ can be directly computed using Bayes'
 theorem:
 
 $$r_{ik} = \mathbb P(z = k | x = x_{i}; \theta_t)
