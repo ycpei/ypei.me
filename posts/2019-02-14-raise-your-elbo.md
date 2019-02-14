@@ -112,7 +112,7 @@ The term \"variational\" comes from the fact that we perform calculus of
 variations: maximise some functional ($L(w, q)$) over a set of functions
 ($q$). Note however, most of the VI / VB algorithms do not concern any
 techniques in calculus of variations, but only uses Jensen\'s inequality
-/ the fact the $D(p, q)$ reaches minimum when $p = q$. Due to this
+/ the fact the $D(q||p)$ reaches minimum when $p = q$. Due to this
 reasoning of the naming, EM is also a kind of VI, even though in the
 literature VI often referes to its fully Bayesian version.
 
