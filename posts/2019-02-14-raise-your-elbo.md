@@ -38,7 +38,7 @@ slides](https://www.cs.tau.ac.il/~rshamir/algmb/presentations/EM-BW-Ron-16%20.pd
 (clear explanations of the connection between EM and Baum-Welch),
 Chapter 10 of [Bishop\'s
 book](https://www.springer.com/us/book/9780387310732) (brilliant
-introduction to variational GMM) and Section 2.5 of [Sudderth\'s
+introduction to variational GMM), Section 2.5 of [Sudderth\'s
 thesis](http://cs.brown.edu/~sudderth/papers/sudderthPhD.pdf) and
 [metacademy](https://metacademy.org). Also thanks to Josef Lindman
 Hörnlund for discussions. The research was done while working at KTH
@@ -77,7 +77,7 @@ To this end, we can simply discard $D(q || p)$ in (1) and obtain:
 
 $$\log Z \ge L(w, q) \qquad (1.3)$$
 
-and keep in mind that the inequality becomes equality when
+and keep in mind that the inequality becomes an equality when
 $q = {w \over Z}$.
 
 It is time to define the task of variational inference (VI), also known
@@ -692,8 +692,9 @@ complicated, and we do not consider it this way here.
 
 Plugging in (9.1) we obtain the updates at E-step
 
-$$r_{\ell i k} \propto \exp(\psi(\phi^{\pi_\ell}_k) + \psi(\phi^{\eta_k}_{x_{\ell i}}) - \psi(\sum_w \phi^{\eta_k}_w)). \qquad (10)$$
+$$r_{\ell i k} \propto \exp(\psi(\phi^{\pi_\ell}_k) + \psi(\phi^{\eta_k}_{x_{\ell i}}) - \psi(\sum_w \phi^{\eta_k}_w)), \qquad (10)$$
 
+where $\psi$ is the digamma function.
 Similarly, plugging in (9.3)(9.7)(9.9), at M-step, we update the
 posterior of $\pi$ and $\eta$:
 
@@ -747,7 +748,7 @@ Both terms are infinite series:
 
 $$L(p, q) = \sum_{k = 1 : \infty} \mathbb E_{q(\theta_k)} \log {p(\theta_k) \over q(\theta_k)} + \sum_{i = 1 : m} \sum_{k = 1 : \infty} q(z_i = k) \mathbb E_{q(\theta)} \log {p(x_i, z_i = k | \theta) \over q(z_i = k)}.$$
 
-There are several solutions to deal with the infinities. One is to set
+There are several ways to deal with the infinities. One is to fix some level $T > 0$ and set
 $v_T = 1$ almost surely (Blei-Jordan 2006). This effectively turns the
 model into a finite one, and both terms become finite sums over
 $k = 1 : T$.
@@ -911,7 +912,7 @@ As an example, here\'s SVI applied to LDA:
     $(\phi^{\eta_k}_w)_{k = 1 : n_z, w = 1 : n_x}$:
     $$\phi^{\eta_k}_w = (1 - \rho_t) \phi^{\eta_k}_w + \rho_t \tilde \phi^{\eta_k}_w$$
 
-6.  Increment $t$ and go back to Step 1.
+6.  Increment $t$ and go back to Step 2.
 
 In the original paper, $\rho_t$ needs to satisfy some conditions that
 guarantees convergence of the global parameters:
