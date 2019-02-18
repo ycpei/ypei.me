@@ -244,7 +244,7 @@ So now the space for both $x$ and $z$ are finite. We call this model the
 simple mixture model (SMM).
 
 As in GMM, at E-step $r_{ik}$ can be explicitly computed using
-Bayesian\'s theorem.
+Bayes\' theorem.
 
 It is not hard to write down the solution to the M-step in this case:
 
