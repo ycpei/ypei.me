@@ -272,8 +272,8 @@ ocurrance of word $x$ in document $d$.
 For each datapoint $(d_{i}, x_{i})$,
 
 $$\begin{aligned}
-p(d_i, x_i; \theta) &= \sum_{z_i} p(z; \theta) p(d_i | z_i; \theta) p(x_i | z_i; \theta) \qquad (2.91)\\
-&= p(d_i; \theta) \sum_{z_i} p(x_i | z_i; \theta) p (z_i | d_i; \theta) \qquad (2.92).
+p(d_i, x_i; \theta) &= \sum_z p(z; \theta) p(d_i | z; \theta) p(x_i | z; \theta) \qquad (2.91)\\
+&= p(d_i; \theta) \sum_z p(x_i | z; \theta) p (z | d_i; \theta) \qquad (2.92).
 \end{aligned}$$
 
 Of the two formulations, (2.91) corresponds to pLSA type 1, and (2.92)
@@ -285,7 +285,7 @@ The pLSA1 model (Hoffman 2000) is basically SMM with $x_i$ substituted
 with $(d_i, x_i)$, which conditioned on $z$ are independently
 categorically distributed:
 
-$$p(d_i = u, x_i = w | z_i = k) = p(d_i | \xi_k) p(x_i; \eta_k) = \xi_{ku} \eta_{kw}.$$
+$$p(d_i = u, x_i = w | z = k) = p(d_i | \xi_k) p(x_i; \eta_k) = \xi_{ku} \eta_{kw}.$$
 
 The model can be illustrated in the plate notations:
 
