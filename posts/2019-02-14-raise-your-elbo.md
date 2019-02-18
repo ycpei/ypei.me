@@ -250,7 +250,7 @@ It is not hard to write down the solution to the M-step in this case:
 
 $$\begin{aligned}
 \pi_{k} &= {1 \over m} \sum_i r_{ik}, \qquad (2.7)\\
-b_{k, w} &= {\sum_i r_{ik} 1_{x_i = w} \over \sum_i r_{ik}}. \qquad (2.8)
+\eta_{k, w} &= {\sum_i r_{ik} 1_{x_i = w} \over \sum_i r_{ik}}. \qquad (2.8)
 \end{aligned}$$
 
 Two trivial variants of the SMM are the two versions of probabilistic
