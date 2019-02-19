@@ -272,7 +272,7 @@ ocurrance of word $x$ in document $d$.
 For each datapoint $(d_{i}, x_{i})$,
 
 $$\begin{aligned}
-p(d_i, x_i; \theta) &= \sum_{z_i} p(z; \theta) p(d_i | z_i; \theta) p(x_i | z_i; \theta) \qquad (2.91)\\
+p(d_i, x_i; \theta) &= \sum_{z_i} p(z_i; \theta) p(d_i | z_i; \theta) p(x_i | z_i; \theta) \qquad (2.91)\\
 &= p(d_i; \theta) \sum_z p(x_i | z_i; \theta) p (z_i | d_i; \theta) \qquad (2.92).
 \end{aligned}$$
 
