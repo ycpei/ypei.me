@@ -344,7 +344,7 @@ Now the model becomes
 $$p(x_{\ell, i} | d_{\ell, i} = \ell; \theta) = \sum_k p(x_{\ell, i} | z_{\ell, i} = k; \theta) p(z_{\ell, i} = k | d_{\ell, i} = \ell; \theta).$$
 
 Since we have regrouped the $x$'s and $z$'s whose indices record the values
-of the $d$'s, we can remove $d$ from the equation altogether.
+of the $d$'s, we can remove the $d$'s from the equation altogether:
 
 $$p(x_{\ell, i}; \theta) = \sum_k p(x_{\ell, i} | z_{\ell, i} = k; \theta) p(z_{\ell, i} = k; \theta).$$
 
