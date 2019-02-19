@@ -152,7 +152,7 @@ decreasing over time $t$.
 
 Equation (1.3) at time $t$ for the $i$th datapoint is
 
-$$\log p(x_{i}; \theta_t) \ge L(p(z, x_{i}; \theta_t), q(z_i)) \qquad (2)$$
+$$\log p(x_{i}; \theta_t) \ge L(p(z_i, x_{i}; \theta_t), q(z_i)) \qquad (2)$$
 
 Each timestep consists of two steps, the E-step and the M-step.
 
