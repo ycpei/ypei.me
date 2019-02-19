@@ -343,6 +343,11 @@ Now the model becomes
 
 $$p(x_{\ell, i} | d_{\ell, i} = \ell; \theta) = \sum_k p(x_{\ell, i} | z_{\ell, i} = k; \theta) p(z_{\ell, i} = k | d_{\ell, i} = \ell; \theta).$$
 
+Since we have regrouped the $x$'s and $z$'s whose indices record the values
+of the $d$'s, we can remove $d$ from the equation altogether.
+
+$$p(x_{\ell, i} | \theta) = \sum_k p(x_{\ell, i} | z_{\ell, i} = k; \theta) p(z_{\ell, i} = k | \theta).$$
+
 It is effectively a modification of SMM by making $n_d$ copies of $\pi$.
 More specifically the parameters are
 $\theta = (\pi_{1 : n_d, 1 : n_z}, \eta_{1 : n_z, 1 : n_x})$, where we
@@ -358,7 +363,7 @@ of SMM wherever applicable.
 
 The updates at the E-step is
 
-$$r_{\ell i k} = p(z_{\ell i} = k | x_{\ell i}, d_{\ell, i} = \ell) \propto \pi_{\ell k} \eta_{k, x_{\ell i}}.$$
+$$r_{\ell i k} = p(z_{\ell i} = k | x_{\ell i}; \theta) \propto \pi_{\ell k} \eta_{k, x_{\ell i}}.$$
 
 And at the M-step
 
