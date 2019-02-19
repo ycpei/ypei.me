@@ -285,7 +285,7 @@ The pLSA1 model (Hoffman 2000) is basically SMM with $x_i$ substituted
 with $(d_i, x_i)$, which conditioned on $z_i$ are independently
 categorically distributed:
 
-$$p(d_i = u, x_i = w | z_i = k) = p(d_i ; \xi_k) p(x_i; \eta_k) = \xi_{ku} \eta_{kw}.$$
+$$p(d_i = u, x_i = w | z_i = k; \theta) = p(d_i ; \xi_k) p(x_i; \eta_k) = \xi_{ku} \eta_{kw}.$$
 
 The model can be illustrated in the plate notations:
 
