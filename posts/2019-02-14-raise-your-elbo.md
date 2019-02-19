@@ -272,8 +272,8 @@ ocurrance of word $x$ in document $d$.
 For each datapoint $(d_{i}, x_{i})$,
 
 $$\begin{aligned}
-p(d_i, x_i; \theta) &= \sum_z p(z; \theta) p(d_i | z; \theta) p(x_i | z; \theta) \qquad (2.91)\\
-&= p(d_i; \theta) \sum_z p(x_i | z; \theta) p (z | d_i; \theta) \qquad (2.92).
+p(d_i, x_i; \theta) &= \sum_{z_i} p(z; \theta) p(d_i | z_i; \theta) p(x_i | z_i; \theta) \qquad (2.91)\\
+&= p(d_i; \theta) \sum_z p(x_i | z_i; \theta) p (z_i | d_i; \theta) \qquad (2.92).
 \end{aligned}$$
 
 Of the two formulations, (2.91) corresponds to pLSA type 1, and (2.92)
@@ -282,10 +282,10 @@ corresponds to type 2.
 #### pLSA1 
 
 The pLSA1 model (Hoffman 2000) is basically SMM with $x_i$ substituted
-with $(d_i, x_i)$, which conditioned on $z$ are independently
+with $(d_i, x_i)$, which conditioned on $z_i$ are independently
 categorically distributed:
 
-$$p(d_i = u, x_i = w | z = k) = p(d_i | \xi_k) p(x_i; \eta_k) = \xi_{ku} \eta_{kw}.$$
+$$p(d_i = u, x_i = w | z_i = k) = p(d_i ; \xi_k) p(x_i; \eta_k) = \xi_{ku} \eta_{kw}.$$
 
 The model can be illustrated in the plate notations:
 
@@ -328,19 +328,20 @@ dimensional embeddings $D_{u, \cdot}$ and $X_{w, \cdot}$.
 Let us turn to pLSA2 (Hoffman 2004), corresponding to (2.92). We rewrite
 it as
 
-$$p(x_i | d_i; \theta) = \sum_z p(x_i | z; \theta) p(z | d_i; \theta).$$
+$$p(x_i | d_i; \theta) = \sum_{z_i} p(x_i | z_i; \theta) p(z_i | d_i; \theta).$$
 
 To simplify notations, we collect all the $x_i$s with the corresponding
 $d_i$ equal to 1 (suppose there are $m_1$ of them), and write them as
 $(x_{1, j})_{j = 1 : m_1}$. In the same fashion we construct
 $x_{2, 1 : m_2}, x_{3, 1 : m_3}, ... x_{n_d, 1 : m_{n_d}}$.
+Similarly, we relabel the corresponding $d_i$ and $z_i$ accordingly.
 
 With almost no loss of generality, we assume all $m_\ell$s are equal and
 write them as $m$.
 
 Now the model becomes
 
-$$p(x_{\ell, i} | d = \ell; \theta) = \sum_k p(x_{\ell, i} | z = k; \theta) p(z = k | d = \ell; \theta).$$
+$$p(x_{\ell, i} | d_{\ell, i} = \ell; \theta) = \sum_k p(x_{\ell, i} | z_{\ell, i} = k; \theta) p(z_{\ell, i} = k | d_{\ell, i} = \ell; \theta).$$
 
 It is effectively a modification of SMM by making $n_d$ copies of $\pi$.
 More specifically the parameters are
@@ -357,7 +358,7 @@ of SMM wherever applicable.
 
 The updates at the E-step is
 
-$$r_{\ell i k} = p(z = k | x_{\ell i}, d = \ell) \propto \pi_{\ell k} \eta_{k, x_{\ell i}}.$$
+$$r_{\ell i k} = p(z_{\ell i} = k | x_{\ell i}, d_{\ell, i} = \ell) \propto \pi_{\ell k} \eta_{k, x_{\ell i}}.$$
 
 And at the M-step
 
