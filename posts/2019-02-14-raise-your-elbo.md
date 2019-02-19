@@ -189,7 +189,7 @@ A different way of describing EM, which will be useful in hidden Markov
 model is:
 
 -   At E-step, one writes down the formula
-    $$\sum_i \mathbb E_{p(z | x_{i}; \theta_t)} \log p(x_{i}, z; \theta). \qquad (2.5)$$
+    $$\sum_i \mathbb E_{p(z_i | x_{i}; \theta_t)} \log p(x_{i}, z_i; \theta). \qquad (2.5)$$
 
 -   At M-setp, one finds $\theta_{t + 1}$ to be the $\theta$ that
     maximises the above formula.
@@ -208,7 +208,7 @@ so we write $\eta_k = (\mu_k, \Sigma_k)$,
 During E-step, the $q(z_i)$ can be directly computed using Bayes'
 theorem:
 
-$$r_{ik} = \mathbb P(z = k | x = x_{i}; \theta_t)
+$$r_{ik} = \mathbb P(z_i = k | x = x_{i}; \theta_t)
 = {g_{\mu_{t, k}, \Sigma_{t, k}} (x_{i}) \pi_{t, k} \over \sum_{j = 1 : n_z} g_{\mu_{t, j}, \Sigma_{t, j}} (x_{i}) \pi_{t, j}},$$
 
 where
