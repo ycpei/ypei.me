@@ -346,7 +346,7 @@ $$p(x_{\ell, i} | d_{\ell, i} = \ell; \theta) = \sum_k p(x_{\ell, i} | z_{\ell, 
 Since we have regrouped the $x$'s and $z$'s whose indices record the values
 of the $d$'s, we can remove $d$ from the equation altogether.
 
-$$p(x_{\ell, i} | \theta) = \sum_k p(x_{\ell, i} | z_{\ell, i} = k; \theta) p(z_{\ell, i} = k | \theta).$$
+$$p(x_{\ell, i}; \theta) = \sum_k p(x_{\ell, i} | z_{\ell, i} = k; \theta) p(z_{\ell, i} = k; \theta).$$
 
 It is effectively a modification of SMM by making $n_d$ copies of $\pi$.
 More specifically the parameters are
