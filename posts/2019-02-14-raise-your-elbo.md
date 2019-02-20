@@ -239,9 +239,11 @@ restricted to $\epsilon I$ is called elliptical k-means algorithm.
 As a transition to the next models to study, let us consider a simpler
 mixture model obtained by making one modification to GMM: change
 $(x; \eta_k) \sim N(\mu_k, \Sigma_k)$ to
-$\mathbb P(x = w; \eta_k) = \eta_{kw}$ so $\eta$ is a stochastic matrix.
+$\mathbb P(x = w; \eta_k) = \eta_{kw}$ where $\eta$ is a stochastic matrix
+and $w$ is an arbitrary element of the space for $x$.
 So now the space for both $x$ and $z$ are finite. We call this model the
 simple mixture model (SMM).
+
 
 As in GMM, at E-step $r_{ik}$ can be explicitly computed using
 Bayes\' theorem.
@@ -252,6 +254,9 @@ $$\begin{aligned}
 \pi_{k} &= {1 \over m} \sum_i r_{ik}, \qquad (2.7)\\
 \eta_{k, w} &= {\sum_i r_{ik} 1_{x_i = w} \over \sum_i r_{ik}}. \qquad (2.8)
 \end{aligned}$$
+
+where $1_{x_i = w}$ is the [indicator function](https://en.wikipedia.org/wiki/Indicator_function),
+and evaluates to $1$ if $x_i = w$ and $0$ otherwise.
 
 Two trivial variants of the SMM are the two versions of probabilistic
 latent semantic analysis (pLSA), which we call pLSA1 and pLSA2.
