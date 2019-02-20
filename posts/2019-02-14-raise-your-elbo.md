@@ -172,7 +172,7 @@ $$\begin{aligned}
 &= \text{argmax}_\theta \sum_i \mathbb E_{p(z_{i} | x_{i}; \theta_t)} \log p(x_{i}, z_{i}; \theta) \qquad (2.3)
 \end{aligned}$$
 
-So $\sum_i L(p(x_{i}, z_{i}; \theta), q(z_i)$ is non-decreasing at both the
+So $\sum_i L(p(x_{i}, z_{i}; \theta), q(z_i))$ is non-decreasing at both the
 E-step and the M-step.
 
 We can see from this derivation that EM is half-Bayesian. The E-step is
