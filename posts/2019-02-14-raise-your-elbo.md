@@ -208,7 +208,7 @@ so we write $\eta_k = (\mu_k, \Sigma_k)$,
 During E-step, the $q(z_i)$ can be directly computed using Bayes'
 theorem:
 
-$$r_{ik} = \mathbb P(z_i = k | x_{i}; \theta_t)
+$$r_{ik} = q(z_i = k) = \mathbb P(z_i = k | x_{i}; \theta_t)
 = {g_{\mu_{t, k}, \Sigma_{t, k}} (x_{i}) \pi_{t, k} \over \sum_{j = 1 : n_z} g_{\mu_{t, j}, \Sigma_{t, j}} (x_{i}) \pi_{t, j}},$$
 
 where
