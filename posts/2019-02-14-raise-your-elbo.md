@@ -96,7 +96,7 @@ w &= p(x, z; \theta)\\
 q &= q(z)
 \end{aligned}$$
 
-and the dummy variable $x$ in (0) is substituted with $z$.
+and the dummy variable $x$ in Equation (0) is substituted with $z$.
 
 Fully Bayesian VI, often just called VI, has the following
 instantiations:
@@ -107,7 +107,7 @@ w &= p(x, z, \theta) \\
 q &= q(z, \theta)
 \end{aligned}$$
 
-and $x$ in (0) is substituted with $(z, \theta)$.
+and $x$ in Equation (0) is substituted with $(z, \theta)$.
 
 In both cases $\theta$ are parameters and $z$ are latent variables.
 
