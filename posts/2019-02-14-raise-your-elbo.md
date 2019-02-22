@@ -230,7 +230,7 @@ $$\begin{aligned}
 
 **Remark**. The k-means algorithm is the $\epsilon \to 0$
 limit of the GMM with constraints $\Sigma_k = \epsilon I$. See Section
-9.3.2 of Bishop 1995 for derivation. It is also briefly mentioned there
+9.3.2 of Bishop 2006 for derivation. It is also briefly mentioned there
 that a variant in this setting where the covariance matrix is not
 restricted to $\epsilon I$ is called elliptical k-means algorithm.
 
@@ -323,7 +323,7 @@ $X = V_s \Sigma_s^{{1 \over 2}}$, where $U_s$ (resp. $V_s$) is the
 matrix of the first $s$ columns of $U$ (resp. $V$) and $\Sigma_s$ is the
 $s \times s$ submatrix of $\Sigma$.
 
-One can compare pLSA1 with LSA. Both proceudres produce embeddings of
+One can compare pLSA1 with LSA. Both procedures produce embeddings of
 $d$ and $x$: in pLSA we obtain $n_z$ dimensional embeddings
 $\xi_{\cdot, u}$ and $\eta_{\cdot, w}$, whereas in LSA we obtain $s$
 dimensional embeddings $D_{u, \cdot}$ and $X_{w, \cdot}$.
@@ -547,7 +547,7 @@ $q_2^*$ (M-step).
 
 It is also called mean field approximation (MFA), and can be easily
 generalised to models with more than two groups of latent variables, see
-e.g. Section 10.1 of Bishop 1995.
+e.g. Section 10.1 of Bishop 2006.
 
 ### Application to mixture models 
 
@@ -660,7 +660,7 @@ More specifically:
 
 The E-step and M-step can be computed using (9.1) and (9.3)(9.7)(9.9) in
 the previous section. The details of the computation can be found in
-Chapter 10.2 of Bishop or the Attias.
+Chapter 10.2 of Bishop 2006 or Attias 2000.
 
 ### LDA 
 
@@ -1089,7 +1089,7 @@ References
     models.\" In Advances in neural information processing systems, pp.
     209-215. 2000.
 -   Bishop, Christopher M. Neural networks for pattern recognition.
-    Oxford university press, 1995.
+    Springer. 2006.
 -   Blei, David M., and Michael I. Jordan. "Variational Inference for
     Dirichlet Process Mixtures." Bayesian Analysis 1, no. 1 (March
     2006): 121--43. <https://doi.org/10.1214/06-BA104>.
