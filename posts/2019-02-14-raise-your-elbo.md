@@ -60,7 +60,7 @@ It achieves minimum $0$ when $p = q$.
 
 If $p$ can be further written as
 
-$$p(x) = {w(x) \over Z}$$
+$$p(x) = {w(x) \over Z}, \qquad (0)$$
 
 where $Z$ is a normaliser, then
 
@@ -96,6 +96,8 @@ w &= p(x, z; \theta)\\
 q &= q(z)
 \end{aligned}$$
 
+and the dummy variable $x$ in (0) is substituted with $z$.
+
 Fully Bayesian VI, often just called VI, has the following
 instantiations:
 
@@ -104,6 +106,8 @@ Z &= p(x) \\
 w &= p(x, z, \theta) \\
 q &= q(z, \theta)
 \end{aligned}$$
+
+and $x$ in (0) is substituted with $(z, \theta)$.
 
 In both cases $\theta$ are parameters and $z$ are latent variables.
 
