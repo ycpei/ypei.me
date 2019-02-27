@@ -12,7 +12,7 @@ I use a top-down approach, starting with the KL divergence and the ELBO,
 to lay the mathematical framework of all the models in this post.
 
 Then I define mixture models and the EM algorithm, with Gaussian mixture
-model (GMM), probabilistic latent semantic analysis (pLSA) the hidden
+model (GMM), probabilistic latent semantic analysis (pLSA) and the hidden
 markov model (HMM) as examples.
 
 After that I present the fully Bayesian version of EM, also known as
@@ -420,7 +420,7 @@ $p(z_i | x_{i}; \theta)$, so during the E-step we instead write down
 formula (2.5) directly in hope of simplifying it:
 
 $$\begin{aligned}
-\mathbb E_{p(z_i | x_i; \theta_t)} \log p(x_i, z_i; \theta_t) &=\mathbb E_{p(z_i | x_i; \theta_t)} \left(\log \pi_{z_{i1}} + \sum_{j = 2 : T} \log a_{z_{i, j - 1}, z_{ij}} + \sum_{j = 1 : T} \log b_{z_{ij}, x_{ij}}\right). \qquad (3)
+\mathbb E_{p(z_i | x_i; \theta_t)} \log p(x_i, z_i; \theta_t) &=\mathbb E_{p(z_i | x_i; \theta_t)} \left(\log \pi_{z_{i1}} + \sum_{j = 2 : T} \log \xi_{z_{i, j - 1}, z_{ij}} + \sum_{j = 1 : T} \log \eta_{z_{ij}, x_{ij}}\right). \qquad (3)
 \end{aligned}$$
 
 Let us compute the summand in second term:
