@@ -984,7 +984,7 @@ $$| X_i - X_{i - 1} | = | \log {p_i(\xi_i | \xi_{< i}) \over q_i(\xi_i | \xi_{< 
 
 by Azuma\'s Inequality,
 
-$$\prob(\log {p^k(\xi_{1 : k}) \over q^k(\xi_{1 : k})} \ge k a(\epsilon) + t) \le \exp(- {t^2 \over 2 k (\epsilon + a(\epsilon))^2}). \qquad(6.99)$$
+$$\mathbb P(\log {p^k(\xi_{1 : k}) \over q^k(\xi_{1 : k})} \ge k a(\epsilon) + t) \le \exp(- {t^2 \over 2 k (\epsilon + a(\epsilon))^2}). \qquad(6.99)$$
 
 Let $t = \sqrt{2 k \log \beta^{-1}} (\epsilon + a(\epsilon))$ we are
 done. $\square$
