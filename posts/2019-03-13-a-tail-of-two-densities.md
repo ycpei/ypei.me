@@ -1,5 +1,5 @@
 ---
-date: 2019-02-13
+date: 2019-03-13
 title: A Tail of Two Densities
 template: post
 comments: true
