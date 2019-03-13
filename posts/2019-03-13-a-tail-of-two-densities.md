@@ -234,7 +234,7 @@ $$\begin{aligned}
 \mathbb P(L(q || p) \le \epsilon) &< 1 - \delta
 \end{aligned}$$
 
-$, and
+**Proof**. Here\'s a example. Let $Y = \{0, 1\}$, and
 $p(0) = q(1) = 2 / 5$ and $p(1) = q(0) = 3 / 5$. Then it is not hard to
 verify that $p$ and $q$ are $(\log {4 \over 3}, {1 \over 3})$-ind: just
 check (3) for all four possible $S \subset Y$ and (4) holds by symmetry.
@@ -302,16 +302,16 @@ $|\log p_{|E}(y) - \log q_{|F}(y)| \le \epsilon$ for all $y \in Y$.
 Here $p_{|E}$ (resp. $q_{|F}$) is $p$ (resp. $q$) conditioned on event
 $E$ (resp. $F$).
 
-**C2** and
+**Remark**. Note that the events in **C2** and
 **C3** are in different spaces, and therefore we can not write
 $p_{|E}(S)$ as $p(S | E)$ or $q_{|F}(S)$ as $q(S | F)$. In fact, if we
 let $E$ and $F$ in **C3** be subsets of $Y$ with
 $p(E), q(F) \ge 1 - \delta$ and assume $p$ and $q$ have the same
 supports, then **C3** degenerates to a stronger condition than
-$ and
+**C2**. Indeed, in this case $p_E(y) = p(y) 1_{y \in E}$ and
 $q_F(y) = q(y) 1_{y \in F}$, and so $p_E(y) \le e^\epsilon q_F(y)$
 forces $E \subset F$. We also obtain $F \subset E$ in the same way. This
-gives us $E = F$, and **C2** with
+gives us $E = F$, and **C3** becomes **C2** with
 $A = B = E = F$.
 
 As it turns out, **C3** is the condition we need.
@@ -422,7 +422,7 @@ To prove the adaptive composition theorem for approximate differential
 privacy, we need a similar claim (We use index shorthand
 $\xi_{< i} = \xi_{1 : i - 1}$ and similarly for other notations):
 
-$ be random
+**Claim 5**. Let $\xi_{1 : i}$ and $\eta_{1 : i}$ be random
 variables. Let
 
 $$\begin{aligned}
@@ -956,7 +956,7 @@ such that for each $i$ and $y_{1 : i}$, $M_i(y_{1 : i})$ is
 $(\epsilon, 0)$-dp. Then the adpative composition of $M_{1 : k}$ is
 $(k a(\epsilon) + \sqrt{2 k \log \beta^{-1}} (\epsilon + a(\epsilon)), \beta)$-dp.
 
- M(x)$
+**Proof**. As before, let $\xi_{1 : k} \overset{d}{=} M(x)$
 and $\eta_{1 : k} \overset{d}{=} M(x')$, where $M$ is the adaptive
 composition of $M_{1 : k}$. Let $p_i$ (resp. $q_i$) be the law of
 $\xi_i | \xi_{< i}$ (resp. $\eta_i | \eta_{< i}$). Let $p^i$ (resp.
@@ -995,7 +995,7 @@ $M_1, ..., M_k$ be $(\epsilon, \delta)$-dp, then the independent
 composition $M$ of $M_{1 : k}$ is
 $(k a(\epsilon) + \sqrt{2 k \log \beta^{-1}} \epsilon, k \delta + \beta)$-dp.
 
-$ and
+**Proof**. By Claim 4, there exist events $E_{1 : k}$ and
 $F_{1 : k}$ such that
 
 1.  The laws $p_{i | E_i}$ and $q_{i | F_i}$ are $\epsilon$-ind.
@@ -1025,7 +1025,7 @@ $i$ and $y_{1 : i}$, $M_i(y_{1 : i})$ is $(\epsilon, \delta)$-dp. Then
 the adpative composition of $M_{1 : k}$ is
 $(k a(\epsilon) + \sqrt{2 k \log \beta^{-1}} (\epsilon + a(\epsilon)), \beta + k \delta)$-dp.
 
-$ and
+**Proof**. By Claim 5, there exist events $E_{1 : k}$ and
 $F_{1 : k}$ such that
 
 1.  The laws $p_{i | E_i}(\cdot | y_{< i})$ and
