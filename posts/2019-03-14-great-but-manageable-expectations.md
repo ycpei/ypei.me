@@ -524,7 +524,7 @@ discuss the package in the current state (2019-03-11). It is divided
 into two parts: [`optimizers`](https://github.com/tensorflow/privacy/tree/master/privacy/optimizers) which implements the actual differentially
 private algorithms, and [`analysis`](https://github.com/tensorflow/privacy/tree/master/privacy/analysis) which computes the privacy guarantee.
 
-The `analysis` parts implements a privacy ledger that \"keeps a record
+The `analysis` part implements a privacy ledger that \"keeps a record
 of all queries executed over a given dataset for the purpose of
 computing privacy guarantees\". On the other hand, all the computation
 is done in [`rdp_accountant.py`](https://github.com/tensorflow/privacy/blob/7e2d796bdee9b60dce21a82a397eefda35b0ac10/privacy/analysis/rdp_accountant.py).
