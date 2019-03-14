@@ -108,9 +108,9 @@ $$\log \mathbb E \exp(t L(M(x) || M(x'))) \le \kappa_M(t), \qquad \forall x, x'\
 For example, we can set $\kappa_M(t) = t \rho(t + 1)$. Using the same
 argument we have the following:
 
-**Claim 21**.
+**Claim 21**. If $M$ is $(\lambda, \rho)$-rdp, then
 
-1.  If $M$ is $(\lambda, \rho)$-rdp, then it is also
+1.  it is also
     $(\epsilon, \exp((\lambda - 1) (\rho - \epsilon)))$-dp for any
     $\epsilon \ge \rho$.
 2.  Alternatively, $M$ is $(\epsilon, - \exp(\kappa_M^*(\epsilon)))$-dp
