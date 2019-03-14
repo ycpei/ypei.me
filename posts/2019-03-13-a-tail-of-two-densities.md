@@ -35,10 +35,13 @@ I also attempt to reproduce a seemingly better moment bound for the
 Gaussian mechanism with subsampling, with one intermediate step which I
 am not able to prove.
 
-Finally I explain the Tensorflow implementation of differential privacy,
-and using the results from both Part 1 and Part 2 to obtain some privacy
-guarantees for the differentially private stochastic gradient descent
-algorithm (DP-SGD). I also compare these privacy guarantees.
+After that I explain the Tensorflow implementation of differential privacy,
+which focuses on the differentially private stochastic gradient descent 
+algorithm (DP-SGD).
+
+Finally I use the results from both Part 1 and Part 2 to obtain some privacy
+guarantees for composed subsampling queries in general, and for DP-SGD in particular. 
+I also compare these privacy guarantees.
 
 **Acknowledgement**. I would like to thank
 [Stockholm AI](https://stockholm.ai) for introducing me to the subject
