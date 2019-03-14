@@ -776,7 +776,7 @@ $M_i(y_{1 : i})$ as $M_i$, but keep in mind of the dependence on the
 parameters.
 
 It is time to state and prove the composition theorems. In this section
-we consider $2 \times 2 \times 2 = 8$ of them, i.e. theorems of three
+we consider $2 \times 2 \times 2 = 8$ cases, i.e. situations of three
 dimensions, where there are two choices in each dimension:
 
 1.  Composition of $\epsilon$-dp or more generally
@@ -787,7 +787,7 @@ dimensions, where there are two choices in each dimension:
 Note that in the first two dimensions the second choice is more general
 than the first.
 
-The relation between proofs of these composition theorems is as follows:
+The proofs of these composition theorems will be laid out as follows:
 
 1.  Claim 10 - Basic composition theorem for $(\epsilon, \delta)$-dp
     with adaptive mechanisms: by a direct proof with an induction
