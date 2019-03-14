@@ -25,7 +25,7 @@ on privacy by stating and proving the composition theorems for differential priv
 as well as the effect of mixing mechanisms, by presenting the subsampling theorem
 (a.k.a. amplification theorem).
 
-In Part 2, I discuss the Rényi differential privacy, corresponding to
+In [Part 2](/posts/2019-03-14-great-but-manageable-expectations.html), I discuss the Rényi differential privacy, corresponding to
 the Rényi divergence, a study of the moment generating functions the 
 divergence between probability measures to derive the tail bounds. 
 
@@ -923,7 +923,7 @@ compared to the Basic Composition Theorem (Claim 10).
 
 **Remark**. In practice one can try different choices of $\beta$ and settle
 with the one that gives the best privacy guarantee.
-See the discussions at the end of Part 2 of this post.
+See the discussions at the end of [Part 2 of this post](/posts/2019-03-14-great-but-manageable-expectations.html).
 
 **Proof**. Let $p_i$, $q_i$, $p$ and $q$ be the laws of
 $M_i(x)$, $M_i(x')$, $M(x)$ and $M(x')$ respectively.
@@ -1215,7 +1215,7 @@ have sensitivity $C$. It makes the difference between the query results
 of two *arbitrary* inputs bounded by $C$, rather than *neighbouring*
 inputs.
 
-In Part 2 we will use the tools developed above to discuss the privacy
+In [Part 2 of this post](/posts/2019-03-14-great-but-manageable-expectations.html) we will use the tools developed above to discuss the privacy
 guarantee for DP-SGD, among other things.
 
 References 
