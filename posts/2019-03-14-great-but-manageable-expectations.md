@@ -522,7 +522,7 @@ The DP-SGD is implemented in [TensorFlow
 Privacy](https://github.com/tensorflow/privacy). In the following I
 discuss the package in the current state (2019-03-11). It is divided
 into two parts: `optimizers` which implements the actual differentially
-private algorithm, and `analysis` which computes the privacy guarantee.
+private algorithm, and [`analysis`](https://github.com/tensorflow/privacy/tree/master/privacy/analysis) which computes the privacy guarantee.
 
 The `analysis` parts implements a privacy ledger that \"keeps a record
 of all queries executed over a given dataset for the purpose of
