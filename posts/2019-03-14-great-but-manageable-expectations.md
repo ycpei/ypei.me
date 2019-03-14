@@ -5,7 +5,7 @@ template: post
 comments: true
 ---
 
-Let us continue with the study of differential privacy from [Part 1 of this post](2019-03-13-a-tail-of-two-densities.html).
+Let us continue with the study of differential privacy from [Part 1 of this post](/posts/2019-03-13-a-tail-of-two-densities.html).
 
 Rényi divergence and differential privacy 
 -----------------------------------------
@@ -133,7 +133,7 @@ which is the same result as (6.8), obtained using the Chernoff bound of
 the noise.
 
 However, as we will see later, compositions will yield different results
-from those obtained from methods in [Part 1](2019-03-13-a-tail-of-two-densities.html) when considering Rényi dp.
+from those obtained from methods in [Part 1](/posts/2019-03-13-a-tail-of-two-densities.html) when considering Rényi dp.
 
 **Claim 22 (Moment Composition
 Theorem)**. Let $M$ be the adaptive composition of $M_{1 : k}$. Suppose
