@@ -590,7 +590,7 @@ second part of this post when considering Renyi differential privacy.
 **Claim 9**. The Gaussian mechanism on a query $f$ is
 $(\epsilon, \delta)$-dp, where
 
-$$\delta = \exp(- (\epsilon S_f \sigma - (2 S_f \sigma)^{-1})^2 / 2). \qquad (6.8)$$
+$$\delta = \exp(- (\epsilon \sigma / S_f - (2 \sigma / S_f)^{-1})^2 / 2). \qquad (6.8)$$
 
 Contrarily, to achieve give $(\epsilon, \delta)$-dp, we may set
 
