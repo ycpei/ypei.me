@@ -303,12 +303,12 @@ assumptions.
 ACGMMTZ16 
 ---------
 
-What follows is my understanding of this result. I call it a hypothesis
+What follows is my understanding of this result. I call it a conjecture
 because there is a gap which I am not able to reproduce their proof or
 prove it myself. This does not mean the result is false. On the
 contrary, I am inclined to believe it is true.
 
-**Hypothesis 0**. For a subsampled Gaussian mechanism
+**Conjecture 0**. For a subsampled Gaussian mechanism
 with ratio $r$, if $r = O(\sigma^{-1})$ and $\lambda = O(\sigma^2)$,
 then we have $(\lambda, O(r^2 \lambda / \sigma^2))$-rdp.
 
@@ -322,7 +322,7 @@ $$G_\lambda(r p + (1 - r) q || q) = \sum_{k = 1 : \lambda} {\lambda \choose k} r
 **Proof**. Quite straightforward, by expanding the numerator
 $(r p + (1 - r) q)^\lambda$ using binomial expansion. $\square$
 
-**Proof of Hypothesis 0
+**Proof of Conjecture 0
 (Incomplete)**. I will break the proof into two parts and discuss each
 one.
 
@@ -336,13 +336,13 @@ one.
 
 **Remark in the proof**. Note that the choice of
 $c_1$, $c_2$ and the function $C(c_1, c_2)$ are important to the
-practicality and usefulness of Hypothesis 0.
+practicality and usefulness of Conjecture 0.
 
-Item 1 can be deduced from the following hypothesis, which, as the only
-gap in the Proof of Hypothesis 0, is heuristically reasonable, hence why
-I am inclined to believe Hypothesis 0 is true.
+Item 1 can be deduced from the following conjecture, which, as the only
+gap in the Proof of Conjecture 0, is heuristically reasonable, hence why
+I am inclined to believe Conjecture 0 is true.
 
-**Hypothesis 1**. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
+**Conjecture 1**. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
 probability densities on the same space for $i = 1 : n$. If
 $D_\lambda(p_i || q_i) \le D_\lambda(\mu_i || \nu_i)$ for all $i$, then
 
@@ -352,7 +352,7 @@ Basically, it is saying \"if for each $i$, $p_i$ and $q_i$ are closer to
 each other than $\mu_i$ and $\nu_i$, then so is their average over
 $i$\".
 
-To see how Hypothesis 1 implies Item 1, note that
+To see how Conjecture 1 implies Item 1, note that
 
 $$D_\lambda(q_I || p_I) = D_\lambda(p_I || q_I) 
 \begin{cases}
@@ -364,13 +364,13 @@ and that $p = |\mathcal I|^{-1} \sum_{I \in \mathcal I} p_I$ and
 $q = |\mathcal I|^{-1} \sum_{I \in \mathcal I} q_I$ and
 $|\mathcal I_\in| = r |\mathcal I|$.
 
-Alternatively, one may try to prove a weaker version of Hypothesis 1, by
+Alternatively, one may try to prove a weaker version of Conjecture 1, by
 specialising on mixture of Gaussians.
 
-One way one may try to prove Hypothesis 1 is to prove an equivalent
+One way one may try to prove Conjecture 1 is to prove an equivalent
 statement:
 
-**Hypothesis 2**. Let $p_1$, $q_1$, $p_2$, $q_2$,
+**Conjecture 2**. Let $p_1$, $q_1$, $p_2$, $q_2$,
 $\mu_1$, $\mu_2$, $\nu_1$, $\nu_2$ be probability densities, and suppose
 
 $$\int {p_i^\lambda \over q_i^{\lambda - 1}} \le \int {\mu_i^\lambda \over \nu_i^{\lambda - 1}}, \qquad i = 1, 2$$
@@ -379,8 +379,8 @@ then
 
 $$\int {(p_1 + p_2)^\lambda \over (q_1 + q_2)^{\lambda - 1}} \le \int {(\mu_1 + \mu_1)^\lambda \over (\nu_1 + \nu_2)^{\lambda - 1}}.$$
 
-Indeed, on one hand, Hypothesis 2 is a special case of Hypothesis 1 and
-on the other hand, given Hypothesis 2, Hypothesis 1 can be shown using
+Indeed, on one hand, Conjecture 2 is a special case of Conjecture 1 and
+on the other hand, given Conjecture 2, Conjecture 1 can be shown using
 induction by replacing one pair of densities a time.
 
 Now let us prove Item 2.
@@ -466,9 +466,9 @@ decreases from $1$. $\square$
 
 In the following for consistency we retain $k$ as the number of epochs,
 and use $T := k / r$ to denote the number of compositions / steps /
-minibatches. With Hypothesis 0 we have:
+minibatches. With Conjecture 0 we have:
 
-**Hypothesis 3**. Let $\epsilon, c_1, c_2 > 0$,
+**Conjecture 3**. Let $\epsilon, c_1, c_2 > 0$,
 $r \le c_1 \sigma^{-1}$,
 $T = {c_2 \over 2 C(c_1, c_2)} \epsilon \sigma^2$. then the DP-SGD with
 subsampling rate $r$, and $T$ steps is $(\epsilon, \delta)$-dp for
@@ -481,7 +481,7 @@ $$\sigma \ge \sqrt{2 c_2^{-1}} \epsilon^{- {1 \over 2}} \sqrt{\log \delta^{-1}},
 
 we can achieve $(\epsilon, \delta)$-dp.
 
-**Proof**. By Hypothesis 0 and the Moment Composition Theorem
+**Proof**. By Conjecture 0 and the Moment Composition Theorem
 (Claim 22), for $\lambda = c_2 \sigma^2$, substituting
 $T = {c_2 \over 2 C(c_1, c_2)} \epsilon \sigma^2$, we have
 
@@ -489,7 +489,7 @@ $$\mathbb P(L(p || q) \ge \epsilon) \le \exp(k C(c_1, c_2) - \lambda \epsilon) =
 
 $\square$
 
-**Remark**. Hypothesis 3 is my understanding / version of
+**Remark**. Conjecture 3 is my understanding / version of
 Theorem 1 in \[ACGMMTZ16\], by using the same proof technique. Here I
 quote the original version of theorem with notions and notations altered
 for consistency with this post:
@@ -500,7 +500,7 @@ for consistency with this post:
 
 $$\sigma \ge c_2' {r \sqrt{T \log (1 / \delta)} \over \epsilon}. \qquad (10)$$
 
-I am however unable to reproduce this version, assuming Hypothesis 0 is
+I am however unable to reproduce this version, assuming Conjecture 0 is
 true, for the following reasons:
 
 1.  In the proof in the paper, we have $\epsilon = c_1' r^2 T$ instead
@@ -509,7 +509,7 @@ true, for the following reasons:
     opposite to the direction we want to prove:
     $$\exp(k C(c_1, c_2) - \lambda \epsilon) \ge ...$$
 
-2.  The implicit condition $r = O(\sigma^{-1})$ of Hypothesis 0 whose
+2.  The implicit condition $r = O(\sigma^{-1})$ of Conjecture 0 whose
     result is used in the proof of this theorem is not mentioned in the
     statement of the proof. The implication is that (10) becomes an
     ill-formed condition as the right hand side also depends on
@@ -576,8 +576,8 @@ DP-SGD with the Gaussian mechanism:
 2.  Example 1 (RDP for the Gaussian mechanism) -\> Claim 22 (Moment
     Composition Theorem) -\> Example 3 (Moment composition applied to
     the Gaussian mechanism)
-3.  Hypothesis 0 (RDP for Gaussian mechanism with specific magnitudes
-    for subsampling rate) -\> Hypothesis 3 (Moment Composition Theorem
+3.  Conjecture 0 (RDP for Gaussian mechanism with specific magnitudes
+    for subsampling rate) -\> Conjecture 3 (Moment Composition Theorem
     and translation to conventional DP)
 
 Which one is the best?
@@ -716,7 +716,7 @@ Here is a list of what I think may be interesting topics or potential
 problems to look at, with no guarantee that they are all awesome
 untouched research problems:
 
-1.  Prove Hypothesis 2
+1.  Prove Conjecture 2
 2.  Find a theoretically definitive answer whether the methods in Part 1
     or Part 2 yield better privacy guarantees.
 3.  Study the non-Gaussian cases, general or specific. Let $p$ be some
@@ -724,7 +724,7 @@ untouched research problems:
     $L(p(y) || p(y + \alpha))$ for $|\alpha| \le 1$? Can you find
     anything better than Gaussian? For a start, perhaps the nice tables
     of Rényi divergence in Gil-Alajaji-Linder 2013 may be useful?
-4.  Find out how useful Hypothesis 0 is. Perhaps start with computing
+4.  Find out how useful Conjecture 0 is. Perhaps start with computing
     the constant $C$ nemerically.
 5.  Help with [the aforementioned
     issue](https://github.com/tensorflow/privacy/issues/23) in the
