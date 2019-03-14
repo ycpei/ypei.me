@@ -215,7 +215,7 @@ $(\lambda, {1 \over \lambda - 1} \log (1 + r(e^{(\lambda - 1) \rho} - 1)))$-rdp.
 
 To prove Claim 24, we need a useful lemma:
 
-{#Claim 25}**Claim 25**. Let $p_{1 : n}$ and $q_{1 : n}$ be
+**Claim 25**. Let $p_{1 : n}$ and $q_{1 : n}$ be
 nonnegative integers, and $\lambda > 1$. Then
 
 $${(\sum p_i)^\lambda \over (\sum q_i)^{\lambda - 1}} \le \sum_i {p_i^\lambda \over q_i^{\lambda - 1}}. \qquad (8)$$
@@ -546,9 +546,9 @@ least when $\lambda$ is an integer.
     decode how `_compute_log_a_frac` computes the cumulant (or an upper
     bound of it) in this case
 -   The function `_compute_delta` computes $\delta$s for a list of
-    $\lambda$s and $\kappa$s using Item 1 of Claim 3 and return the
+    $\lambda$s and $\kappa$s using Item 1 of Claim 25 and return the
     smallest one, and the function `_compute_epsilon` computes epsilon
-    uses Item 3 in the same way.
+    uses Item 3 in Claim 25 in the same way.
 
 In `optimizers`, among other things, the DP-SGD with Gaussian mechanism
 is implemented in `dp_optimizer.py` and `gaussian_query.py`. See the
