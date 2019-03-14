@@ -918,6 +918,10 @@ when $\epsilon$ is sufficiently small, in which case the leading term is of orde
 $O(\sqrt k \epsilon)$ and we save a $\sqrt k$ in the $\epsilon$-part
 compared to the Basic Composition Theorem (Claim 10).
 
+**Remark**. In practice one can try different choices of $\beta$ and settle
+with the one that gives the best privacy guarantee.
+See the discussions at the end of Part 2 of this post.
+
 **Proof**. Let $p_i$, $q_i$, $p$ and $q$ be the laws of
 $M_i(x)$, $M_i(x')$, $M(x)$ and $M(x')$ respectively.
 
