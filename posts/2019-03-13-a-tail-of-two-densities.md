@@ -592,7 +592,7 @@ $(\epsilon, \delta)$-dp, where
 
 $$\delta = \exp(- (\epsilon \sigma / S_f - (2 \sigma / S_f)^{-1})^2 / 2). \qquad (6.8)$$
 
-Contrarily, to achieve give $(\epsilon, \delta)$-dp, we may set
+Conversely, to achieve give $(\epsilon, \delta)$-dp, we may set
 
 $$\sigma > \left(\epsilon^{-1} \sqrt{2 \log \delta^{-1}} + (2 \epsilon)^{- {1 \over 2}}\right) S_f \qquad (6.81)$$
 
