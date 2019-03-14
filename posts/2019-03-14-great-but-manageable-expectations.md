@@ -1,5 +1,5 @@
 ---
-title: 'Great, but Manageable Expectations'
+title: Great but Manageable Expectations
 date: 2019-03-14
 template: post
 comments: true
