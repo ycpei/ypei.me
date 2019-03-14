@@ -6,7 +6,7 @@ comments: true
 ---
 
 This is Part 1 of a two-part post where I give an introduction to
-differential privacy, a study of tail bounds of the divergence between
+differential privacy, which is a study of tail bounds of the divergence between
 probability measures, with the end goal of applying it to stochastic
 gradient descent.
 
@@ -14,16 +14,22 @@ I start with the definition of $\epsilon$-differential privacy
 (corresponding to max divergence), followed by
 $(\epsilon, \delta)$-differential privacy (a.k.a. approximate
 differential privacy, corresponding to the $\delta$-approximate max
-divergence). I show the $\epsilon$-dp for Laplace mechanism and, using
-some tail bounds, the approximate dp for the Gaussian mechanism.
+divergence). I show a characterisation of the $(\epsilon, \delta)$-differential privacy
+conditioned $\epsilon$-differential privacy.
+Also, as examples, I illustrate the $\epsilon$-dp with Laplace mechanism and, using
+some common tail bounds, the approximate dp with the Gaussian mechanism.
 
-Then I continue to state and prove the composition theorems for
-approximate differential privacy, as well as the subsampling theorem
+Then I continue to show the effect of combinatorial
+and sequential compositions of randomised queries (called mechanisms)
+on privacy by stating and proving the composition theorems for differential privacy, 
+as well as the effect of mixing mechanisms, by presenting the subsampling theorem
 (a.k.a. amplification theorem).
 
 In Part 2, I discuss the Rényi differential privacy, corresponding to
-the Rényi divergence. Like in Part 1, I prove a composition theorem and
-a subsampling theorem.
+the Rényi divergence, a study of the moment generating functions the 
+divergence between probability measures to derive the tail bounds. 
+
+Like in Part 1, I prove a composition theorem and a subsampling theorem.
 
 I also attempt to reproduce a seemingly better moment bound for the
 Gaussian mechanism with subsampling, with one intermediate step which I
@@ -39,8 +45,11 @@ algorithm (DP-SGD). I also compare these privacy guarantees.
 of differential privacy. Thanks to (in chronological order) Reynaldo
 Boulogne, Martin Abedi, Ilya Mironov, Kurt Johansson, Mark Bun, Salil
 Vadhan, Jonathan Ullman, Yuanyuan Xu and Yiting Li for communication and
-discussions. The research was done while working at KTH Department of
-Mathematics.
+discussions. The research was done while working at [KTH Department of
+Mathematics](https://www.kth.se/en/sci/institutioner/math).
+
+*This post is licensed under [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+and [GNU FDL](https://www.gnu.org/licenses/fdl.html).*
 
 The gist of differential privacy 
 --------------------------------
@@ -55,17 +64,22 @@ $$L(p || q) := \log {p(\xi) \over q(\xi)}$$
 where $\xi$ is a random variable distributed according to $p$.
 
 Roughly speaking, differential privacy is the study of the tail bound of
-$L(p || q)$ and of $L(q || p)$: for certain $p$s and $q$s, and for
+$L(p || q)$: for certain $p$s and $q$s, and for
 $\epsilon > 0$, find $\delta(\epsilon)$ such that
 
-$$\mathbb P(L(p || q) > \epsilon) < \delta(\epsilon) > \mathbb P(L(q || p) > \epsilon),$$
+$$\mathbb P(L(p || q) > \epsilon) < \delta(\epsilon),$$
 
 where $p$ and $q$ are the laws of the outputs of a randomised functions
 on two very similar inputs.
+Moreover, to make matters even simpler, only three situations need to be considered:
 
-In application, the inputs are databases and the randomised functions
-are queries with an added noise, and the tail bound gives privacy
-guarantee. When it comes to gradient descent, the input is the training
+1.  (General case) $q$ is in the form of $q(y) = p(y + \Delta)$ for some bounded $\Delta$.
+2.  (Compositions) $p$ and $q$ are combinatorial or sequential compositions of some simpler $p_i$'s and $q_i$'s respectively
+3.  (Subsampling) $p$ and $q$ are mixtures / averages of some simpler $p_i$'s and $q_i$'s respectively
+
+In applications, the inputs are databases and the randomised functions
+are queries with an added noise, and the tail bounds give privacy
+guarantees. When it comes to gradient descent, the input is the training
 dataset, and the query updates the parameters, and privacy is achieved
 by adding noise to the gradients.
 
@@ -220,11 +234,11 @@ This Claim translates differential privacy to the tail bound of
 divergence variables, and for the rest of this post all dp results are
 obtained by estimating this tail bound.
 
-In the following we discuss the contrary of Claim 1. The discussions are
+In the following we discuss the converse of Claim 1. The discussions are
 rather technical, and readers can skip to the next subsection on first
 reading.
 
-The contrary of Claim 1 is not true.
+The converse of Claim 1 is not true.
 
 **Claim 2**. There exists $\epsilon, \delta > 0$, and $p$
 and $q$ that are $(\epsilon, \delta)$-ind, such that
@@ -244,7 +258,7 @@ $$\mathbb P(L(p || q) \le \log {4 \over 3}) = \mathbb P(L(q || p) \le \log {4 \o
 
 $\square$
 
-A weaker version of the contrary of Claim 1 is true
+A weaker version of the converse of Claim 1 is true
 (Kasiviswanathan-Smith 2015), though:
 
 **Claim 3**. Let $\alpha > 1$. If $p$ and $q$ are
@@ -510,7 +524,7 @@ $E, F \subset \Omega$ with $\mathbb P(E) = \mathbb P(F) \ge 1 - \delta$,
 $M(x) | E$ and $M(x') | F$ are $\epsilon$-ind.
 
 We can further simplify the privacy loss $L(M(x) || M(x'))$, by
-observing the translation and scaling invariance of $L(\cdot||\cdot)$:
+observing the translational and scaling invariance of $L(\cdot||\cdot)$:
 
 $$\begin{aligned}
 L(\xi || \eta) &\overset{d}{=} L(\alpha \xi + \beta || \alpha \eta + \beta), \qquad \alpha \neq 0. \qquad (6.1)
@@ -707,15 +721,15 @@ noises. The mechanism $M = (M_1, ..., M_k)$ is called the *independent
 composition* of $M_{1 : k}$.
 
 To define the adaptive composition, let us motivate it with an example
-of gradient descent. Consider a neural network $h_\theta(x)$, where
-$\theta$ is the parameter and $x$ the input, gradient descent updates
+of gradient descent. Consider the loss function $\ell(x; \theta)$ of a neural network,
+where $\theta$ is the parameter and $x$ the input, gradient descent updates
 its parameter $\theta$ at each time $t$:
 
-$$\theta_{t} = \theta_{t - 1} - \alpha m^{-1} \sum_{i = 1 : m} \nabla_\theta h_\theta(x_i) |_{\theta = \theta_{t - 1}}.$$
+$$\theta_{t} = \theta_{t - 1} - \alpha m^{-1} \sum_{i = 1 : m} \nabla_\theta \ell(x_i; \theta) |_{\theta = \theta_{t - 1}}.$$
 
 We may add privacy by adding noise $\zeta_t$ at each step:
 
-$$\theta_{t} = \theta_{t - 1} - \alpha m^{-1} \sum_{i = 1 : m} \nabla_\theta h_\theta(x_i) |_{\theta = \theta_{t - 1}} + \zeta_t. \qquad (6.97)$$
+$$\theta_{t} = \theta_{t - 1} - \alpha m^{-1} \sum_{i = 1 : m} \nabla_\theta \ell(x_i; \theta) |_{\theta = \theta_{t - 1}} + \zeta_t. \qquad (6.97)$$
 
 Viewed as a sequence of mechanism, we have that at each time $t$, the
 mechanism $M_t$ takes input $x$, and outputs $\theta_t$. But $M_t$ also
@@ -740,6 +754,11 @@ The definition of adaptive composition may look a bit complicated, but
 the point is to describe $k$ mechanisms such that for each $i$, the
 output of the first, second, \..., $i - 1$th mechanisms determine the
 $i$th mechanism, like in the case of gradient descent.
+
+It is not hard to write down the differentially private gradient descent
+as a sequential composition:
+
+$$M_t(\theta_{1 : t - 1})(x) = \theta_{t - 1} - \alpha m^{-1} \sum_{i = 1 : m} \nabla_\theta \ell(x_i; \theta) |_{\theta = \theta_{t - 1}} + \zeta_t.$$
 
 In Dwork-Rothblum-Vadhan 2010 (see also Dwork-Roth 2013) the adaptive
 composition is defined in a more general way, but the definition is
@@ -895,7 +914,9 @@ $(k a(\epsilon) + \sqrt{2 k \log \beta^{-1}} \epsilon, \beta)$-dp.
 
 **Remark**. By (6.98) we know that
 $k a(\epsilon) + \sqrt{2 k \log \beta^{-1}} \epsilon = \sqrt{2 k \log \beta^{-1}} \epsilon + k O(\epsilon^2)$
-when $\epsilon$ is sufficiently small.
+when $\epsilon$ is sufficiently small, in which case the leading term is of order
+$O(\sqrt k \epsilon)$ and we save a $\sqrt k$ in the $\epsilon$-part
+compared to the Basic Composition Theorem (Claim 10).
 
 **Proof**. Let $p_i$, $q_i$, $p$ and $q$ be the laws of
 $M_i(x)$, $M_i(x')$, $M(x)$ and $M(x')$ respectively.
@@ -1174,7 +1195,7 @@ Finally we define the differentially private stochastic gradient descent
 with the noise specialised to Gaussian and an added clipping operation
 to bound to sensitivity of the query to a chosen $C$:
 
-$$\theta_{t} = \theta_{t - 1} - \alpha \left(n^{-1} \sum_{i \in \gamma} \nabla_\theta h_\theta(x_i) |_{\theta = \theta_{t - 1}}\right)_{\text{Clipped at }C / 2} + N(0, \sigma^2 C^2 I),$$
+$$\theta_{t} = \theta_{t - 1} - \alpha \left(n^{-1} \sum_{i \in \gamma} \nabla_\theta \ell(x_i; \theta) |_{\theta = \theta_{t - 1}}\right)_{\text{Clipped at }C / 2} + N(0, \sigma^2 C^2 I),$$
 
 where
 
