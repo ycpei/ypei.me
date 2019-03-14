@@ -15,7 +15,7 @@ I start with the definition of $\epsilon$-differential privacy
 $(\epsilon, \delta)$-differential privacy (a.k.a. approximate
 differential privacy, corresponding to the $\delta$-approximate max
 divergence). I show a characterisation of the $(\epsilon, \delta)$-differential privacy
-conditioned $\epsilon$-differential privacy.
+as conditioned $\epsilon$-differential privacy.
 Also, as examples, I illustrate the $\epsilon$-dp with Laplace mechanism and, using
 some common tail bounds, the approximate dp with the Gaussian mechanism.
 
