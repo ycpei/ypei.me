@@ -375,6 +375,7 @@ I will break the proof into two parts:
 $c_1$, $c_2$ and the function $C(c_1, c_2)$ are important to the
 practicality and usefulness of Conjecture 0.
 
+Part 1 can be derived using Conjecture 1.
 We use the notations $p_I$ and $q_I$ to be $q$ and $p$ conditioned on
 the subsampling index $I$, just like in the proof of the subsampling theorems (Claim 19 and 24).
 Then
@@ -385,16 +386,16 @@ $$D_\lambda(q_I || p_I) = D_\lambda(p_I || q_I)
 = D_\lambda(\mu_0 || \mu_0) = D_\lambda(\mu_1 || \mu_1) = 0 & I \in \mathcal I_\notin
 \end{cases}$$
 
-and that $p = |\mathcal I|^{-1} \sum_{I \in \mathcal I} p_I$ and
+Since $p = |\mathcal I|^{-1} \sum_{I \in \mathcal I} p_I$ and
 $q = |\mathcal I|^{-1} \sum_{I \in \mathcal I} q_I$ and
-$|\mathcal I_\in| = r |\mathcal I|$.
+$|\mathcal I_\in| = r |\mathcal I|$, by Conjecture 1, we have Part 1.
 
 **Remark in the proof**. As we can see here, instead of trying to prove Conjecture 1,
 it suffices to prove a weaker version of it, by specialising on mixture of Gaussians,
-to have a Claim 26 without any conjectural assumptions.
+in order to have a Claim 26 without any conjectural assumptions.
 I have in fact posted the Conjecture on [Stackexchange](https://math.stackexchange.com/questions/3147963/an-inequality-related-to-the-renyi-divergence).
 
-Now let us prove Item 2.
+Now let us verify Part 2.
 
 Using Claim 27 and Example 1, we have
 
