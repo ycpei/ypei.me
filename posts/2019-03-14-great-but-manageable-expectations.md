@@ -327,25 +327,43 @@ because there is a gap which I am not able to reproduce their proof or
 prove it myself. This does not mean the result is false. On the
 contrary, I am inclined to believe it is true.
 
-**Conjecture 0**. For a subsampled Gaussian mechanism
+**Claim 26**. Assuming Conjecture 1 (see below) is true. 
+For a subsampled Gaussian mechanism
 with ratio $r$, if $r = O(\sigma^{-1})$ and $\lambda = O(\sigma^2)$,
 then we have $(\lambda, O(r^2 \lambda / \sigma^2))$-rdp.
+
+Wait, why is there a conjecture? Well, I have tried but not been able to
+prove the following, which is a hidden assumption in the original proof:
+
+**Conjecture 1**. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
+probability densities on the same space for $i = 1 : n$. If
+$D_\lambda(p_i || q_i) \le D_\lambda(\mu_i || \nu_i)$ for all $i$, then
+
+$$D_\lambda(n^{-1} \sum_i p_i || n^{-1} \sum_i q_i) \le D_\lambda(n^{-1} \sum_i \mu_i || n^{-1} \sum_i \nu_i).$$
+
+Basically, it is saying \"if for each $i$, $p_i$ and $q_i$ are closer to
+each other than $\mu_i$ and $\nu_i$, then so are their averages over
+$i$\".
+So it is heuristically reasonable.
+
+This conjecture is equivalent to its special case when $n = 2$ by an induction argument
+(replacing one pair of densities at a time).
 
 Recall the definition of $G_\lambda$ under the definition of Rényi
 differential privacy. The following Claim will be useful.
 
-**Claim 26**. Let $\lambda$ be a positive integer, then
+**Claim 27**. Let $\lambda$ be a positive integer, then
 
 $$G_\lambda(r p + (1 - r) q || q) = \sum_{k = 1 : \lambda} {\lambda \choose k} r^k (1 - r)^{\lambda - k} G_k(p || q).$$
 
 **Proof**. Quite straightforward, by expanding the numerator
 $(r p + (1 - r) q)^\lambda$ using binomial expansion. $\square$
 
-**Proof of Conjecture 0
-(Incomplete)**. I will break the proof into two parts and discuss each
-one.
+**Proof of Claim 26**. Let $M$ be the Gaussian mechanism with subsampling rate $r$,
+and $p$ and $q$ be the laws of $M(x)$ and $M(x')$ respectively, where $d(x, x') = 1$.
+I will break the proof into two parts:
 
-1.  The MGF of the privacy loss is bounded by that of
+1.  The MGF of the privacy loss $L(p || q)$ is bounded by that of
     $L(r \mu_1 + (1 - r) \mu_0 || \mu_0)$ where
     $\mu_i = N(i, \sigma^2)$.
 2.  If $r \le c_1 \sigma^{-1}$ and $\lambda \le c_2 \sigma^2$, then
@@ -357,21 +375,9 @@ one.
 $c_1$, $c_2$ and the function $C(c_1, c_2)$ are important to the
 practicality and usefulness of Conjecture 0.
 
-Item 1 can be deduced from the following conjecture, which, as the only
-gap in the Proof of Conjecture 0, is heuristically reasonable, hence why
-I am inclined to believe Conjecture 0 is true.
-
-**Conjecture 1**. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
-probability densities on the same space for $i = 1 : n$. If
-$D_\lambda(p_i || q_i) \le D_\lambda(\mu_i || \nu_i)$ for all $i$, then
-
-$$D_\lambda(n^{-1} \sum_i p_i || n^{-1} \sum_i q_i) \le D_\lambda(n^{-1} \sum_i \mu_i || n^{-1} \sum_i \nu_i).$$
-
-Basically, it is saying \"if for each $i$, $p_i$ and $q_i$ are closer to
-each other than $\mu_i$ and $\nu_i$, then so is their average over
-$i$\".
-
-To see how Conjecture 1 implies Item 1, note that
+We use the notations $p_I$ and $q_I$ to be $q$ and $p$ conditioned on
+the subsampling index $I$, just like in the proof of the subsampling theorems (Claim 19 and 24).
+Then
 
 $$D_\lambda(q_I || p_I) = D_\lambda(p_I || q_I) 
 \begin{cases}
@@ -383,28 +389,14 @@ and that $p = |\mathcal I|^{-1} \sum_{I \in \mathcal I} p_I$ and
 $q = |\mathcal I|^{-1} \sum_{I \in \mathcal I} q_I$ and
 $|\mathcal I_\in| = r |\mathcal I|$.
 
-Alternatively, one may try to prove a weaker version of Conjecture 1, by
-specialising on mixture of Gaussians.
-
-One way one may try to prove Conjecture 1 is to prove an equivalent
-statement:
-
-**Conjecture 2**. Let $p_1$, $q_1$, $p_2$, $q_2$,
-$\mu_1$, $\mu_2$, $\nu_1$, $\nu_2$ be probability densities, and suppose
-
-$$\int {p_i^\lambda \over q_i^{\lambda - 1}} \le \int {\mu_i^\lambda \over \nu_i^{\lambda - 1}}, \qquad i = 1, 2$$
-
-then
-
-$$\int {(p_1 + p_2)^\lambda \over (q_1 + q_2)^{\lambda - 1}} \le \int {(\mu_1 + \mu_1)^\lambda \over (\nu_1 + \nu_2)^{\lambda - 1}}.$$
-
-Indeed, on one hand, Conjecture 2 is a special case of Conjecture 1 and
-on the other hand, given Conjecture 2, Conjecture 1 can be shown using
-induction by replacing one pair of densities a time.
+**Remark in the proof**. As we can see here, instead of trying to prove Conjecture 1,
+it suffices to prove a weaker version of it, by specialising on mixture of Gaussians,
+to have a Claim 26 without any conjectural assumptions.
+I have in fact posted the Conjecture on [Stackexchange](https://math.stackexchange.com/questions/3147963/an-inequality-related-to-the-renyi-divergence).
 
 Now let us prove Item 2.
 
-Using Claim 26 and Example 1, we have
+Using Claim 27 and Example 1, we have
 
 $$\begin{aligned}
 G_\lambda(r \mu_1 + (1 - r) \mu_0 || \mu_0)) &= \sum_{j = 0 : \lambda} {\lambda \choose j} r^j (1 - r)^{\lambda - j} G_j(\mu_1 || \mu_0)\\
@@ -487,7 +479,7 @@ In the following for consistency we retain $k$ as the number of epochs,
 and use $T := k / r$ to denote the number of compositions / steps /
 minibatches. With Conjecture 0 we have:
 
-**Conjecture 3**. Let $\epsilon, c_1, c_2 > 0$,
+**Claim 28**. Assuming Conjecture 1 is true. Let $\epsilon, c_1, c_2 > 0$,
 $r \le c_1 \sigma^{-1}$,
 $T = {c_2 \over 2 C(c_1, c_2)} \epsilon \sigma^2$. then the DP-SGD with
 subsampling rate $r$, and $T$ steps is $(\epsilon, \delta)$-dp for
@@ -500,7 +492,7 @@ $$\sigma \ge \sqrt{2 c_2^{-1}} \epsilon^{- {1 \over 2}} \sqrt{\log \delta^{-1}},
 
 we can achieve $(\epsilon, \delta)$-dp.
 
-**Proof**. By Conjecture 0 and the Moment Composition Theorem
+**Proof**. By Claim 26 and the Moment Composition Theorem
 (Claim 22), for $\lambda = c_2 \sigma^2$, substituting
 $T = {c_2 \over 2 C(c_1, c_2)} \epsilon \sigma^2$, we have
 
@@ -508,7 +500,7 @@ $$\mathbb P(L(p || q) \ge \epsilon) \le \exp(k C(c_1, c_2) - \lambda \epsilon) =
 
 $\square$
 
-**Remark**. Conjecture 3 is my understanding / version of
+**Remark**. Claim 28 is my understanding / version of
 Theorem 1 in \[ACGMMTZ16\], by using the same proof technique. Here I
 quote the original version of theorem with notions and notations altered
 for consistency with this post:
@@ -626,8 +618,7 @@ bounds.
 Let us first compare Route 1 and Route 2 without specialising to the
 Gaussian mechanism.
 
-**Disclaimer**. What follows is my original research and
-has not been reviewed by anyone.
+**Disclaimer**. What follows is a bit messy and has not been reviewed by anyone.
 
 Suppose each mechanism $N_i$ satisfies
 $(\epsilon', \delta(\epsilon'))$-dp. Let
