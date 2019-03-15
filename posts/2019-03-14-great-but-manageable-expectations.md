@@ -84,18 +84,18 @@ $$D_\lambda(p || q) = (\lambda - 1)^{-1} \kappa_{p, q}(\lambda - 1).$$
 
 In the following, whenever you see $t$, think of it as $\lambda - 1$.
 
-**Example 1 (RDP for Gaussian
+**Example 1 (RDP for the Gaussian
 mechanism)**. Using the scaling and translation invariance of $L$ (6.1),
 we have that the divergence variable for two Gaussians with the same
 variance is
 
-$$L(N(\mu_1, \sigma^2) || N(\mu_2, \sigma^2)) \overset{d}{=} L(N(0, 1) || N((\mu_2 - \mu_1) / \sigma, 1)).$$
+$$L(N(\mu_1, \sigma^2 I) || N(\mu_2, \sigma^2 I)) \overset{d}{=} L(N(0, I) || N((\mu_2 - \mu_1) / \sigma, I)).$$
 
 With this we get
 
-$$D_\lambda(N(\mu_1, \sigma^2) || N(\mu_2, \sigma^2)) = {\lambda (\mu_2 - \mu_1)^2 \over 2 \sigma^2} = D_\lambda(N(\mu_2, \sigma^2) || N(\mu_1, \sigma^2)).$$
+$$D_\lambda(N(\mu_1, \sigma^2 I) || N(\mu_2, \sigma^2 I)) = {\lambda \|\mu_2 - \mu_1\|_2^2 \over 2 \sigma^2} = D_\lambda(N(\mu_2, \sigma^2 I) || N(\mu_1, \sigma^2 I)).$$
 
-Also due to the scaling invariance of $L$, we only need to consider $f$
+Again due to the scaling invariance of $L$, we only need to consider $f$
 with sensitivity $1$, see the discussion under (6.1). The Gaussian
 mechanism on query $f$ is thus $(\lambda, \lambda / 2 \sigma^2)$-rdp for
 any $\lambda > 1$.
