@@ -51,7 +51,8 @@ Vadhan, Jonathan Ullman, Yuanyuan Xu and Yiting Li for communication and
 discussions. The research was done while working at [KTH Department of
 Mathematics](https://www.kth.se/en/sci/institutioner/math).
 
-*This post (including both Part 1 and Part2) is licensed under 
+*If you are confused by any notations, ask me or try [this](/notations.html).
+This post (including both Part 1 and Part2) is licensed under 
 [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 and [GNU FDL](https://www.gnu.org/licenses/fdl.html).*
 

@@ -25,6 +25,7 @@ Finally I use the results from both Part 1 and Part 2 to obtain some privacy
 guarantees for composed subsampling queries in general, and for DP-SGD in particular. 
 I also compare these privacy guarantees.
 
+*If you are confused by any notations, ask me or try [this](/notations.html).*
 
 Rényi divergence and differential privacy 
 -----------------------------------------
