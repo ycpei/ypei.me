@@ -1,5 +1,5 @@
 ---
-date: 2019-03-15
+date: '2019-03-15'
 title: List of Notations
 template: default
 ---
@@ -8,12 +8,13 @@ Here I list meanings of notations that may have not been explained
 elsewhere.
 
 -   $\text{ty}$: type. Given a word $w \in [n]^\ell$,
-    $\ty w = (m_1, m_2, ..., m_n)$ where $m_i$ is the number of $i$\'s
-    in $w$. For example $\ty (1, 2, 2, 1, 4, 2) = (2, 3, 0, 1)$. The
-    definition of $\ty T$ for a tableau $T$ is similar.
+    $\text{ty} w = (m_1, m_2, ..., m_n)$ where $m_i$ is the number of
+    $i$\'s in $w$. For example
+    $\text{ty} (1, 2, 2, 1, 4, 2) = (2, 3, 0, 1)$. The definition of
+    $\text{ty} T$ for a tableau $T$ is similar.
 -   $[n]$: for $n \in \mathbb N_{>0}$, $[n]$ stands for the set
     $\{1, 2, ..., n\}$.
--   $i : j$: for $i, j \in \intg$, $i : j$ stands for the set
+-   $i : j$: for $i, j \in \mathbb Z$, $i : j$ stands for the set
     $\{i, i + 1, ..., j\}$, or the sequence $(i, i + 1, ..., j)$,
     depending on the context.
 -   $k = i : j$: means $k$ iterates over $i$, $i + 1$,\..., $j$. For
