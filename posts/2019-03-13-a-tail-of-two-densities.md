@@ -107,7 +107,7 @@ from $f$ by adding a noise:
 
 $$M(x) := f(x) + \text{noise}.$$
 
-Later, we will also consider mechanisms constructed by composition of
+Later, we will also consider mechanisms constructed from composition or mixture of
 other mechanisms.
 
 In this post $Y = \mathbb R^d$ for some $d$.
