@@ -588,8 +588,8 @@ DP-SGD with the Gaussian mechanism:
 2.  Example 1 (RDP for the Gaussian mechanism) -\> Claim 22 (Moment
     Composition Theorem) -\> Example 3 (Moment composition applied to
     the Gaussian mechanism)
-3.  Conjecture 0 (RDP for Gaussian mechanism with specific magnitudes
-    for subsampling rate) -\> Conjecture 3 (Moment Composition Theorem
+3.  Claim 26 (RDP for Gaussian mechanism with specific magnitudes
+    for subsampling rate) -\> Claim 28 (Moment Composition Theorem
     and translation to conventional DP)
 
 Which one is the best?
@@ -727,7 +727,7 @@ Here is a list of what I think may be interesting topics or potential
 problems to look at, with no guarantee that they are all awesome
 untouched research problems:
 
-1.  Prove Conjecture 2
+1.  Prove Conjecture 1
 2.  Find a theoretically definitive answer whether the methods in Part 1
     or Part 2 yield better privacy guarantees.
 3.  Study the non-Gaussian cases, general or specific. Let $p$ be some
@@ -735,7 +735,7 @@ untouched research problems:
     $L(p(y) || p(y + \alpha))$ for $|\alpha| \le 1$? Can you find
     anything better than Gaussian? For a start, perhaps the nice tables
     of Rényi divergence in Gil-Alajaji-Linder 2013 may be useful?
-4.  Find out how useful Conjecture 0 is. Perhaps start with computing
+4.  Find out how useful Claim 26 is. Perhaps start with computing
     the constant $C$ nemerically.
 5.  Help with [the aforementioned
     issue](https://github.com/tensorflow/privacy/issues/23) in the
