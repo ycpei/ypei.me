@@ -55,4 +55,4 @@ date: 2019-03-16
 >decrypt DVDs.
 >```
 
-- Seth Schoen, [DeCSS haiku](https://en.wikipedia.org/wiki/DeCSS_haiku)
+Seth Schoen, [DeCSS haiku](https://en.wikipedia.org/wiki/DeCSS_haiku)
