@@ -17,7 +17,8 @@ I also attempt to reproduce a seemingly better moment bound for the
 Gaussian mechanism with subsampling, with one intermediate step which I
 am not able to prove.
 
-After that I explain the Tensorflow implementation of differential privacy,
+After that I explain the Tensorflow implementation of differential privacy
+in its [Privacy](https://github.com/tensorflow/privacy/tree/master/privacy) module,
 which focuses on the differentially private stochastic gradient descent 
 algorithm (DP-SGD).
 
