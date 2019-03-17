@@ -26,7 +26,7 @@ as well as the effect of mixing mechanisms, by presenting the subsampling theore
 (a.k.a. amplification theorem).
 
 In [Part 2](/posts/2019-03-14-great-but-manageable-expectations.html), I discuss the Rényi differential privacy, corresponding to
-the Rényi divergence, a study of the moment generating functions the 
+the Rényi divergence, a study of the moment generating functions of the 
 divergence between probability measures to derive the tail bounds. 
 
 Like in Part 1, I prove a composition theorem and a subsampling theorem.
@@ -591,7 +591,7 @@ Legendre transformation). When $\xi$ is standard normal, we get (6.5).
 $\square$
 
 **Remark**. We will use the Chernoff bound extensively in the
-second part of this post when considering Renyi differential privacy.
+second part of this post when considering Rényi differential privacy.
 
 **Claim 9**. The Gaussian mechanism on a query $f$ is
 $(\epsilon, \delta)$-dp, where
