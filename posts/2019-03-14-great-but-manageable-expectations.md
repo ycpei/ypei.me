@@ -341,7 +341,7 @@ then we have $(\lambda, O(r^2 \lambda / \sigma^2))$-rdp.
 Wait, why is there a conjecture? Well, I have tried but not been able to
 prove the following, which is a hidden assumption in the original proof:
 
-**Conjecture 1**. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
+**Conjecture 1** \[Probably [FALSE](https://math.stackexchange.com/a/3152296/149540), to be removed\]. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
 probability densities on the same space for $i = 1 : n$. If
 $D_\lambda(p_i || q_i) \le D_\lambda(\mu_i || \nu_i)$ for all $i$, then
 
@@ -351,9 +351,12 @@ Basically, it is saying \"if for each $i$, $p_i$ and $q_i$ are closer to
 each other than $\mu_i$ and $\nu_i$, then so are their averages over
 $i$\".
 So it is heuristically reasonable.
+But it is probably [**FALSE**](https://math.stackexchange.com/a/3152296/149540).
 
+<!---
 This conjecture is equivalent to its special case when $n = 2$ by an induction argument
 (replacing one pair of densities at a time).
+-->
 
 Recall the definition of $G_\lambda$ under the definition of Rényi
 differential privacy. The following Claim will be useful.
@@ -381,7 +384,9 @@ I will break the proof into two parts:
 $c_1$, $c_2$ and the function $C(c_1, c_2)$ are important to the
 practicality and usefulness of Conjecture 0.
 
-Part 1 can be derived using Conjecture 1.
+Part 1 can be derived using Conjecture 1, but since Conjecture 1 is probably false,
+let us rename Part 1 itself _Conjecture 2_, which needs to be verified by other means.
+<!---
 We use the notations $p_I$ and $q_I$ to be $q$ and $p$ conditioned on
 the subsampling index $I$, just like in the proof of the subsampling theorems (Claim 19 and 24).
 Then
@@ -400,6 +405,7 @@ $|\mathcal I_\in| = r |\mathcal I|$, by Conjecture 1, we have Part 1.
 it suffices to prove a weaker version of it, by specialising on mixture of Gaussians,
 in order to have a Claim 26 without any conjectural assumptions.
 I have in fact posted the Conjecture on [Stackexchange](https://math.stackexchange.com/questions/3147963/an-inequality-related-to-the-renyi-divergence).
+-->
 
 Now let us verify Part 2.
 
@@ -486,7 +492,7 @@ In the following for consistency we retain $k$ as the number of epochs,
 and use $T := k / r$ to denote the number of compositions / steps /
 minibatches. With Conjecture 0 we have:
 
-**Claim 28**. Assuming Conjecture 1 is true. Let $\epsilon, c_1, c_2 > 0$,
+**Claim 28**. Assuming Conjecture 2 is true. Let $\epsilon, c_1, c_2 > 0$,
 $r \le c_1 \sigma^{-1}$,
 $T = {c_2 \over 2 C(c_1, c_2)} \epsilon \sigma^2$. then the DP-SGD with
 subsampling rate $r$, and $T$ steps is $(\epsilon, \delta)$-dp for
@@ -733,7 +739,7 @@ Here is a list of what I think may be interesting topics or potential
 problems to look at, with no guarantee that they are all awesome
 untouched research problems:
 
-1.  Prove Conjecture 1
+1.  Prove Conjecture 2
 2.  Find a theoretically definitive answer whether the methods in Part 1
     or Part 2 yield better privacy guarantees.
 3.  Study the non-Gaussian cases, general or specific. Let $p$ be some
