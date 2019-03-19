@@ -352,6 +352,7 @@ each other than $\mu_i$ and $\nu_i$, then so are their averages over
 $i$\".
 So it is heuristically reasonable.
 But it is probably [**FALSE**](https://math.stackexchange.com/a/3152296/149540).
+This does not mean Claim 26 is false, as it might still be possible that Conjecture 2 (see below) is true.
 
 <!---
 This conjecture is equivalent to its special case when $n = 2$ by an induction argument
