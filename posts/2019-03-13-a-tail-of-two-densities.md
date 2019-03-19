@@ -100,7 +100,7 @@ a function that takes $x \in X$ as input and outputs a random variable
 on $Y$.
 
 In this post, $X = Z^m$ is the space of datasets of $m$ rows for some
-integer $m$, where each item resides in $Z$. In this case the distance
+integer $m$, where each item resides in some space $Z$. In this case the distance
 $d(x, x') := \#\{i: x_i \neq x'_i\}$ is the number of rows that differ
 between $x$ and $x'$.
 
