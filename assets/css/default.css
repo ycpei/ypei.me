@@ -8,11 +8,13 @@ nav {
     float: right;
 }
 
-nav#TOC:before {
+#TOC:before {
     content: "Table of Contents";
 }
 
-nav#TOC{
+#TOC{
+    display: inline;
+    float: right;
     margin: 1rem;
 }
 
