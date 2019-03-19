@@ -8,7 +8,7 @@ comments: true
 This is Part 1 of a two-part post where I give an introduction to
 differential privacy, which is a study of tail bounds of the divergence between
 probability measures, with the end goal of applying it to stochastic
-gradient descent.
+gradient descent. 
 
 I start with the definition of $\epsilon$-differential privacy
 (corresponding to max divergence), followed by
