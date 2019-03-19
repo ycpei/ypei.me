@@ -8,6 +8,20 @@ nav {
     float: right;
 }
 
+nav#TOC:before {
+    content: "Table of Contents";
+}
+
+nav#TOC{
+    margin: 1rem;
+}
+
+/*
+nav#TOC li{
+    list-style-type: none;
+}
+*/
+
 span.logo {
     float: left;
 }

@@ -79,7 +79,7 @@ where $p$ and $q$ are the laws of the outputs of a randomised functions
 on two very similar inputs.
 Moreover, to make matters even simpler, only three situations need to be considered:
 
-1.  (General case) $q$ is in the form of $q(y) = p(y + \Delta)$ for some bounded $\Delta$.
+1.  (General case) $q$ is in the form of $q(y) = p(y + \Delta)$ for some bounded constant $\Delta$.
 2.  (Compositions) $p$ and $q$ are combinatorial or sequential compositions of some simpler $p_i$'s and $q_i$'s respectively
 3.  (Subsampling) $p$ and $q$ are mixtures / averages of some simpler $p_i$'s and $q_i$'s respectively
 
