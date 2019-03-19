@@ -156,6 +156,8 @@ the noise.
 However, as we will see later, compositions will yield different results
 from those obtained from methods in [Part 1](/posts/2019-03-13-a-tail-of-two-densities.html) when considering Rényi dp.
 
+### Moment Composition
+
 **Claim 22 (Moment Composition
 Theorem)**. Let $M$ be the adaptive composition of $M_{1 : k}$. Suppose
 for any $y_{< i}$, $M_i(y_{< i})$ is $(\lambda, \rho)$-rdp. Then $M$ is
@@ -220,6 +222,8 @@ then the composition $M$ is $(\epsilon, \delta)$-dp.
 As we will see in the discussions at the end of this post, this result
 is different from (and probably better than) the one obtained by using
 the Advanced Composition Theorem (Claim 18).
+
+### Subsampling
 
 We also have a subsampling theorem for the Rényi dp.
 
