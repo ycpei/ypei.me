@@ -333,7 +333,7 @@ because there is a gap which I am not able to reproduce their proof or
 prove it myself. This does not mean the result is false. On the
 contrary, I am inclined to believe it is true.
 
-**Claim 26**. Assuming Conjecture 1 (see below) is true. 
+**Claim 26**. Assuming Conjecture 2 (see below) is true. 
 For a subsampled Gaussian mechanism
 with ratio $r$, if $r = O(\sigma^{-1})$ and $\lambda = O(\sigma^2)$,
 then we have $(\lambda, O(r^2 \lambda / \sigma^2))$-rdp.
@@ -631,7 +631,7 @@ bounds.
 Let us first compare Route 1 and Route 2 without specialising to the
 Gaussian mechanism.
 
-**Disclaimer**. What follows is a bit messy and has not been reviewed by anyone.
+**Warning**. What follows is a bit messy.
 
 Suppose each mechanism $N_i$ satisfies
 $(\epsilon', \delta(\epsilon'))$-dp. Let
