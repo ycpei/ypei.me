@@ -47,3 +47,7 @@ elsewhere.
     have the same distribution.
 -   $\mathbb E f(\xi)$: expectation of $f(\xi)$.
 -   $\mathbb P(A)$: probability of event $A$.
+-   $a \wedge b$: $\min\{a, b\}$.
+-   $a \vee b$: $\max\{a, b\}$.
+-   $(\alpha)_+$: the positive part of $\alpha$, i.e. $\alpha \vee 0$.
+-   $(\alpha)_-$: the negative part of $\alpha$, i.e. $(- \alpha)_+$.
