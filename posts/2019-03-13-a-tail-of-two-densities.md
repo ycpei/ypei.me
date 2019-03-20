@@ -7,7 +7,7 @@ comments: true
 
 This is Part 1 of a two-part post where I give an introduction to
 differential privacy, which is a study of tail bounds of the divergence between
-probability measures, with the end goal of applying it to stochastic
+two probability measures, with the end goal of applying it to stochastic
 gradient descent. 
 
 I start with the definition of $\epsilon$-differential privacy
@@ -44,6 +44,12 @@ Finally I use the results from both Part 1 and Part 2 to obtain some privacy
 guarantees for composed subsampling queries in general, and for DP-SGD in particular. 
 I also compare these privacy guarantees.
 
+This post focuses on the mathematics of differential privacy, and should be
+suitable for anyone with some knowledge of probability.
+For how the subject discussed in this post is related to privacy, 
+check out the [Wikipedia entry](https://en.wikipedia.org/wiki/Differential_privacy)
+or [Dwork-Roth 2013](https://www.cis.upenn.edu/~aaroth/privacybook.html).
+
 **Acknowledgement**. I would like to thank
 [Stockholm AI](https://stockholm.ai) for introducing me to the subject
 of differential privacy. Thanks to (in chronological order) Reynaldo
@@ -63,7 +69,7 @@ The gist of differential privacy
 If you only have one minute, here is what differential privacy is about:
 
 Let $p$ and $q$ be two probability densities, we define the *divergence
-variable* of $(p, q)$ to be
+variable*[^dv] of $(p, q)$ to be
 
 $$L(p || q) := \log {p(\xi) \over q(\xi)}$$
 
@@ -90,6 +96,10 @@ dataset, and the query updates the parameters, and privacy is achieved
 by adding noise to the gradients.
 
 Now if you have an hour\...
+
+[^dv] For those who have read about differential privacy and never heard 
+of the term "divergence variable", it is closely related to the notion of "privacy loss",
+see the paragraph under Claim 6 in [Back to approximate differential privacy](#back-to-approximate-differential-privacy).
 
 $\epsilon$-dp 
 -------------
