@@ -1094,8 +1094,8 @@ It turns out subsampling has an amplification effect on privacy.
 
 **Claim 19 (Ullman 2017)**. Fix
 $r \in [0, 1]$. Let $n \le m$ be two nonnegative integers with
-$n = r m$. Let $N$ be an $(\epsilon, \delta)$-dp machanism on $X^n$.
-Define mechanism $M$ on $X^m$ by
+$n = r m$. Let $N$ be an $(\epsilon, \delta)$-dp machanism on $Z^n$.
+Define mechanism $M$ on $Z^m$ by
 
 $$M(x) = N(x_\gamma)$$
 
@@ -1105,7 +1105,7 @@ Then $M$ is $(\log (1 + r(e^\epsilon - 1)), r \delta)$-dp.
 Kasiviswanathan-Lee-Nissim-Raskhodnikova-Smith 2005 for this result, but
 it is not clear to me how it appears there.
 
-**Proof**. Let $x, x' \in X^n$ such that they differ by one
+**Proof**. Let $x, x' \in Z^n$ such that they differ by one
 row $x_i \neq x_i'$. Naturally we would like to consider the cases where
 the index $i$ is picked and the ones where it is not separately. Let
 $\mathcal I_\in$ and $\mathcal I_\notin$ be these two cases:
