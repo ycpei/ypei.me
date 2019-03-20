@@ -132,12 +132,12 @@ $$\mathbb P(M(x) \in S) \le e^\epsilon P(M(x') \in S). \qquad (1)$$
 
 An example of $\epsilon$-dp mechanism is the Laplace mechanism.
 
-**Definition**. The Laplace distribution over $\mathbb R$
+**Definition**. The *Laplace distribution* over $\mathbb R$
 with parameter $b > 0$ has probability density function
 
 $$f_{\text{Lap}(b)}(x) = {1 \over 2 b} e^{- {|x| \over b}}.$$
 
-**Definition**. Let $d = 1$. The Laplace mechanism is
+**Definition**. Let $d = 1$. The *Laplace mechanism* is
 defined by
 
 $$M(x) = f(x) + \text{Lap}(b).$$
