@@ -56,7 +56,9 @@ or [Dwork-Roth 2013](https://www.cis.upenn.edu/~aaroth/privacybook.html).
 of differential privacy. Thanks to (in chronological order) Reynaldo
 Boulogne, Martin Abedi, Ilya Mironov, Kurt Johansson, Mark Bun, Salil
 Vadhan, Jonathan Ullman, Yuanyuan Xu and Yiting Li for communication and
-discussions. The research was done while working at [KTH Department of
+discussions. Also thanks to the [r/MachineLearning](https://www.reddit.com/r/MachineLearning/) 
+community for comments and suggestions which result in improvement of
+readability of this post. The research was done while working at [KTH Department of
 Mathematics](https://www.kth.se/en/sci/institutioner/math).
 
 *If you are confused by any notations, ask me or try [this](/notations.html).
