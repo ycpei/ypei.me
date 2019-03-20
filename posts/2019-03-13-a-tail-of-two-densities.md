@@ -46,7 +46,7 @@ guarantees for composed subsampling queries in general, and for DP-SGD in partic
 I also compare these privacy guarantees.
 
 This post focuses on the mathematics of differential privacy, and should be
-suitable for anyone with some knowledge of probability.
+suitable for anyone familiar with probability theory.
 For how the subject discussed in this post is related to privacy, 
 check out the [Wikipedia entry](https://en.wikipedia.org/wiki/Differential_privacy)
 or [Dwork-Roth 2013](https://www.cis.upenn.edu/~aaroth/privacybook.html).
