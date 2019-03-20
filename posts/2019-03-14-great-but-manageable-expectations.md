@@ -8,7 +8,7 @@ comments: true
 This is Part 2 of a two-part blog post on differential privacy.
 Continuing from [Part 1](/posts/2019-03-13-a-tail-of-two-densities.html),
 I discuss the Rényi differential privacy, corresponding to
-the Rényi divergence, a study of the moment generating functions the 
+the Rényi divergence, a study of the moment generating functions of the 
 divergence between probability measures to derive the tail bounds. 
 
 Like in Part 1, I prove a composition theorem and a subsampling theorem.
