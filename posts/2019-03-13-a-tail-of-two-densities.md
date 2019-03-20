@@ -703,7 +703,7 @@ $$\sigma > \epsilon^{-1} (\sqrt{\log e^\alpha \delta^{-2}}) S_f$$
 
 or
 
-$$\sigma > \epsilon^{-1} (\sqrt{1 + \alpha} \vee \sqrt{(\log (2 \pi)^{-1} e^\alpha \delta^{-2})_+}).$$
+$$\sigma > \epsilon^{-1} (\sqrt{1 + \alpha} \vee \sqrt{(\log (2 \pi)^{-1} e^\alpha \delta^{-2})_+}) S_f.$$
 
 The second bound is similar to and slightly better than the one in
 Theorem A.1 of Dwork-Roth 2013, where $\alpha = 1$:
