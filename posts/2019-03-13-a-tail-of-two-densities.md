@@ -590,14 +590,14 @@ using
 
 $$\int_t^\infty e^{- {y^2 \over 2}} dy < \int_t^\infty {y \over t} e^{- {y^2 \over 2}} dy.$$
 
-The second is shown using Chernoff bound. For any random variable $\xi$,
+The second is shown using [Chernoff bound](https://en.wikipedia.org/wiki/Chernoff_bound). For any random variable $\xi$,
 
 $$\mathbb P(\xi > t) < {\mathbb E \exp(\lambda \xi) \over \exp(\lambda t)} = \exp(\kappa_\xi(\lambda) - \lambda t), \qquad (6.7)$$
 
 where $\kappa_\xi(\lambda) = \log \mathbb E \exp(\lambda \xi)$ is the
 cumulant of $\xi$. Since (6.7) holds for any $\lambda$, we can get the
 best bound by minimising $\kappa_\xi(\lambda) - \lambda t$ (a.k.a. the
-Legendre transformation). When $\xi$ is standard normal, we get (6.5).
+[Legendre transformation](https://en.wikipedia.org/wiki/Legendre_transformation)). When $\xi$ is standard normal, we get (6.5).
 $\square$
 
 **Remark**. We will use the Chernoff bound extensively in the
