@@ -6,9 +6,10 @@ comments: true
 ---
 
 This is Part 1 of a two-part post where I give an introduction to
-differential privacy, which is a study of tail bounds of the divergence between
-two probability measures, with the end goal of applying it to stochastic
-gradient descent. 
+differential privacy, a study of [tail bounds](https://en.wikipedia.org/wiki/Concentration_inequality)
+of the divergence between
+two probability measures, with the end goal of applying it to [stochastic
+gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
 
 I start with the definition of $\epsilon$-differential privacy
 (corresponding to max divergence), followed by
@@ -223,7 +224,7 @@ One interesting and readily verifiable fact is
 
 $$\mathbb E L(p || q) = D(p || q)$$
 
-where $D$ is the KL-divergence.
+where $D$ is the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence).
 
 **Claim 1**. If
 
@@ -964,7 +965,8 @@ $$\mathbb P(L(q || p) \le k a(\epsilon) + \sqrt{2 k \epsilon^2 \log \beta^{-1}})
 By Claim 1 we arrive at the conclusion. $\square$
 
 **Claim 15 (Azuma\'s Inequality)**.
-Let $X_{0 : k}$ be a supermartingale. If $|X_i - X_{i - 1}| \le b$, then
+Let $X_{0 : k}$ be a [supermartingale](https://en.wikipedia.org/wiki/Martingale_(probability_theory)).
+If $|X_i - X_{i - 1}| \le b$, then
 
 $$\mathbb P(X_k - X_0 \ge t) \le \exp(- {t^2 \over 2 k b^2}).$$
 
