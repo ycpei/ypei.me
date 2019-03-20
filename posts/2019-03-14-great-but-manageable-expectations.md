@@ -383,7 +383,7 @@ I will break the proof into two parts:
 
 **Remark in the proof**. Note that the choice of
 $c_1$, $c_2$ and the function $C(c_1, c_2)$ are important to the
-practicality and usefulness of Conjecture 0.
+practicality and usefulness of Claim 26.
 
 Part 1 can be derived using Conjecture 1, but since Conjecture 1 is probably false,
 let us rename Part 1 itself _Conjecture 2_, which needs to be verified by other means.
@@ -491,7 +491,7 @@ decreases from $1$. $\square$
 
 In the following for consistency we retain $k$ as the number of epochs,
 and use $T := k / r$ to denote the number of compositions / steps /
-minibatches. With Conjecture 0 we have:
+minibatches. With Claim 26 we have:
 
 **Claim 28**. Assuming Conjecture 2 is true. Let $\epsilon, c_1, c_2 > 0$,
 $r \le c_1 \sigma^{-1}$,
@@ -525,7 +525,7 @@ for consistency with this post:
 
 $$\sigma \ge c_2' {r \sqrt{T \log (1 / \delta)} \over \epsilon}. \qquad (10)$$
 
-I am however unable to reproduce this version, assuming Conjecture 0 is
+I am however unable to reproduce this version, assuming Conjecture 2 is
 true, for the following reasons:
 
 1.  In the proof in the paper, we have $\epsilon = c_1' r^2 T$ instead
@@ -534,7 +534,7 @@ true, for the following reasons:
     opposite to the direction we want to prove:
     $$\exp(k C(c_1, c_2) - \lambda \epsilon) \ge ...$$
 
-2.  The implicit condition $r = O(\sigma^{-1})$ of Conjecture 0 whose
+2.  The condition $r = O(\sigma^{-1})$ of Claim 26 whose
     result is used in the proof of this theorem is not mentioned in the
     statement of the proof. The implication is that (10) becomes an
     ill-formed condition as the right hand side also depends on
