@@ -340,7 +340,7 @@ As it turns out, **C3** is the condition we need.
 $(\epsilon, \delta)$-ind if and only if **C3** holds.
 
 **Proof**(Murtagh-Vadhan 2018). The \"if\" direction is proved
-in the same way as Lemma 1. Without loss of generality we may assume
+in the same way as Claim 1. Without loss of generality we may assume
 $\mathbb P(E) = \mathbb P(F) \ge 1 - \delta$. To see this, suppose $F$
 has higher probability than $E$, then we can substitute $F$ with a
 subset of $F$ that has the same probability as $E$ (with possible
@@ -506,7 +506,7 @@ $$\begin{aligned}
 \mathbb P(F_i | \xi_{\le i} = y_{\le i}) &= {f(y_{\le i}) \over q_i(y_{\le i})}.
 \end{aligned}$$
 
-The rest of the proof is almost the same as the proof of Lemma 2.
+The rest of the proof is almost the same as the proof of Claim 4.
 $\square$
 
 ### Back to approximate differential privacy 
