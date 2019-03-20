@@ -8,8 +8,8 @@ comments: true
 This is Part 2 of a two-part blog post on differential privacy.
 Continuing from [Part 1](/posts/2019-03-13-a-tail-of-two-densities.html),
 I discuss the Rényi differential privacy, corresponding to
-the Rényi divergence, a study of the moment generating functions of the 
-divergence between probability measures to derive the tail bounds. 
+the Rényi divergence, a study of the [moment generating functions](https://en.wikipedia.org/wiki/Moment-generating_function)
+of the divergence between probability measures in order to derive the tail bounds. 
 
 Like in Part 1, I prove a composition theorem and a subsampling theorem.
 
@@ -79,7 +79,7 @@ functions $f$ and $g$:
 $$G_\lambda(f || g) = \int f(y)^{\lambda} g(y)^{1 - \lambda} dy; \qquad \kappa_{f, g} (t) = \log G_{t + 1}(f || g).$$
 
 For probability densities $p$ and $q$, $G_{t + 1}(p || q)$ and
-$\kappa_{p, q}(t)$ are the $t$th moment generating function and cumulant
+$\kappa_{p, q}(t)$ are the $t$th moment generating function and [cumulant](https://en.wikipedia.org/wiki/Cumulant)
 of the divergence variable $L(p || q)$, and
 
 $$D_\lambda(p || q) = (\lambda - 1)^{-1} \kappa_{p, q}(\lambda - 1).$$
@@ -112,7 +112,7 @@ Using the Chernoff bound (6.7), we can bound the divergence variable:
 
 $$\mathbb P(L(p || q) \ge \epsilon) \le {\mathbb E \exp(t L(p || q)) \over \exp(t \epsilon))} =  \exp (\kappa_{p, q}(t) - \epsilon t). \qquad (7.7)$$
 
-For a function $f: I \to \mathbb R$, denote its Legendre transform by
+For a function $f: I \to \mathbb R$, denote its [Legendre transform](https://en.wikipedia.org/wiki/Legendre_transformation) by
 
 $$f^*(\epsilon) := \sup_{t \in I} (\epsilon t - f(t)).$$
 
