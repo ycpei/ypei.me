@@ -6,10 +6,16 @@ comments: true
 ---
 
 This is Part 1 of a two-part post where I give an introduction to
-differential privacy, a study of [tail bounds](https://en.wikipedia.org/wiki/Concentration_inequality)
+the mathematics of differential privacy.
+Practically speaking, [differential privacy](https://en.wikipedia.org/wiki/Differential_privacy) 
+is a technique of perturbing database queries so that query results do not leak information.
+
+This post however focuses on the mathematical aspects of differential privacy, which is
+a study of [tail bounds](https://en.wikipedia.org/wiki/Concentration_inequality)
 of the divergence between
 two probability measures, with the end goal of applying it to [stochastic
 gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
+It should be suitable for anyone familiar with probability theory.
 
 I start with the definition of $\epsilon$-differential privacy
 (corresponding to max divergence), followed by
@@ -44,12 +50,6 @@ algorithm (DP-SGD).
 Finally I use the results from both Part 1 and Part 2 to obtain some privacy
 guarantees for composed subsampling queries in general, and for DP-SGD in particular. 
 I also compare these privacy guarantees.
-
-This post focuses on the mathematics of differential privacy, and should be
-suitable for anyone familiar with probability theory.
-For how the subject discussed in this post is related to privacy, 
-check out the [Wikipedia entry](https://en.wikipedia.org/wiki/Differential_privacy)
-or [Dwork-Roth 2013](https://www.cis.upenn.edu/~aaroth/privacybook.html).
 
 **Acknowledgement**. I would like to thank
 [Stockholm AI](http://stockholm.ai) for introducing me to the subject
@@ -101,11 +101,11 @@ by adding noise to the gradients.
 Now if you have an hour\...
 
 [^dv]: For those who have read about differential privacy and never heard 
-of the term "divergence variable", it is closely related to the notion of "privacy loss",
+of the term \"divergence variable\", it is closely related to the notion of \"privacy loss\",
 see the paragraph under Claim 6 in [Back to approximate differential privacy](#back-to-approximate-differential-privacy).
 I defined the term this way so that we can focus on the more general stuff: 
 compared to the privacy loss $L(M(x) || M(x'))$, the term $L(p || q)$ removes 
-the "distracting information" that $p$ and $q$ are related to databases, 
+the \"distracting information\" that $p$ and $q$ are related to databases, 
 queries, mechanisms etc., but merely probability laws. By removing the distraction, 
 we simplify the analysis. And once we are done with the analysis of $L(p || q)$, 
 we can apply the results obtained in the general setting to the special case 
@@ -149,6 +149,10 @@ $x, x' \in X$ with $d(x, x') = 1$, and for all measureable set
 $S \subset \mathbb R^n$,
 
 $$\mathbb P(M(x) \in S) \le e^\epsilon P(M(x') \in S). \qquad (1)$$
+
+Practically speaking, this means given the results from perturbed query on
+two known databases that differs by one row, it is hard to determine
+which result is from which database.
 
 An example of $\epsilon$-dp mechanism is the Laplace mechanism.
 
