@@ -9,7 +9,8 @@ This is Part 1 of a two-part post where I give an introduction to
 the mathematics of differential privacy.
 
 Practically speaking, [differential privacy](https://en.wikipedia.org/wiki/Differential_privacy) 
-is a technique of perturbing database queries so that query results do not leak information.
+is a technique of perturbing database queries so that query results do not 
+leak too much information while still being relatively accurate.
 
 This post however focuses on the mathematical aspects of differential privacy, which is
 a study of [tail bounds](https://en.wikipedia.org/wiki/Concentration_inequality)
