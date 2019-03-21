@@ -381,11 +381,10 @@ $$G_\lambda(r p + (1 - r) q || q) = \sum_{k = 1 : \lambda} {\lambda \choose k} r
 $(r p + (1 - r) q)^\lambda$ using binomial expansion. $\square$
 
 **Proof of Claim 26**. 
-let $M$ be the Gaussian mechanism with subsampling rate $r$,
-and $p$ and $q$ be the laws of $M(x)$ and $M(x')$ respectively, where $d(x, x') = 1$.
 By Conjecture 1, it suffices to prove the following:
 
-If $r \le c_1 \sigma^{-1}$ and $\lambda \le c_2 \sigma^2$, then
+If $r \le c_1 \sigma^{-1}$ and $\lambda \le c_2 \sigma^2$ for some
+positive constant $c_1$ and $c_2$, then
 there exists $C = C(c_1, c_2)$ such that
 $G_\lambda (r \mu_1 + (1 - r) \mu_0 || \mu_0) \le C$ (since
 $O(r^2 \lambda^2 / \sigma^2) = O(1)$).
