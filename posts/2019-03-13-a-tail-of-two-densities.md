@@ -16,7 +16,7 @@ a study of [tail bounds](https://en.wikipedia.org/wiki/Concentration_inequality)
 of the divergence between
 two probability measures, with the end goal of applying it to [stochastic
 gradient descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
-It should be suitable for anyone familiar with probability theory.
+This post should be suitable for anyone familiar with probability theory.
 
 I start with the definition of $\epsilon$-differential privacy
 (corresponding to max divergence), followed by
