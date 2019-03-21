@@ -328,8 +328,6 @@ assumptions.
 ACGMMTZ16 
 ---------
 
-**Warning**. This section is under construction.
-
 What follows is my understanding of this result. I call it a conjecture
 because there is a gap which I am not able to reproduce their proof or
 prove it myself. This does not mean the result is false. On the
@@ -351,6 +349,14 @@ Then
 $$D_\lambda (p || q) \le D_\lambda (r \mu_1 + (1 - r) \mu_0 || \mu_0)$$ 
 
 where $\mu_i = N(i, \sigma^2)$.
+
+**Remark**. 
+<!---
+Conjecture 1 is heuristically reasonable.
+To see this, let us use the notations $p_I$ and $q_I$ to be $q$ and $p$ conditioned on
+the subsampling index $I$, just like in the proof of the subsampling theorems (Claim 19 and 24).
+-->
+[A more general version of Conjecture 1 has been proven false](https://math.stackexchange.com/a/3152296/149540).
 
 <!---
 **Conjecture 1** \[Probably [FALSE](https://math.stackexchange.com/a/3152296/149540), to be removed\]. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
