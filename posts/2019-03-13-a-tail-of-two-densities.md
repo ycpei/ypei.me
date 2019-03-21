@@ -103,6 +103,13 @@ Now if you have an hour\...
 [^dv]: For those who have read about differential privacy and never heard 
 of the term "divergence variable", it is closely related to the notion of "privacy loss",
 see the paragraph under Claim 6 in [Back to approximate differential privacy](#back-to-approximate-differential-privacy).
+I defined the term this way so that we can focus on the more general stuff: 
+compared to the privacy loss $L(M(x) || M(x'))$, the term $L(p || q)$ removes 
+the "distracting information" that $p$ and $q$ are related to databases, 
+queries, mechanisms etc., but merely probability laws. By removing the distraction, 
+we simplify the analysis. And once we are done with the analysis of $L(p || q)$, 
+we can apply the results obtained in the general setting to the special case 
+where $p$ is the law of $M(x)$ and $q$ is the law of $M(x')$.
 
 $\epsilon$-dp 
 -------------
