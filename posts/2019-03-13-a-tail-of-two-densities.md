@@ -52,7 +52,7 @@ check out the [Wikipedia entry](https://en.wikipedia.org/wiki/Differential_priva
 or [Dwork-Roth 2013](https://www.cis.upenn.edu/~aaroth/privacybook.html).
 
 **Acknowledgement**. I would like to thank
-[Stockholm AI](https://stockholm.ai) for introducing me to the subject
+[Stockholm AI](http://stockholm.ai) for introducing me to the subject
 of differential privacy. Thanks to (in chronological order) Reynaldo
 Boulogne, Martin Abedi, Ilya Mironov, Kurt Johansson, Mark Bun, Salil
 Vadhan, Jonathan Ullman, Yuanyuan Xu and Yiting Li for communication and
