@@ -7,6 +7,7 @@ comments: true
 
 This is Part 1 of a two-part post where I give an introduction to
 the mathematics of differential privacy.
+
 Practically speaking, [differential privacy](https://en.wikipedia.org/wiki/Differential_privacy) 
 is a technique of perturbing database queries so that query results do not leak information.
 
