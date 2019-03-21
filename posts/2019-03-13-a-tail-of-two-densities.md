@@ -254,7 +254,7 @@ divergence variables, and for the rest of this post all dp results are
 obtained by estimating this tail bound.
 
 In the following we discuss the converse of Claim 1. The discussions are
-rather technical, and readers can skip to the next subsection on first
+rather technical, and readers can skip to the [next subsection](#back-to-approximate-differential-privacy) on first
 reading.
 
 The converse of Claim 1 is not true.
