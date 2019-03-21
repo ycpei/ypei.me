@@ -328,12 +328,14 @@ assumptions.
 ACGMMTZ16 
 ---------
 
+**Warning**. This section is under construction.
+
 What follows is my understanding of this result. I call it a conjecture
 because there is a gap which I am not able to reproduce their proof or
 prove it myself. This does not mean the result is false. On the
 contrary, I am inclined to believe it is true.
 
-**Claim 26**. Assuming Conjecture 2 (see below) is true. 
+**Claim 26**. Assuming Conjecture 1 (see below) is true. 
 For a subsampled Gaussian mechanism
 with ratio $r$, if $r = O(\sigma^{-1})$ and $\lambda = O(\sigma^2)$,
 then we have $(\lambda, O(r^2 \lambda / \sigma^2))$-rdp.
@@ -341,6 +343,16 @@ then we have $(\lambda, O(r^2 \lambda / \sigma^2))$-rdp.
 Wait, why is there a conjecture? Well, I have tried but not been able to
 prove the following, which is a hidden assumption in the original proof:
 
+**Conjecture 1**.
+Let $M$ be the Gaussian mechanism with subsampling rate $r$,
+and $p$ and $q$ be the laws of $M(x)$ and $M(x')$ respectively, where $d(x, x') = 1$.
+Then
+
+$$D_\lambda (p || q) \le D_\lambda (r \mu_1 + (1 - r) \mu_0 || \mu_0)$$ 
+
+where $\mu_i = N(i, \sigma^2)$.
+
+<!---
 **Conjecture 1** \[Probably [FALSE](https://math.stackexchange.com/a/3152296/149540), to be removed\]. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
 probability densities on the same space for $i = 1 : n$. If
 $D_\lambda(p_i || q_i) \le D_\lambda(\mu_i || \nu_i)$ for all $i$, then
@@ -354,7 +366,6 @@ So it is heuristically reasonable.
 But it is probably [**FALSE**](https://math.stackexchange.com/a/3152296/149540).
 This does not mean Claim 26 is false, as it might still be possible that Conjecture 2 (see below) is true.
 
-<!---
 This conjecture is equivalent to its special case when $n = 2$ by an induction argument
 (replacing one pair of densities at a time).
 -->
@@ -369,25 +380,23 @@ $$G_\lambda(r p + (1 - r) q || q) = \sum_{k = 1 : \lambda} {\lambda \choose k} r
 **Proof**. Quite straightforward, by expanding the numerator
 $(r p + (1 - r) q)^\lambda$ using binomial expansion. $\square$
 
-**Proof of Claim 26**. Let $M$ be the Gaussian mechanism with subsampling rate $r$,
+**Proof of Claim 26**. 
+let $M$ be the Gaussian mechanism with subsampling rate $r$,
 and $p$ and $q$ be the laws of $M(x)$ and $M(x')$ respectively, where $d(x, x') = 1$.
-I will break the proof into two parts:
+By Conjecture 1, it suffices to prove the following:
 
-1.  The MGF of the privacy loss $L(p || q)$ is bounded by that of
-    $L(r \mu_1 + (1 - r) \mu_0 || \mu_0)$ where
-    $\mu_i = N(i, \sigma^2)$.
-2.  If $r \le c_1 \sigma^{-1}$ and $\lambda \le c_2 \sigma^2$, then
-    there exists $C = C(c_1, c_2)$ such that
-    $G_\lambda (r \mu_1 + (1 - r) \mu_0 || \mu_0) \le C$ (since
-    $O(r^2 \lambda^2 / \sigma^2) = O(1)$).
+If $r \le c_1 \sigma^{-1}$ and $\lambda \le c_2 \sigma^2$, then
+there exists $C = C(c_1, c_2)$ such that
+$G_\lambda (r \mu_1 + (1 - r) \mu_0 || \mu_0) \le C$ (since
+$O(r^2 \lambda^2 / \sigma^2) = O(1)$).
 
 **Remark in the proof**. Note that the choice of
 $c_1$, $c_2$ and the function $C(c_1, c_2)$ are important to the
 practicality and usefulness of Claim 26.
 
+<!---
 Part 1 can be derived using Conjecture 1, but since Conjecture 1 is probably false,
 let us rename Part 1 itself _Conjecture 2_, which needs to be verified by other means.
-<!---
 We use the notations $p_I$ and $q_I$ to be $q$ and $p$ conditioned on
 the subsampling index $I$, just like in the proof of the subsampling theorems (Claim 19 and 24).
 Then
@@ -406,9 +415,9 @@ $|\mathcal I_\in| = r |\mathcal I|$, by Conjecture 1, we have Part 1.
 it suffices to prove a weaker version of it, by specialising on mixture of Gaussians,
 in order to have a Claim 26 without any conjectural assumptions.
 I have in fact posted the Conjecture on [Stackexchange](https://math.stackexchange.com/questions/3147963/an-inequality-related-to-the-renyi-divergence).
--->
 
 Now let us verify Part 2.
+-->
 
 Using Claim 27 and Example 1, we have
 
@@ -493,7 +502,7 @@ In the following for consistency we retain $k$ as the number of epochs,
 and use $T := k / r$ to denote the number of compositions / steps /
 minibatches. With Claim 26 we have:
 
-**Claim 28**. Assuming Conjecture 2 is true. Let $\epsilon, c_1, c_2 > 0$,
+**Claim 28**. Assuming Conjecture 1 is true. Let $\epsilon, c_1, c_2 > 0$,
 $r \le c_1 \sigma^{-1}$,
 $T = {c_2 \over 2 C(c_1, c_2)} \epsilon \sigma^2$. then the DP-SGD with
 subsampling rate $r$, and $T$ steps is $(\epsilon, \delta)$-dp for
@@ -525,7 +534,7 @@ for consistency with this post:
 
 $$\sigma \ge c_2' {r \sqrt{T \log (1 / \delta)} \over \epsilon}. \qquad (10)$$
 
-I am however unable to reproduce this version, assuming Conjecture 2 is
+I am however unable to reproduce this version, assuming Conjecture 1 is
 true, for the following reasons:
 
 1.  In the proof in the paper, we have $\epsilon = c_1' r^2 T$ instead
@@ -740,7 +749,7 @@ Here is a list of what I think may be interesting topics or potential
 problems to look at, with no guarantee that they are all awesome
 untouched research problems:
 
-1.  Prove Conjecture 2
+1.  Prove Conjecture 1
 2.  Find a theoretically definitive answer whether the methods in Part 1
     or Part 2 yield better privacy guarantees.
 3.  Study the non-Gaussian cases, general or specific. Let $p$ be some
