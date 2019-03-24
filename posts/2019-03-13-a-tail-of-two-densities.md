@@ -55,7 +55,8 @@ I also compare these privacy guarantees.
 
 **Acknowledgement**. I would like to thank
 [Stockholm AI](http://stockholm.ai) for introducing me to the subject
-of differential privacy. Thanks to (in chronological order) Reynaldo
+of differential privacy. Thanks to Amir Hossein Rahnama for hosting the discussions.
+Thanks to (in chronological order) Reynaldo
 Boulogne, Martin Abedi, Ilya Mironov, Kurt Johansson, Mark Bun, Salil
 Vadhan, Jonathan Ullman, Yuanyuan Xu and Yiting Li for communication and
 discussions. Also thanks to the [r/MachineLearning](https://www.reddit.com/r/MachineLearning/) 
