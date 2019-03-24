@@ -363,7 +363,7 @@ and for $I \in \mathcal I_\notin$,
 $$D_\lambda(p_I || q_I) = 0 = D_\lambda(\mu_0 || \mu_0).$$
 
 Since we are taking an average over $\mathcal I$, of which $r |\mathcal I|$ are
-in $\mathcal I_\in$ and $(1 - r) |\mathcal I|$ are in $\mathcal I_\noin$, (9.3) says
+in $\mathcal I_\in$ and $(1 - r) |\mathcal I|$ are in $\mathcal I_\notin$, (9.3) says
 "the inequalities carry over averaging".
 
 [A more general version of Conjecture 1 has been proven false](https://math.stackexchange.com/a/3152296/149540).
@@ -381,7 +381,7 @@ By Claim 25, we have
 $$D_\lambda(p_\in || q_\in) \le D_\lambda (\mu_1 || \mu_0). \qquad(9.9) $$
 
 So one way to prove Conjecture 1 is perhaps prove a more specialised 
-comparison theorem than the false Conjecture: 
+comparison theorem than the false conjecture: 
 
 Given (9.7) and (9.9), show that 
 
