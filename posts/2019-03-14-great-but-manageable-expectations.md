@@ -372,9 +372,9 @@ The counter example for the general version does not apply here, so it is still 
 Let $p_\in$ (resp. $q_\in$) be the average of $p_I$ (resp. $q_I$) over $I \in \mathcal I_\in$,
 and $p_\notin$ (resp. $q_\notin$) be the average of $p_I$ (resp. $q_I$) over $I \in \mathcal I_\notin$.
 
-Immediately we have $$p_\notin = q_\notin$$, hence
+Immediately we have $p_\notin = q_\notin$, hence
 
-$$D_|lambda(p_\notin || q_\notin) = 0 = D_\lambda(\mu_0 || \mu_0). \qquad(9.7)$$ 
+$$D_\lambda(p_\notin || q_\notin) = 0 = D_\lambda(\mu_0 || \mu_0). \qquad(9.7)$$ 
 
 By Claim 25, we have
 
