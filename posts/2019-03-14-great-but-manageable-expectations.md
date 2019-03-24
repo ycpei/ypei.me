@@ -351,12 +351,43 @@ $$D_\lambda (p || q) \le D_\lambda (r \mu_1 + (1 - r) \mu_0 || \mu_0)$$
 where $\mu_i = N(i, \sigma^2)$.
 
 **Remark**. 
-<!---
 Conjecture 1 is heuristically reasonable.
 To see this, let us use the notations $p_I$ and $q_I$ to be $q$ and $p$ conditioned on
 the subsampling index $I$, just like in the proof of the subsampling theorems (Claim 19 and 24).
--->
+Then for $I \in \mathcal I_\in$,
+
+$$D_\lambda(p_I || q_I) \le D_\lambda(\mu_0 || \mu_1),$$
+
+and for $I \in \mathcal I_\notin$,
+
+$$D_\lambda(p_I || q_I) = 0 = D_\lambda(\mu_0 || \mu_0).$$
+
+Since we are taking an average over $\mathcal I$, of which $r |\mathcal I|$ are
+in $\mathcal I_\in$ and $(1 - r) |\mathcal I|$ are in $\mathcal I_\noin$, (9.3) says
+"the inequalities carry over averaging".
+
 [A more general version of Conjecture 1 has been proven false](https://math.stackexchange.com/a/3152296/149540).
+The counter example for the general version does not apply here, so it is still possible Conjecture 1 is true.
+
+Let $p_\in$ (resp. $q_\in$) be the average of $p_I$ (resp. $q_I$) over $I \in \mathcal I_\in$,
+and $p_\notin$ (resp. $q_\notin$) be the average of $p_I$ (resp. $q_I$) over $I \in \mathcal I_\notin$.
+
+Immediately we have $$p_\notin = q_\notin$$, hence
+
+$$D_|lambda(p_\notin || q_\notin) = 0 = D_\lambda(\mu_0 || \mu_0). \qquad(9.7)$$ 
+
+By Claim 25, we have
+
+$$D_\lambda(p_\in || q_\in) \le D_\lambda (\mu_1 || \mu_0). \qquad(9.9) $$
+
+So one way to prove Conjecture 1 is perhaps prove a more specialised 
+comparison theorem than the false Conjecture: 
+
+Given (9.7) and (9.9), show that 
+
+$$D_\lambda(r p_\in + (1 - r) p_\notin || r q_\in + (1 - r) q_\notin) \le D_\lambda(r \mu_1 + (1 - r) \mu_0 || \mu_0).$$
+
+\[End of Remark\]
 
 <!---
 **Conjecture 1** \[Probably [FALSE](https://math.stackexchange.com/a/3152296/149540), to be removed\]. Let $p_i$, $q_i$, $\mu_i$, $\nu_i$ be
