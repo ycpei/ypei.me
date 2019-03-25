@@ -1085,6 +1085,12 @@ $i$ and $y_{1 : i}$, $M_i(y_{1 : i})$ is $(\epsilon, \delta)$-dp. Then
 the adpative composition of $M_{1 : k}$ is
 $(k a(\epsilon) + \sqrt{2 k \log \beta^{-1}} (\epsilon + a(\epsilon)), \beta + k \delta)$-dp.
 
+**Remark**. 
+This theorem appeared in Dwork-Rothblum-Vadhan 2010, but I could not find a proof there.
+A proof can be found in Dwork-Roth 2013 (See Theorem 3.20 there).
+Here I prove it in a similar way, except that I use the conditional probability results 
+as in Claim 5 instead of use of an intermediate random variable.
+
 **Proof**. By Claim 5, there exist events $E_{1 : k}$ and
 $F_{1 : k}$ such that
 
