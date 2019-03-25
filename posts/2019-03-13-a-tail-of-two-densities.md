@@ -828,10 +828,10 @@ The proofs of these composition theorems will be laid out as follows:
     argument
 2.  Claim 14 - Advanced composition theorem for $\epsilon$-dp with
     independent mechanisms: by factorising privacy loss and using
-    Hoeffding\'s Inequality
+    [Hoeffding\'s Inequality](https://en.wikipedia.org/wiki/Hoeffding%27s_inequality)
 3.  Claim 16 - Advanced composition theorem for $\epsilon$-dp with
-    adaptive mechanisms: by factorising privacy loss and using Azuma\'s
-    Inequality
+    adaptive mechanisms: by factorising privacy loss and using 
+    [Azuma\'s Inequality](https://en.wikipedia.org/wiki/Azuma%27s_inequality)
 4.  Claims 17 and 18 - Advanced composition theorem for
     $(\epsilon, \delta)$-dp with independent / adaptive mechanisms: by
     using characterisations of $(\epsilon, \delta)$-dp in Claims 4 and 5
