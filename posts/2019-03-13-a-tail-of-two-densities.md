@@ -1089,7 +1089,7 @@ $(k a(\epsilon) + \sqrt{2 k \log \beta^{-1}} (\epsilon + a(\epsilon)), \beta + k
 This theorem appeared in Dwork-Rothblum-Vadhan 2010, but I could not find a proof there.
 A proof can be found in Dwork-Roth 2013 (See Theorem 3.20 there).
 Here I prove it in a similar way, except that I use the conditional probability results 
-as in Claim 5 instead of use of an intermediate random variable.
+from Claim 5 instead of the use of an intermediate random variable in Dwork-Roth 2013.
 
 **Proof**. By Claim 5, there exist events $E_{1 : k}$ and
 $F_{1 : k}$ such that
