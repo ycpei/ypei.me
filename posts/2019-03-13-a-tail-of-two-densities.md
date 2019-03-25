@@ -934,8 +934,8 @@ $$D(p || q) = \mathbb E_{\xi \sim p} \log {p(\xi) \over q(\xi)} \le \max_y {\log
 Comparing the quantity in Claim 11 ($\epsilon(e^\epsilon - 1)$) with the
 quantity above ($\epsilon$), we arrive at the conclusion. $\square$
 
-**Claim 13 (Hoeffding\'s
-Inequality)**. Let $L_i$ be independent random variables with
+**Claim 13 ([Hoeffding\'s Inequality](https://en.wikipedia.org/wiki/Hoeffding%27s_inequality))**. 
+Let $L_i$ be independent random variables with
 $|L_i| \le b$, and let $L = L_1 + ... + L_k$, then for $t > 0$,
 
 $$\mathbb P(L - \mathbb E L \ge t) \le \exp(- {t^2 \over 2 k b^2}).$$
@@ -981,7 +981,7 @@ $$\mathbb P(L(q || p) \le k a(\epsilon) + \sqrt{2 k \epsilon^2 \log \beta^{-1}})
 
 By Claim 1 we arrive at the conclusion. $\square$
 
-**Claim 15 (Azuma\'s Inequality)**.
+**Claim 15 ([Azuma\'s Inequality](https://en.wikipedia.org/wiki/Azuma%27s_inequality))**.
 Let $X_{0 : k}$ be a [supermartingale](https://en.wikipedia.org/wiki/Martingale_(probability_theory)).
 If $|X_i - X_{i - 1}| \le b$, then
 
